@@ -1,11 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Global;
 
 public class UpdateCard : MonoBehaviour
 {
-    public Card cardData;
+    public CardData cardData;
 
 
     [SerializeField]
@@ -39,8 +38,16 @@ public class UpdateCard : MonoBehaviour
         healthText.text = cardData.health.ToString();
         damageText.text = cardData.damage.ToString();
         faceText.text = cardData.faceValue;
-        costText.text = cardData.cost.ToString();
+        if (cardData.cost == 0) {
+            costText.gameObject.SetActive(false);
+            costImage.gameObject.SetActive(false);
+        } else {
+            costText.text = cardData.cost.ToString();
+            costImage.sprite = costSprites[(int)cardData.costType];
+        }
+    }
 
-        costImage.sprite = costSprites[(int)cardData.costType];
+    public void UpdateFaceText(string newText) {
+        faceText.text = newText;
     }
 }

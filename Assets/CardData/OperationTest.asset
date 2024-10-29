@@ -9,13 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7fc7e1c4cd86aa43a9fdf08d91e4954, type: 3}
-  m_Name: Test
+  m_Script: {fileID: 11500000, guid: 68633aeebbf3d0246bd52e1ed5725460, type: 3}
+  m_Name: OperationTest
   m_EditorClassIdentifier: 
-  faceValue: x5
-  cardType: 0
+  faceValue: x4
   cardPack: 0
   costType: 0
-  health: 10
-  damage: 4
-  cost: 6
+  health: 3
+  damage: 2
+  cost: 2
+  operation: 1
+  operand: 2
