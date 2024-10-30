@@ -1,6 +1,6 @@
-using System.Net.NetworkInformation;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System.Collections;
 
 public abstract class CardManager : MonoBehaviour
 {
@@ -8,6 +8,8 @@ public abstract class CardManager : MonoBehaviour
     public delegate void ClickCallback(int id);
     public ClickCallback OnClick;
     public int id;
+    public IEnumerator animImageEnumerator;
+    public IEnumerator animEnumerator;
 
     public void Clicked() {
         Debug.Log("Card " + id + " Clicked");

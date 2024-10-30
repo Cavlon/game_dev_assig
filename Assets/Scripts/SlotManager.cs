@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.Collections.Generic;
+using CavlonUtils;
 
 public class SlotManager : MonoBehaviour
 {
@@ -31,7 +31,15 @@ public class SlotManager : MonoBehaviour
         }
         playedCards[index] = card;
         card.transform.SetParent(slots[index]);
-        card.transform.localPosition = new Vector2(0, 0);
+
+        CardManager cardManager = card.GetComponent<CardManager>();
+        if (cardManager.animEnumerator != null) {
+            StopCoroutine(cardManager.animEnumerator);
+        }
+        cardManager.animEnumerator = AnimUtils.TweenPos(card.transform, new Vector2(0, 0), 0.25f, AnimUtils.CubicOut);
+        StartCoroutine(cardManager.animEnumerator);
+
+        // card.transform.localPosition = new Vector2(0, 0);
         card.transform.localRotation = Quaternion.Euler(0, 0, 0);
         card.transform.GetChild(0).localPosition = new Vector2(0, 0f);
         return true;

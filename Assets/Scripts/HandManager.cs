@@ -1,8 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
-using Unity.VisualScripting;
-using UnityEngine.SocialPlatforms;
+using CavlonUtils;
+using System.Collections;
 
 public class HandManager : MonoBehaviour
 {
@@ -26,6 +26,15 @@ public class HandManager : MonoBehaviour
     private int cardId = 0;
     private int selectedInd = -1;
     public int slotInd = -1;
+    private Vector2 initHandPos;
+    private Vector2 deckPos;
+
+    private IEnumerator handAnimEnumerator;
+
+    void Start() {
+        initHandPos = handTrans.localPosition;
+        deckPos = transform.parent.Find("Deck").position;
+    }
 
     // Update is called once per frame
     void Update()
@@ -37,7 +46,9 @@ public class HandManager : MonoBehaviour
                 cards[selectedInd].GetComponent<CardManager>().OnClick = null;
                 cards.RemoveAt(selectedInd);
                 cardCount--;
-                handTrans.localPosition = new Vector2(handTrans.localPosition.x, handTrans.localPosition.y + 140f);
+
+                AnimateHand(AnimUtils.TweenPos(handTrans, initHandPos, 0.2f, AnimUtils.CubicOut));
+
                 selectedInd = -1;
                 UpdateHand();
             }
@@ -61,6 +72,7 @@ public class HandManager : MonoBehaviour
         } else {
             cardManager = newCard.AddComponent<SpecialCard>();
         }
+        newCard.transform.position = deckPos;
 
         cardManager.OnClick = CardSelected;
         cardManager.Init(cardId, cardData);
@@ -77,7 +89,7 @@ public class HandManager : MonoBehaviour
             float centralDist = midpoint - i;
             cards[i].transform.localRotation = Quaternion.Euler(0, 0, spread * centralDist);
 
-            cards[i].transform.localPosition = new Vector3(centralDist * -spacing, Math.Abs(centralDist) * -vertOffset, 0);
+            AnimateCard(cards[i], AnimUtils.TweenPos(cards[i].transform, new Vector2(centralDist * -spacing, Math.Abs(centralDist) * -vertOffset), 0.25f, AnimUtils.CubicOut));
         }
     }
 
@@ -94,9 +106,8 @@ public class HandManager : MonoBehaviour
 
         if (Vector2.Distance(pos, handTrans.localPosition) < hoverDist + (cardCount * 20f)) {
             int prevDist = 1000;
-            int dist = 0;
             for (int i = 0; i < cards.Count; i++) {
-                dist = (int)Vector2.Distance(pos, handTrans.localPosition + cards[i].transform.localPosition);
+                int dist = (int)Vector2.Distance(pos, handTrans.localPosition + cards[i].transform.localPosition);
                 if (dist <= prevDist) {
                     prevDist = dist;
                 } else {
@@ -113,12 +124,14 @@ public class HandManager : MonoBehaviour
     private void HoverCard(int index) {
         if (hoverInd != -1 && hoverInd < cardCount) {
             cards[hoverInd].transform.SetSiblingIndex(hoverInd);
-            cards[hoverInd].transform.GetChild(0).localPosition = new Vector2(0, 0);
+
+            AnimateCardImage(cards[hoverInd], AnimUtils.TweenPos(cards[hoverInd].transform.GetChild(0), new Vector2(0, 0), 0.1f, AnimUtils.CubicOut));
         }
 
         if (index != -1) {
             cards[index].transform.SetAsLastSibling();
-            cards[index].transform.GetChild(0).localPosition = new Vector2(0, 0.8f);
+
+            AnimateCardImage(cards[index], AnimUtils.TweenPos(cards[index].transform.GetChild(0), new Vector2(0, 0.8f), 0.1f, AnimUtils.CubicOut));
         }
     }
 
@@ -132,16 +145,46 @@ public class HandManager : MonoBehaviour
         }
         if (selectedInd == ind) {
             cards[selectedInd].transform.SetSiblingIndex(selectedInd);
-            cards[selectedInd].transform.GetChild(0).localPosition = new Vector2(0, 0);
-            handTrans.localPosition = new Vector2(handTrans.localPosition.x, handTrans.localPosition.y + 140f);
+
+            AnimateCardImage(cards[selectedInd], AnimUtils.TweenPos(cards[ind].transform.GetChild(0), new Vector2(0, 0), 0.2f, AnimUtils.CubicOut));
+            AnimateHand(AnimUtils.TweenPos(handTrans, initHandPos, 0.2f, AnimUtils.CubicOut));
+
             selectedInd = -1;
             return;
         }
         if (selectedInd != -1) return;
         selectedInd = ind;
         cards[ind].transform.SetAsLastSibling();
-        cards[ind].transform.GetChild(0).localPosition = new Vector2(0, 2f);
-        handTrans.localPosition = new Vector2(handTrans.localPosition.x, handTrans.localPosition.y - 140f);
+
+        AnimateCardImage(cards[ind], AnimUtils.TweenPos(cards[ind].transform.GetChild(0), new Vector2(0, 2.1f), 0.2f, AnimUtils.CubicOut));
+        AnimateHand(AnimUtils.TweenPos(handTrans, new Vector2(initHandPos.x, initHandPos.y - 140f), 0.2f, AnimUtils.CubicOut));
+
         slotInd = -1;
+    }
+
+    private void AnimateCardImage(GameObject card, IEnumerator animation) {
+        CardManager cardManager = card.GetComponent<CardManager>();
+        if (cardManager.animImageEnumerator != null) {
+            StopCoroutine(cardManager.animImageEnumerator);
+        }
+        cardManager.animImageEnumerator = animation;
+        StartCoroutine(cardManager.animImageEnumerator);
+    }
+
+    private void AnimateCard(GameObject card, IEnumerator animation) {
+        CardManager cardManager = card.GetComponent<CardManager>();
+        if (cardManager.animEnumerator != null) {
+            StopCoroutine(cardManager.animEnumerator);
+        }
+        cardManager.animEnumerator = animation;
+        StartCoroutine(cardManager.animEnumerator);
+    }
+
+    private void AnimateHand(IEnumerator animation) {
+        if (handAnimEnumerator != null) {
+            StopCoroutine(handAnimEnumerator);
+        }
+        handAnimEnumerator = animation;
+        StartCoroutine(handAnimEnumerator);
     }
 }
