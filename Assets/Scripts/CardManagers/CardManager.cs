@@ -8,8 +8,10 @@ public abstract class CardManager : MonoBehaviour
     public delegate void ClickCallback(int id);
     public ClickCallback OnClick;
     public int id;
-    public IEnumerator animImageEnumerator;
+    public IEnumerator animImageRotEnumerator;
+    public IEnumerator animImagePosEnumerator;
     public IEnumerator animEnumerator;
+    public CardData cardData;
 
     public void Clicked() {
         Debug.Log("Card " + id + " Clicked");
@@ -19,6 +21,7 @@ public abstract class CardManager : MonoBehaviour
 
     public virtual void Init(int newId, CardData newCardData) {
         id = newId;
+        cardData = newCardData;
         EventTrigger eventTrigger = transform.GetChild(0).GetComponent<EventTrigger>();
         EventTrigger.Entry entry = new EventTrigger.Entry();
         entry.eventID = EventTriggerType.PointerClick;
