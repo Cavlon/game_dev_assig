@@ -4,6 +4,23 @@ using System.Collections;
 using System.Collections.Generic;
 
 namespace CavlonUtils {
+
+    public static class ListUtils {
+
+        // From https://stackoverflow.com/questions/24644846/random-shuffle-listing-in-unity-3d
+        public static List<T> Shuffle<T>(List<T> _list)
+        {
+            for (int i = 0; i < _list.Count; i++)
+            {
+                T temp = _list[i];
+                int randomIndex = UnityEngine.Random.Range(i, _list.Count);
+                _list[i] = _list[randomIndex];
+                _list[randomIndex] = temp;
+            }
+
+            return _list;
+        }
+    }
     public static class AnimUtils {
 
         public delegate float EasingFunction(float x);
@@ -14,7 +31,7 @@ namespace CavlonUtils {
 
         // From https://nicmulvaney.com/easing?ref=blog.febucci.com#easeInOutElastic
         public static float ElasticInOut(float x) {
-            const float c5 = 2 * (float)Math.PI / 5f;
+            const float c5 = 2 * (float)Math.PI / 4.5f;
             if (x == 0) return 0;
             else if (x == 1) return 1;
             else if (x < 0.5f) return (float)(-(Math.Pow(2, 20 * x - 10) * Math.Sin((20 * x - 11.125) * c5)) / 2);

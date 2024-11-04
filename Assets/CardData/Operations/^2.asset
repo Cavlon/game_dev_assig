@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68633aeebbf3d0246bd52e1ed5725460, type: 3}
-  m_Name: OperationTest
+  m_Name: ^2
   m_EditorClassIdentifier: 
-  faceValue: "4\u03B1"
+  faceValue: "\u03B1<sup>2</sup>"
   cardPack: 0
-  costType: 0
-  health: 3
-  damage: 2
-  cost: 2
-  operation: 1
-  operand: 4
+  costType: 1
+  health: 2
+  damage: 1
+  cost: 5
+  operation: 2
+  operand: 2

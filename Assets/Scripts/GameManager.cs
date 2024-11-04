@@ -2,6 +2,8 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using CavlonUtils;
+using Unity.VisualScripting;
+using Unity.Mathematics;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,12 +16,25 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Transform bytesImage;
 
-    private int round = 0;
+    [SerializeField]
+    private SlotManager slotManager;
+    [SerializeField]
+    private DeckManager deckManager;
+    [SerializeField]
+    private HandManager handManager;
+
+    [SerializeField]
+    private GameObject opponentPrefab;
+
+    public int round = 0;
     public int bytes = 5;
     public int variables = 0;
     public int requiredVars = 0;
 
     public bool varSearching = false;
+
+    private GameObject opponent;
+    private Opponent opponentScript;
 
     private IEnumerator endTurnScaleEnumerator;
     private IEnumerator endTurnRotEnumerator;
@@ -28,14 +43,39 @@ public class GameManager : MonoBehaviour
 
     void Start() {
         UpdateBytes(bytes);
+        opponent = Instantiate(opponentPrefab, transform.GetChild(0).position, Quaternion.identity, transform.GetChild(0));
+        opponentScript = opponent.GetComponent<Opponent>();
+        opponentScript.slotManager = slotManager;
+        opponentScript.gameManager = this;
+
+        deckManager.Shuffle();
+        deckManager.DrawCard(true);
+        deckManager.DrawCard(true);
+        deckManager.DrawCard(true);
+        deckManager.DrawCard(true);
+        deckManager.DrawCard(false);
     }
 
     public void EndTurn() {
-        Debug.Log("Turn Ended");
+        StartCoroutine(EndTurnEnum());
+    }
+
+    private IEnumerator EndTurnEnum() {
+        StartCoroutine(Shake(endTurn, endTurnRotEnumerator, 3, 0));
+        yield return slotManager.ApplyOperationsPlayer();
+        yield return slotManager.PlayerAttack();
+        yield return opponentScript.OpponentTurn();
+        yield return slotManager.ApplyOperationsOpponent();
+        yield return slotManager.OpponentAttack();
+        StartTurn();
+    }
+
+    private void StartTurn() {
+        Debug.Log("Turn Started");
+        deckManager.canDraw = true;
         round++;
         roundCounter.text = "t = " + round;
         UpdateBytes(bytes+1);
-        StartCoroutine(Shake(endTurn, endTurnRotEnumerator, 3, 0));
         StartCoroutine(Bounce(roundCounter.transform, roundCounterAnimEnumerator, 50));
     }
 

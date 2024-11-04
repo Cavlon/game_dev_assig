@@ -24,7 +24,7 @@ public class HandManager : MonoBehaviour
 
     private List<GameObject> cards = new List<GameObject>();
     private int hoverInd = -1;
-    private int cardCount = 0;
+    public int cardCount = 0;
     private int cardId = 0;
     private int selectedInd = -1;
     public int slotInd = -1;
@@ -53,6 +53,7 @@ public class HandManager : MonoBehaviour
                     } else {
                         if (slotManager.CheckSlot(cardManager, slotInd)) {
                             StartCoroutine(gameManager.ShakeBytes());
+                            AnimateEntity(gameManager.Shake(cards[selectedInd].transform.GetChild(0), cardManager.animImageRotEnumerator, 2, spread * (((cardCount - 1) / 2f) - selectedInd)), ref cardManager.animImageRotEnumerator);
                         }
                     }
                     
@@ -70,7 +71,7 @@ public class HandManager : MonoBehaviour
 
     private void TryPlayCard() {
         if (slotManager.CheckSlot(cards[selectedInd].GetComponent<CardManager>(), slotInd)) {
-            slotManager.PlayCard(cards[selectedInd], slotInd);
+            slotManager.PlayerPlayCard(cards[selectedInd], slotInd);
             cards.RemoveAt(selectedInd);
             cardCount--;
 
@@ -87,7 +88,7 @@ public class HandManager : MonoBehaviour
         newCard.name = "Card " + cardId;
         cardCount++;
 
-        newCard.GetComponent<UpdateCard>().cardData = cardData;
+        newCard.GetComponent<UpdateCard>().InitValues(cardData);
 
         CardManager cardManager;
 
@@ -102,6 +103,7 @@ public class HandManager : MonoBehaviour
 
         cardManager.OnClick = CardSelected;
         cardManager.Init(cardId, cardData);
+        cardManager.AddClickFunction();
         cardId++;
 
         UpdateHand();

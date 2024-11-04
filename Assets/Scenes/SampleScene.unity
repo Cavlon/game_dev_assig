@@ -194,6 +194,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24837173}
   m_CullTransparentMesh: 1
+--- !u!1 &95861277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 95861278}
+  m_Layer: 5
+  m_Name: OpponentHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &95861278
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95861277}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1083247314}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 726}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &150760806
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,6 +1113,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handManager: {fileID: 2022576540}
   gameManager: {fileID: 1083247317}
+  cardPrefab: {fileID: 8630708733848710258, guid: f57c59ee943014f4aa08eb732624f0c0, type: 3}
+  opponentSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  opponentCards:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &575232414
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,18 +1175,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deckCards:
-  - {fileID: 11400000, guid: 1937d141d3f9eee449c7478d627e998a, type: 2}
-  - {fileID: 11400000, guid: 00d552a5a6255d74e87029b71edda590, type: 2}
-  - {fileID: 11400000, guid: 1937d141d3f9eee449c7478d627e998a, type: 2}
-  - {fileID: 11400000, guid: 1937d141d3f9eee449c7478d627e998a, type: 2}
-  - {fileID: 11400000, guid: 00d552a5a6255d74e87029b71edda590, type: 2}
-  - {fileID: 11400000, guid: 00d552a5a6255d74e87029b71edda590, type: 2}
-  - {fileID: 11400000, guid: 1937d141d3f9eee449c7478d627e998a, type: 2}
-  - {fileID: 11400000, guid: 00d552a5a6255d74e87029b71edda590, type: 2}
-  - {fileID: 11400000, guid: 00d552a5a6255d74e87029b71edda590, type: 2}
-  - {fileID: 11400000, guid: 1937d141d3f9eee449c7478d627e998a, type: 2}
-  - {fileID: 11400000, guid: 1937d141d3f9eee449c7478d627e998a, type: 2}
+  - {fileID: 11400000, guid: cd03cc753d5653f4ba5b808cf2fd2f58, type: 2}
+  - {fileID: 11400000, guid: cd03cc753d5653f4ba5b808cf2fd2f58, type: 2}
+  - {fileID: 11400000, guid: 5ee4130c51f53f943ad075a7aac26e4f, type: 2}
+  - {fileID: 11400000, guid: 5ee4130c51f53f943ad075a7aac26e4f, type: 2}
+  - {fileID: 11400000, guid: ee670e87cff01eb4cb3720e96e9687ee, type: 2}
+  - {fileID: 11400000, guid: 15d4f1adbbab28d408ddee4d4324726f, type: 2}
+  - {fileID: 11400000, guid: b4068770640851443925bcbe0d226b29, type: 2}
+  - {fileID: 11400000, guid: 17ef15d3dbc71534f84372aea5eb5a31, type: 2}
+  - {fileID: 11400000, guid: 17ef15d3dbc71534f84372aea5eb5a31, type: 2}
+  - {fileID: 11400000, guid: 17ef15d3dbc71534f84372aea5eb5a31, type: 2}
+  - {fileID: 11400000, guid: db531946e5c8c114d85335e0f34f087b, type: 2}
+  - {fileID: 11400000, guid: db531946e5c8c114d85335e0f34f087b, type: 2}
+  - {fileID: 11400000, guid: 4991d93da46f2b548ad7548e260edff9, type: 2}
+  - {fileID: 11400000, guid: 4991d93da46f2b548ad7548e260edff9, type: 2}
+  - {fileID: 11400000, guid: 7b8fee0d4b7fadf4f96993fb0444d93f, type: 2}
+  - {fileID: 11400000, guid: 36fc07d77c5310540bc0e857dba9d8a8, type: 2}
+  - {fileID: 11400000, guid: 2815b7770c099fc41b885a6295bc100c, type: 2}
+  - {fileID: 11400000, guid: 3f8ea9a178cb0b540b93006ae2bd42de, type: 2}
+  - {fileID: 11400000, guid: cd5719cc937f0064da828636a9f19d10, type: 2}
+  - {fileID: 11400000, guid: 0a600d3debdd819498487118e8cc18ee, type: 2}
   deck: {fileID: 1016148616}
+  deckIcons:
+  - {fileID: 21300000, guid: 9c703d0f2f110f446a9668b48cdad61f, type: 3}
+  - {fileID: 21300000, guid: ef231b83164200749a7ce8635cbc7df0, type: 3}
+  - {fileID: 21300000, guid: 355f30cda5c1bcd43879c2fcafc9bd69, type: 3}
+  deckIcon: {fileID: 1985365906}
+  deckCard: {fileID: 1647147755}
+  gameManager: {fileID: 1083247317}
+  handManager: {fileID: 2022576540}
+  canDraw: 1
 --- !u!1 &631548962
 GameObject:
   m_ObjectHideFlags: 0
@@ -2049,11 +2115,11 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 575232416}
           m_TargetAssemblyTypeName: DeckManager, Assembly-CSharp
-          m_MethodName: DrawCard
-          m_Mode: 2
+          m_MethodName: DeckClicked
+          m_Mode: 1
           m_Arguments:
-            m_ObjectArgument: {fileID: 2022576540}
-            m_ObjectArgumentAssemblyTypeName: HandManager, Assembly-CSharp
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -2370,7 +2436,7 @@ GameObject:
   - component: {fileID: 1053213534}
   - component: {fileID: 1053213535}
   m_Layer: 5
-  m_Name: Slot1
+  m_Name: Slot4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2589,6 +2655,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 95861278}
   - {fileID: 331025835}
   - {fileID: 498407979}
   - {fileID: 631548963}
@@ -2659,6 +2726,11 @@ MonoBehaviour:
   bytesCounter: {fileID: 251810642}
   endTurn: {fileID: 1534548768}
   bytesImage: {fileID: 377435696}
+  slotManager: {fileID: 498407980}
+  deckManager: {fileID: 575232416}
+  handManager: {fileID: 2022576540}
+  opponentPrefab: {fileID: 5387556600734212574, guid: a77783a356ae61f43a7233f55baa04cc, type: 3}
+  round: 0
   bytes: 3
   variables: 0
   requiredVars: 0
@@ -2864,10 +2936,10 @@ RectTransform:
   m_LocalScale: {x: 0.75000197, y: 0.75000197, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1053213534}
-  - {fileID: 1393901955}
-  - {fileID: 1460224553}
   - {fileID: 1765982983}
+  - {fileID: 1460224553}
+  - {fileID: 1393901955}
+  - {fileID: 1053213534}
   m_Father: {fileID: 1167361910}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3415,7 +3487,7 @@ GameObject:
   - component: {fileID: 1393901955}
   - component: {fileID: 1393901956}
   m_Layer: 5
-  m_Name: Slot2
+  m_Name: Slot3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3536,7 +3608,7 @@ GameObject:
   - component: {fileID: 1460224553}
   - component: {fileID: 1460224554}
   m_Layer: 5
-  m_Name: Slot3
+  m_Name: Slot2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4295,7 +4367,7 @@ GameObject:
   - component: {fileID: 1765982983}
   - component: {fileID: 1765982984}
   m_Layer: 5
-  m_Name: Slot4
+  m_Name: Slot1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4986,6 +5058,7 @@ MonoBehaviour:
   handTrans: {fileID: 1080941384}
   slotManager: {fileID: 498407980}
   gameManager: {fileID: 1083247317}
+  cardCount: 0
   slotInd: -1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

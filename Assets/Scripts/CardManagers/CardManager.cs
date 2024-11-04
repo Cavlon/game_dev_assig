@@ -12,6 +12,8 @@ public abstract class CardManager : MonoBehaviour
     public IEnumerator animImagePosEnumerator;
     public IEnumerator animEnumerator;
     public CardData cardData;
+    public int health;
+    public int damage;
 
     public void Clicked() {
         Debug.Log("Card " + id + " Clicked");
@@ -22,6 +24,11 @@ public abstract class CardManager : MonoBehaviour
     public virtual void Init(int newId, CardData newCardData) {
         id = newId;
         cardData = newCardData;
+        health = cardData.health;
+        damage = cardData.damage;
+    }
+
+    public void AddClickFunction() {
         EventTrigger eventTrigger = transform.GetChild(0).GetComponent<EventTrigger>();
         EventTrigger.Entry entry = new EventTrigger.Entry();
         entry.eventID = EventTriggerType.PointerClick;

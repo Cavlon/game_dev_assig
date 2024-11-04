@@ -3,12 +3,12 @@ using UnityEngine;
 public class NumberCard : CardManager
 {
 
-    private int value;
+    public ulong value;
     private new NumberCardData cardData;
 
     public override void Init(int newId, CardData newCardData) {
         base.Init(newId, newCardData);
         cardData = newCardData as NumberCardData;
-        value = cardData.value;
+        value = (ulong)cardData.value;
     }
 }

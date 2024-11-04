@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class OperationCard : CardManager
 {
-    private int operand;
-    private OperationCardData.Operation operation;
+    public int operand;
+    public OperationCardData.Operation operation;
     private new OperationCardData cardData;
 
     public override void Init(int newId, CardData newCardData) {

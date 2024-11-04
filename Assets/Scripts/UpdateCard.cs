@@ -4,8 +4,6 @@ using TMPro;
 
 public class UpdateCard : MonoBehaviour
 {
-    public CardData cardData;
-
 
     [SerializeField]
     private Image cardImage;
@@ -28,13 +26,7 @@ public class UpdateCard : MonoBehaviour
     [SerializeField]
     private Sprite[] costSprites = new Sprite[2];
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        UpdateValues();
-    }
-
-    public void UpdateValues() {
+    public void InitValues(CardData cardData) {
         healthText.text = cardData.health.ToString();
         damageText.text = cardData.damage.ToString();
         faceText.text = cardData.faceValue;
@@ -49,5 +41,9 @@ public class UpdateCard : MonoBehaviour
 
     public void UpdateFaceText(string newText) {
         faceText.text = newText;
+    }
+
+    public void UpdateHealth(int health) {
+        healthText.text = health.ToString();
     }
 }
