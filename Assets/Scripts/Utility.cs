@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 namespace CavlonUtils {
 
+    // Basic list operations
     public static class ListUtils {
 
         // From https://stackoverflow.com/questions/24644846/random-shuffle-listing-in-unity-3d
@@ -21,12 +22,20 @@ namespace CavlonUtils {
             return _list;
         }
     }
+
+    // Basic animation tweens and easing functions
     public static class AnimUtils {
 
+        // Some function that is bound between 0 and 1
         public delegate float EasingFunction(float x);
 
         public static float Identity(float x) {
             return x;
+        }
+
+        // From https://nicmulvaney.com/easing?ref=blog.febucci.com#easeOutSine
+        public static float SineOut(float x) {
+            return (float)Math.Sin(x * Math.PI / 2);
         }
 
         // From https://nicmulvaney.com/easing?ref=blog.febucci.com#easeInOutElastic
@@ -48,6 +57,15 @@ namespace CavlonUtils {
             return (float)(1 - Math.Pow(1 - x, 3));
         }
 
+        public static float QuintOut(float x) {
+            return (float)(1 - Math.Pow(1 - x, 5));
+        }
+
+        // From https://nicmulvaney.com/easing?ref=blog.febucci.com#easeInOutQuint
+        public static float QuintInOut(float x) {
+            return (float)(x < 0.5 ? 16 * x * x * x * x * x : 1 - Math.Pow(-2 * x + 2, 5) / 2);
+        }
+
         // Edit of function from https://stackoverflow.com/questions/27119906/animate-move-translate-tween-image-in-unity-4-6-from-c-sharp-code
         public static IEnumerator TweenPos(Transform transform, Vector3 targetPos, float duration, EasingFunction easingFunction)
         {
@@ -56,22 +74,7 @@ namespace CavlonUtils {
             do 
             {
                 elapsed_time += Time.deltaTime; //Adds to the elapsed time the amount of time needed to skip/wait one frame
-                pos = Vector3.Lerp(pos, targetPos, easingFunction(elapsed_time / duration)); //Changes and interpolates the position's "y" value
-                Debug.Log(pos);
-                transform.localPosition = pos;//Changes the object's position
-                yield return 0;
-            } while (elapsed_time <= duration); //Inside the loop until the time expires
-        }
-
-        // Edit of function from https://stackoverflow.com/questions/27119906/animate-move-translate-tween-image-in-unity-4-6-from-c-sharp-code
-        public static IEnumerator TweenPos(Transform transform, Vector2 targetPos, float duration, EasingFunction easingFunction)
-        {
-            float elapsed_time = 0; //Elapsed time
-            Vector3 pos = transform.localPosition; //Start object's position
-            do 
-            {
-                elapsed_time += Time.deltaTime; //Adds to the elapsed time the amount of time needed to skip/wait one frame
-                pos = Vector2.Lerp(pos, targetPos, easingFunction(elapsed_time / duration)); //Changes and interpolates the position's "y" value
+                pos = Vector3.Lerp(pos, targetPos, easingFunction(elapsed_time / duration)); //Changes and interpolates the position
                 transform.localPosition = pos;//Changes the object's position
                 yield return 0;
             } while (elapsed_time <= duration); //Inside the loop until the time expires
@@ -80,12 +83,12 @@ namespace CavlonUtils {
         public static IEnumerator TweenScale(Transform transform, Vector3 targetScale, float duration, EasingFunction easingFunction)
         {
             float elapsed_time = 0; //Elapsed time
-            Vector3 scale = transform.localScale; //Start object's position
+            Vector3 scale = transform.localScale; //Start object's scale
             do 
             {
                 elapsed_time += Time.deltaTime; //Adds to the elapsed time the amount of time needed to skip/wait one frame
-                scale = Vector3.Lerp(scale, targetScale, easingFunction(elapsed_time / duration)); //Changes and interpolates the position's "y" value
-                transform.localScale = scale;//Changes the object's position
+                scale = Vector3.Lerp(scale, targetScale, easingFunction(elapsed_time / duration)); //Changes and interpolates the scale
+                transform.localScale = scale;//Changes the object's scale
                 yield return 0;
             } while (elapsed_time <= duration); //Inside the loop until the time expires
         }
@@ -93,12 +96,12 @@ namespace CavlonUtils {
         public static IEnumerator TweenRotZ(Transform transform, float targetAngle, float duration, EasingFunction easingFunction)
         {
             float elapsed_time = 0; //Elapsed time
-            float angleZ = transform.eulerAngles.z; //Start object's position
+            float angleZ = transform.eulerAngles.z; //Start object's rotation
             do 
             {
                 elapsed_time += Time.deltaTime; //Adds to the elapsed time the amount of time needed to skip/wait one frame
-                angleZ = Mathf.LerpAngle(angleZ, targetAngle, easingFunction(elapsed_time / duration)); //Changes and interpolates the position's "y" value
-                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, angleZ);//Changes the object's position
+                angleZ = Mathf.LerpAngle(angleZ, targetAngle, easingFunction(elapsed_time / duration)); //Changes and interpolates the rotation
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, angleZ);//Changes the object's rotation
                 yield return 0;
             } while (elapsed_time <= duration); //Inside the loop until the time expires
         }

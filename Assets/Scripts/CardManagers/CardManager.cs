@@ -6,7 +6,7 @@ public abstract class CardManager : MonoBehaviour
 {
 
     public delegate void ClickCallback(int id);
-    public ClickCallback OnClick;
+    public ClickCallback OnClick;   // Function that is called when the card is clicked
     public int id;
     public IEnumerator animImageRotEnumerator;
     public IEnumerator animImagePosEnumerator;
@@ -15,12 +15,13 @@ public abstract class CardManager : MonoBehaviour
     public int health;
     public int damage;
 
-    public void Clicked() {
+    public void Clicked() {     // Card click callback
         Debug.Log("Card " + id + " Clicked");
         if (OnClick == null) return;
-        OnClick(id);
+        OnClick(id);    // Runs the callback function if it exists
     }
 
+    // Initialises card data
     public virtual void Init(int newId, CardData newCardData) {
         id = newId;
         cardData = newCardData;
@@ -28,7 +29,7 @@ public abstract class CardManager : MonoBehaviour
         damage = cardData.damage;
     }
 
-    public void AddClickFunction() {
+    public void AddClickFunction() {    // Add a click event listener and callback
         EventTrigger eventTrigger = transform.GetChild(0).GetComponent<EventTrigger>();
         EventTrigger.Entry entry = new EventTrigger.Entry();
         entry.eventID = EventTriggerType.PointerClick;

@@ -15,8 +15,8 @@ MonoBehaviour:
   faceValue: "\u03B1<sup>2</sup>"
   cardPack: 0
   costType: 1
-  health: 2
+  health: 1
   damage: 1
-  cost: 5
+  cost: 7
   operation: 2
   operand: 2

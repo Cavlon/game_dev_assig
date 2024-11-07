@@ -9,7 +9,7 @@ public class HandManager : MonoBehaviour
 {
 
     [SerializeField]
-    private GameObject cardPrefab;
+    private GameObject cardPrefab;      // Prefab of the generic card object which is then initialised
 
     [SerializeField]
     private Transform handTrans;
@@ -18,20 +18,23 @@ public class HandManager : MonoBehaviour
     [SerializeField]
     private GameManager gameManager;
 
+    // Parameters for card fanning in the hand
     private const float spread = 6f;
     private const float spacing = 90f;
     private const float vertOffset = 20f;
 
+    // The cards in the player's hand
     private List<GameObject> cards = new List<GameObject>();
-    private int hoverInd = -1;
-    public int cardCount = 0;
-    private int cardId = 0;
-    private int selectedInd = -1;
+    public int selectedInd = -1;
     public int slotInd = -1;
-    private Vector2 initHandPos;
-    private Vector2 deckPos;
+    private int hoverInd = -1;
 
-    private IEnumerator handAnimEnumerator;
+    public int cardCount = 0;
+    private int cardId = 0;     // Used to distinguish specific cards and identify them
+    private Vector2 initHandPos;    // Initial hand position for animation
+    private Vector2 deckPos;    // Deck position for card drawing
+
+    private IEnumerator handAnimEnumerator;     // Used for interrupting hand animations
 
     void Start() {
         initHandPos = handTrans.localPosition;
@@ -41,12 +44,12 @@ public class HandManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (selectedInd ==-1) {
+        if (selectedInd == -1) {     // If no card is selected then perform card hover checks
             CheckClosestCard();
         } else {
-            if (slotInd != -1) {
+            if (slotInd != -1) {    // Check if a slot has been selected
                 CardManager cardManager = cards[selectedInd].GetComponent<CardManager>();
-                if (cardManager.cardData.costType == CardData.CostType.Bytes) {
+                if (cardManager.cardData.costType == CardData.CostType.Bytes) {     // Check if the player has enough bytes to play the card
                     if (gameManager.bytes >= cardManager.cardData.cost) {
                         gameManager.UpdateBytes(gameManager.bytes - cardManager.cardData.cost);
                         TryPlayCard();
@@ -57,7 +60,7 @@ public class HandManager : MonoBehaviour
                         }
                     }
                     
-                } else if (gameManager.variables == cardManager.cardData.cost) {
+                } else if (gameManager.variables == cardManager.cardData.cost) {    // Check if the player has enough variables to play the card
                     TryPlayCard();
                 } else {
                     if (slotManager.CheckSlot(cardManager, slotInd)) {
@@ -69,8 +72,8 @@ public class HandManager : MonoBehaviour
         }
     }
 
-    private void TryPlayCard() {
-        if (slotManager.CheckSlot(cards[selectedInd].GetComponent<CardManager>(), slotInd)) {
+    private void TryPlayCard() {    // Attempt to play the selected card in the chosen slot
+        if (slotManager.CheckSlot(cards[selectedInd].GetComponent<CardManager>(), slotInd)) {   // Play the card if the slot is free
             slotManager.PlayerPlayCard(cards[selectedInd], slotInd);
             cards.RemoveAt(selectedInd);
             cardCount--;
@@ -82,34 +85,35 @@ public class HandManager : MonoBehaviour
         }
     }
 
-    public void AddCard(CardData cardData) {
-        GameObject newCard = Instantiate(cardPrefab, handTrans.position, Quaternion.identity, handTrans);
+    public void AddCard(CardData cardData) {    // Draw a card from the deck
+        GameObject newCard = Instantiate(cardPrefab, deckPos, Quaternion.identity, handTrans);  // Create a new card
         cards.Add(newCard);
         newCard.name = "Card " + cardId;
         cardCount++;
 
-        newCard.GetComponent<UpdateCard>().InitValues(cardData);
+        newCard.GetComponent<UpdateCard>().InitValues(cardData);    // Update the visuals of the card with the default values
 
         CardManager cardManager;
 
-        if (cardData is NumberCardData) {
+        if (cardData is NumberCardData) {   // Determine what type the card is
             cardManager = newCard.AddComponent<NumberCard>();
         } else if (cardData is OperationCardData) {
             cardManager = newCard.AddComponent<OperationCard>();
         } else {
             cardManager = newCard.AddComponent<SpecialCard>();
         }
-        newCard.transform.position = deckPos;
 
+        // Initialise the card and its callback
         cardManager.OnClick = CardSelected;
         cardManager.Init(cardId, cardData);
         cardManager.AddClickFunction();
         cardId++;
 
+        // Update the hand fanning
         UpdateHand();
     }
 
-    private void UpdateHand()
+    private void UpdateHand()   // Calculates the hand fanning
     {
         float midpoint = (cardCount - 1) / 2f;
 
@@ -121,20 +125,23 @@ public class HandManager : MonoBehaviour
         }
     }
 
-    private void UpdateHoverIndex(int index) {
+    private void UpdateHoverIndex(int index) {      // Manage what card is currently being hovered over
         if (index == hoverInd) return;
         HoverCard(index);
         hoverInd = index;
     }
 
-    private void CheckClosestCard() {
+    private void CheckClosestCard() {   // Checks which card the mouse is currently closest to
 
+        // Get the mouse coordinates in local canvas coordinates
         Vector2 pos;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(handTrans.parent as RectTransform, new Vector2(Input.mousePosition.x, Input.mousePosition.y), null, out pos);
 
+        // Only check for hovering if the mouse is close enough to the cards
         if (Math.Abs(initHandPos.x-pos.x) < 150 + (cardCount-1) * 65 && pos.y < initHandPos.y + 240) {
-            // Debug.Log(Math.Abs(initHandPos.x-pos.x));
 
+            // Iterate through each card and find which is closest to the mouse
+            // Set the closest index to be the one hovered over
             int prevDist = int.MaxValue;
             for (int i = 0; i < cards.Count; i++) {
                 int dist = (int)Vector2.Distance(pos, handTrans.localPosition + cards[i].transform.localPosition);
@@ -151,14 +158,14 @@ public class HandManager : MonoBehaviour
         }
     }
 
-    private void HoverCard(int index) {
-        if (hoverInd != -1 && hoverInd < cardCount) {
+    private void HoverCard(int index) {     // Animate card hovering
+        if (hoverInd != -1 && hoverInd < cardCount) {   // Lower the previously hovered card
             cards[hoverInd].transform.SetSiblingIndex(hoverInd);
 
             AnimateEntity(AnimUtils.TweenPos(cards[hoverInd].transform.GetChild(0), new Vector2(0, 0), 0.1f, AnimUtils.CubicOut), ref cards[hoverInd].GetComponent<CardManager>().animImagePosEnumerator);
         }
 
-        if (index != -1) {
+        if (index != -1) {      // Raise the newly hovered card
             cards[index].transform.SetAsLastSibling();
 
             float centralDist = (cardCount - 1) / 2f - index;
@@ -166,7 +173,22 @@ public class HandManager : MonoBehaviour
         }
     }
 
-    public void CardSelected(int id) {
+    public void ResetSelection() {      // Forcefully reset the currently selected card
+        if (selectedInd == -1) return;
+        cards[selectedInd].transform.SetSiblingIndex(selectedInd);
+
+        AnimateEntity(AnimUtils.TweenPos(cards[selectedInd].transform.GetChild(0), new Vector2(0, 0), 0.2f, AnimUtils.CubicOut), ref cards[selectedInd].GetComponent<CardManager>().animImagePosEnumerator);
+        RaiseHand();
+
+        gameManager.varSearching = false;
+        gameManager.requiredVars = 0;
+        gameManager.variables = 0;
+        slotManager.ResetSelection();
+    }
+
+    public void CardSelected(int id) {      // Select a card when it is clicked
+
+        // Identify which card was clicked from its ID
         int ind = -1;
         for (int i = 0; i < cardCount; i++) {
             if (cards[i].GetComponent<CardManager>().id == id) {
@@ -174,35 +196,42 @@ public class HandManager : MonoBehaviour
                 break;
             }
         }
+
+        // If the previously selected card was clicked again, lower and unselect it
         if (selectedInd == ind) {
-            cards[selectedInd].transform.SetSiblingIndex(selectedInd);
-
-            AnimateEntity(AnimUtils.TweenPos(cards[ind].transform.GetChild(0), new Vector2(0, 0), 0.2f, AnimUtils.CubicOut), ref cards[ind].GetComponent<CardManager>().animImagePosEnumerator);
-            AnimateEntity(AnimUtils.TweenPos(handTrans, initHandPos, 0.2f, AnimUtils.CubicOut), ref handAnimEnumerator);
-
-            gameManager.varSearching = false;
-            gameManager.requiredVars = 0;
-            gameManager.variables = 0;
-            slotManager.ResetSelection();
-
+            ResetSelection();
             selectedInd = -1;
             return;
         }
-        if (selectedInd != -1) return;
+
+        if (selectedInd != -1) return;  // If a card has already been selected but a different card is clicked, ignore the click
+
+        // Raise the selected card
         selectedInd = ind;
         cards[ind].transform.SetAsLastSibling();
 
+        // Enter variable searching mode if the card selected requires variables
         if (cards[ind].GetComponent<CardManager>().cardData.costType == CardData.CostType.Variables) {
             gameManager.varSearching = true;
             gameManager.requiredVars = cards[ind].GetComponent<CardManager>().cardData.cost;
         }
 
         AnimateEntity(AnimUtils.TweenPos(cards[ind].transform.GetChild(0), new Vector2(0, 100f), 0.2f, AnimUtils.CubicOut), ref cards[ind].GetComponent<CardManager>().animImagePosEnumerator);
-        AnimateEntity(AnimUtils.TweenPos(handTrans, new Vector2(initHandPos.x, initHandPos.y - 140f), 0.2f, AnimUtils.CubicOut), ref handAnimEnumerator);
+        LowerHand();
 
+        // Start searching for a slot
         slotInd = -1;
     }
 
+    public void LowerHand() {
+        AnimateEntity(AnimUtils.TweenPos(handTrans, new Vector2(initHandPos.x, initHandPos.y - 140f), 0.2f, AnimUtils.CubicOut), ref handAnimEnumerator);
+    }
+
+    public void RaiseHand() {
+        AnimateEntity(AnimUtils.TweenPos(handTrans, initHandPos, 0.2f, AnimUtils.CubicOut), ref handAnimEnumerator);
+    }
+
+    // Interrupts the currently playing animation and starts the new one
     private void AnimateEntity(IEnumerator animation, ref IEnumerator enumerator) {
         if (enumerator != null) {
             StopCoroutine(enumerator);

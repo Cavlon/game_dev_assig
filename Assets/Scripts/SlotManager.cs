@@ -14,13 +14,17 @@ public class SlotManager : MonoBehaviour
     [SerializeField]
     private GameObject cardPrefab;
 
+    // The different slots on the page
     private Transform[] playerSlots = new Transform[5];
     public Transform[] opponentSlots = new Transform[5];
-    private GameObject[] playedCards = new GameObject[5];
+    private GameObject[] playerCards = new GameObject[5];
     public GameObject[] opponentCards = new GameObject[5];
+
+    // Which cards have been selected for sacrifice
     private bool[] selectedCards = new bool[4];
 
     void Start() {
+        // Initialise all the slots
         Transform operationSlots = transform.parent.Find("PlayerSlots").GetChild(0);
         for (int i = 0; i < 4; i++) {
             playerSlots[i] = operationSlots.GetChild(i);
@@ -34,52 +38,59 @@ public class SlotManager : MonoBehaviour
         opponentSlots[4] = transform.parent.Find("OpponentSlots").GetChild(1);
     }
 
-    public void SlotClicked(int ind) {
+    public void SlotClicked(int ind) {      // Inform the hand that a slot has been clicked
         handManager.slotInd = ind;
         Debug.Log("Slot " + ind + " Clicked");
     }
 
-    public void CardClicked(int id) {
+    public void CardClicked(int id) {       // Label a card as a sacrifice target if variables are requires and it has been clicked
         if (!gameManager.varSearching) return;
+
+        // Identify which card has been clicked
         int ind = 0;
         for (int i = 0; i < 4; i++) {
-            if (playedCards[i] != null && playedCards[i].GetComponent<CardManager>().id == id) {
+            if (playerCards[i] != null && playerCards[i].GetComponent<CardManager>().id == id) {
                 ind = i;
                 break;
             }
         }
+
+        // Select or unselect the clicked card
         if (!selectedCards[ind]) {
-            if (gameManager.variables == gameManager.requiredVars) return;
+            if (gameManager.variables == gameManager.requiredVars) return;  // Don't sacrifice more cards than needed
             selectedCards[ind] = true;
             gameManager.variables++;
-            playedCards[ind].transform.GetChild(0).Find("Generalise").gameObject.SetActive(true);
-            StartCoroutine(gameManager.Shake(playedCards[ind].transform, playedCards[ind].GetComponent<CardManager>().animEnumerator, 1, 0));
+            playerCards[ind].transform.GetChild(0).Find("Generalise").gameObject.SetActive(true);
+            StartCoroutine(gameManager.Shake(playerCards[ind].transform, playerCards[ind].GetComponent<CardManager>().animEnumerator, 1, 0));
         } else {
             selectedCards[ind] = false;
             gameManager.variables--;
-            playedCards[ind].transform.GetChild(0).Find("Generalise").gameObject.SetActive(false);
-            StartCoroutine(gameManager.Shake(playedCards[ind].transform, playedCards[ind].GetComponent<CardManager>().animEnumerator, 1, 0));
+            playerCards[ind].transform.GetChild(0).Find("Generalise").gameObject.SetActive(false);
+            StartCoroutine(gameManager.Shake(playerCards[ind].transform, playerCards[ind].GetComponent<CardManager>().animEnumerator, 1, 0));
         }
     }
 
-    public void ResetSelection() {
+    public void ResetSelection() {      // Forcefully reset the sacrfice targets
         for (int i = 0; i < 4; i++) {
             selectedCards[i] = false;
-            if (playedCards[i] != null) playedCards[i].transform.GetChild(0).Find("Generalise").gameObject.SetActive(false);
+            if (playerCards[i] != null) playerCards[i].transform.GetChild(0).Find("Generalise").gameObject.SetActive(false);
         }
     }
 
-    public bool CheckSlot(CardManager card, int index) {
+    public bool CheckSlot(CardManager card, int index) {    // Check if the card can be placed in the alpha slot
         if (index == 4 && card.GetComponent<CardManager>() is not NumberCard) {
             return false;
         }
         return true;
     }
 
+    // The player plays a card on a certain slot
     public void PlayerPlayCard(GameObject card, int index) {
-        playedCards[index] = card;
+        // Add the card to the slot
+        playerCards[index] = card;
         card.transform.SetParent(playerSlots[index]);
 
+        // Animate the card moving to the slot
         CardManager cardManager = card.GetComponent<CardManager>();
         if (cardManager.animEnumerator != null) {
             StopCoroutine(cardManager.animEnumerator);
@@ -87,33 +98,42 @@ public class SlotManager : MonoBehaviour
         cardManager.animEnumerator = AnimUtils.TweenPos(card.transform, new Vector2(0, 0), 0.25f, AnimUtils.CubicOut);
         StartCoroutine(cardManager.animEnumerator);
 
+        // Assign click callback
         if (index < 4) cardManager.OnClick = CardClicked;
         else cardManager.OnClick = null;
 
+        // Reset the transform of the card
         card.transform.localRotation = Quaternion.Euler(0, 0, 0);
         card.transform.GetChild(0).localPosition = new Vector2(0, 0f);
-        card.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
-        card.transform.GetChild(0).GetChild(0).GetComponent<Image>().color = new Color(85/255f, 168/255f, 212/255f);
         card.transform.localScale = playerSlots[index].localScale;
 
+        // Activate the card outline
+        card.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
+        card.transform.GetChild(0).GetChild(0).GetComponent<Image>().color = new Color(85/255f, 168/255f, 212/255f);    
+
+        // Reset variables
         gameManager.variables = 0;
         gameManager.requiredVars = 0;
         gameManager.varSearching = false;
+
+        // Destroy all sacrificed cards
         for (int i = 0; i < 4; i++) {
             if (selectedCards[i]) {
-                StartCoroutine(DestroyCard(playedCards[i]));
+                StartCoroutine(DestroyCard(playerCards[i]));
                 selectedCards[i] = false;
             }
         }
     }
 
+    // Opponent plays a card on a certain slot
     public IEnumerator OpponentPlayCard(CardData cardData, Vector2 oppPos, int index) {
+        // Create the card and assign it to the slot
         GameObject card = Instantiate(cardPrefab, oppPos, Quaternion.identity, opponentSlots[index]);
         opponentCards[index] = card;
 
         CardManager cardManager;
 
-        if (cardData is NumberCardData) {
+        if (cardData is NumberCardData) {   // Determine the card's type
             cardManager = card.AddComponent<NumberCard>();
         } else if (cardData is OperationCardData) {
             cardManager = card.AddComponent<OperationCard>();
@@ -121,52 +141,57 @@ public class SlotManager : MonoBehaviour
             cardManager = card.AddComponent<SpecialCard>();
         }
 
+        // Initialise the card
         cardManager.Init(-1, cardData);
         card.GetComponent<UpdateCard>().InitValues(cardData);
+
+        // Animate the card moving to the slot
         if (cardManager.animEnumerator != null) {
             StopCoroutine(cardManager.animEnumerator);
         }
         cardManager.animEnumerator = AnimUtils.TweenPos(card.transform, new Vector2(0, 0), 0.25f, AnimUtils.CubicOut);
+        card.transform.localScale = opponentSlots[index].localScale;
+
+        // Activate the card outline
         card.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
         card.transform.GetChild(0).GetChild(0).GetComponent<Image>().color = new Color(209/255f, 114/255f, 108/255f);
-        card.transform.localScale = opponentSlots[index].localScale;
         yield return StartCoroutine(cardManager.animEnumerator);
     }
 
     public IEnumerator ApplyOperationsPlayer() {
-        if (playedCards[4] != null) {
-            Transform alphaCardTrans = playedCards[4].transform;
-            NumberCard alphaCard = alphaCardTrans.GetComponent<NumberCard>();
-            for (int i = 0; i < 4; i++) {
-                if (playedCards[i] != null) {
-                    if (playedCards[i].GetComponent<CardManager>() is OperationCard opCard) {
-                        switch (opCard.operation) {
-                            case OperationCardData.Operation.Add:
-                                alphaCard.value += (ulong)opCard.operand;
-                                break;
-                            case OperationCardData.Operation.Multiply:
-                                alphaCard.value *= (ulong)opCard.operand;
-                                break;
-                            case OperationCardData.Operation.Exponentiate:
-                                alphaCard.value = (ulong)Math.Pow(alphaCard.value, opCard.operand);
-                                break;
-                        }
-                        alphaCardTrans.GetComponent<UpdateCard>().UpdateFaceText(alphaCard.value.ToString());
-                        StartCoroutine(gameManager.Shake(alphaCardTrans, alphaCard.animImageRotEnumerator, 2, 0));
-                        yield return gameManager.Shake(playedCards[i].transform, opCard.animImageRotEnumerator, 2, 0);
-                    }
-                }
-            }
-        }
+        yield return ApplyOperations(playerCards);
     }
 
     public IEnumerator ApplyOperationsOpponent() {
-        if (opponentCards[4] != null) {
-            Transform alphaCardTrans = opponentCards[4].transform;
+        yield return ApplyOperations(opponentCards);
+    }
+
+    public IEnumerator PlayerAttack() {
+        yield return Attack(playerCards, opponentCards);
+    }
+
+    public IEnumerator OpponentAttack() {
+        yield return Attack(opponentCards, playerCards);
+    }
+
+    public IEnumerator PlayerAlphaAttack() {
+        yield return AlphaAttack(playerCards, 1);
+    }
+
+    public IEnumerator OpponentAlphaAttack() {
+        yield return AlphaAttack(opponentCards, -1);
+    }
+
+    // Apply all operations to the alpha card
+    private IEnumerator ApplyOperations(GameObject[] cards) {
+        if (cards[4] != null) {   // Check if an alpha card has been played
+            Transform alphaCardTrans = cards[4].transform;
             NumberCard alphaCard = alphaCardTrans.GetComponent<NumberCard>();
-            for (int i = 0; i < 4; i++) {
-                if (opponentCards[i] != null) {
-                    if (opponentCards[i].GetComponent<CardManager>() is OperationCard opCard) {
+            for (int i = 0; i < 4; i++) {       // Iterate through all operation cards
+                if (cards[i] != null) {
+
+                    // Apply the specified operation to the alpha card
+                    if (cards[i].GetComponent<CardManager>() is OperationCard opCard) {
                         switch (opCard.operation) {
                             case OperationCardData.Operation.Add:
                                 alphaCard.value += (ulong)opCard.operand;
@@ -178,58 +203,64 @@ public class SlotManager : MonoBehaviour
                                 alphaCard.value = (ulong)Math.Pow(alphaCard.value, opCard.operand);
                                 break;
                         }
+
                         alphaCardTrans.GetComponent<UpdateCard>().UpdateFaceText(alphaCard.value.ToString());
                         StartCoroutine(gameManager.Shake(alphaCardTrans, alphaCard.animImageRotEnumerator, 2, 0));
-                        yield return gameManager.Shake(opponentCards[i].transform, opCard.animImageRotEnumerator, 2, 0);
+                        yield return gameManager.Shake(cards[i].transform, opCard.animImageRotEnumerator, 2, 0);
+                        yield return new WaitForSeconds(0.15f);
                     }
                 }
             }
         }
     }
 
-    public IEnumerator PlayerAttack() {
-        for (int i = 0; i < 4; i++) {
-            if (playedCards[i] != null && opponentCards[i] != null) {
-                CardManager cardManager = playedCards[i].GetComponent<CardManager>();
-                CardManager oppCardManager = opponentCards[i].GetComponent<CardManager>();
-                if (cardManager.damage != 0) {
-                    yield return AnimUtils.TweenPos(playedCards[i].transform, new Vector2(playedCards[i].transform.localPosition.x, 530), 0.4f, AnimUtils.ElasticInOut);
+    // Attack with all cards
+    private IEnumerator Attack(GameObject[] attackingCards, GameObject[] victimCards) {
+        for (int i = 0; i < 4; i++) {       // Iterate through all the played cards
+            if (attackingCards[i] != null && victimCards[i] != null) {       // Only attack if there is a played card and there is a valid opponent
+                CardManager cardManager = attackingCards[i].GetComponent<CardManager>();
+                CardManager oppCardManager = victimCards[i].GetComponent<CardManager>();
+                if (cardManager.damage != 0) {      // Only attack if there is damage to be dealt
+
+                    // Animate the attack
+                    yield return AnimUtils.TweenPos(attackingCards[i].transform, new Vector2(attackingCards[i].transform.localPosition.x, -60), 0.1f, AnimUtils.CubicIn);
+                    yield return AnimUtils.TweenPos(attackingCards[i].transform, new Vector2(attackingCards[i].transform.localPosition.x, 530), 0.25f, AnimUtils.CubicIn);
+                    StartCoroutine(gameManager.Shake(attackingCards[i].transform, cardManager.animImageRotEnumerator, 2, 0));
+
+                    // Deal damage to the victim card
                     oppCardManager.health = Math.Max(0, oppCardManager.health - cardManager.damage);
-                    opponentCards[i].GetComponent<UpdateCard>().UpdateHealth(oppCardManager.health);
+                    victimCards[i].GetComponent<UpdateCard>().UpdateHealth(oppCardManager.health);
+
+                    // Destroy the victim if it dies
                     if (oppCardManager.health <= 0) {
-                        StartCoroutine(DestroyCard(opponentCards[i]));
+                        StartCoroutine(DestroyCard(victimCards[i]));
                     } else {
-                        StartCoroutine(gameManager.Shake(opponentCards[i].transform, opponentCards[i].GetComponent<CardManager>().animEnumerator, 2, 0));
+                        StartCoroutine(gameManager.Shake(victimCards[i].transform, oppCardManager.animEnumerator, 2, 0));
                     }
-                    yield return AnimUtils.TweenPos(playedCards[i].transform, new Vector2(playedCards[i].transform.localPosition.x, 0), 0.7f, AnimUtils.ElasticInOut);
+
+                    // Return the card to the slot
+                    yield return AnimUtils.TweenPos(attackingCards[i].transform, new Vector2(attackingCards[i].transform.localPosition.x, 0), 1.2f, AnimUtils.QuintInOut);
+                    yield return new WaitForSeconds(0.05f);
                 }
             }
         }
     }
 
-    public IEnumerator OpponentAttack() {
-        for (int i = 0; i < 4; i++) {
-            if (playedCards[i] != null && opponentCards[i] != null) {
-                CardManager cardManager = playedCards[i].GetComponent<CardManager>();
-                CardManager oppCardManager = opponentCards[i].GetComponent<CardManager>();
-                if (oppCardManager.damage != 0) {
-                    yield return AnimUtils.TweenPos(opponentCards[i].transform, new Vector2(opponentCards[i].transform.localPosition.x, 530), 0.4f, AnimUtils.ElasticInOut);
-                    cardManager.health = Math.Max(0, cardManager.health - oppCardManager.damage);
-                    playedCards[i].GetComponent<UpdateCard>().UpdateHealth(cardManager.health);
-                    if (cardManager.health <= 0) {
-                        StartCoroutine(DestroyCard(playedCards[i]));
-                    } else {
-                        StartCoroutine(gameManager.Shake(playedCards[i].transform, playedCards[i].GetComponent<CardManager>().animEnumerator, 2, 0));
-                    }
-                    yield return AnimUtils.TweenPos(opponentCards[i].transform, new Vector2(opponentCards[i].transform.localPosition.x, 0), 0.7f, AnimUtils.ElasticInOut);
-                }
-            }
+    // Animates and applies the apha value to the health scale
+    private IEnumerator AlphaAttack(GameObject[] cards, int playerOrOpponnent) {
+        if (cards[4] != null) {
+            StartCoroutine(gameManager.Shake(cards[4].transform, cards[4].GetComponent<CardManager>().animEnumerator, 2, 0));
+            yield return AnimUtils.TweenScale(cards[4].transform, new Vector2(1.2f, 1.2f), 0.2f, AnimUtils.ElasticInOut);
+            gameManager.TipScale((int)cards[4].GetComponent<NumberCard>().value * playerOrOpponnent);
+            yield return AnimUtils.TweenScale(cards[4].transform, new Vector2(1f, 1f), 0.2f, AnimUtils.ElasticInOut);
+            yield return new WaitForSeconds(0.5f);
         }
     }
 
+    // Animate card death
     private IEnumerator DestroyCard(GameObject card) {
         StartCoroutine(gameManager.Shake(card.transform, card.GetComponent<CardManager>().animEnumerator, 2, 0));
-        yield return StartCoroutine(AnimUtils.TweenScale(card.transform, new Vector2(0.01f, 0.01f), 0.7f, AnimUtils.ElasticInOut));;
+        yield return AnimUtils.TweenScale(card.transform, new Vector2(0.01f, 0.01f), 0.7f, AnimUtils.ElasticInOut);;
         StopCoroutine(card.GetComponent<CardManager>().animEnumerator);
         Destroy(card);
     }
