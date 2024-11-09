@@ -2,14 +2,12 @@ using UnityEngine;
 
 public class OperationCard : CardManager
 {
-    public int operand;
-    public OperationCardData.Operation operation;
+    public string equation;
     private new OperationCardData cardData;
 
     public override void Init(int newId, CardData newCardData) {
         base.Init(newId, newCardData);
         cardData = newCardData as OperationCardData;
-        operand = cardData.operand;
-        operation = cardData.operation;
+        equation = cardData.equation;
     }
 }

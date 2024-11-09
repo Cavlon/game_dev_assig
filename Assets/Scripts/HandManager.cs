@@ -17,6 +17,8 @@ public class HandManager : MonoBehaviour
     private SlotManager slotManager;
     [SerializeField]
     private GameManager gameManager;
+    [SerializeField]
+    private SoundManager soundManager;
 
     // Parameters for card fanning in the hand
     private const float spread = 6f;
@@ -55,6 +57,7 @@ public class HandManager : MonoBehaviour
                         TryPlayCard();
                     } else {
                         if (slotManager.CheckSlot(cardManager, slotInd)) {
+                            soundManager.PlaySound(8);
                             StartCoroutine(gameManager.ShakeBytes());
                             AnimateEntity(gameManager.Shake(cards[selectedInd].transform.GetChild(0), cardManager.animImageRotEnumerator, 2, spread * (((cardCount - 1) / 2f) - selectedInd)), ref cardManager.animImageRotEnumerator);
                         }
@@ -64,6 +67,7 @@ public class HandManager : MonoBehaviour
                     TryPlayCard();
                 } else {
                     if (slotManager.CheckSlot(cardManager, slotInd)) {
+                        soundManager.PlaySound(8);
                         AnimateEntity(gameManager.Shake(cards[selectedInd].transform.GetChild(0), cardManager.animImageRotEnumerator, 2, spread * (((cardCount - 1) / 2f) - selectedInd)), ref cardManager.animImageRotEnumerator);
                     }
                 }
@@ -169,6 +173,7 @@ public class HandManager : MonoBehaviour
             cards[index].transform.SetAsLastSibling();
 
             float centralDist = (cardCount - 1) / 2f - index;
+            soundManager.PlaySound(5);
             AnimateEntity(AnimUtils.TweenPos(cards[index].transform.GetChild(0), new Vector2(0, 60f + Math.Abs(centralDist) * vertOffset), 0.1f, AnimUtils.CubicOut), ref cards[index].GetComponent<CardManager>().animImagePosEnumerator);
         }
     }
@@ -201,6 +206,7 @@ public class HandManager : MonoBehaviour
         if (selectedInd == ind) {
             ResetSelection();
             selectedInd = -1;
+            soundManager.PlaySound(0);
             return;
         }
 
@@ -215,6 +221,8 @@ public class HandManager : MonoBehaviour
             gameManager.varSearching = true;
             gameManager.requiredVars = cards[ind].GetComponent<CardManager>().cardData.cost;
         }
+
+        soundManager.PlaySound(0);
 
         AnimateEntity(AnimUtils.TweenPos(cards[ind].transform.GetChild(0), new Vector2(0, 100f), 0.2f, AnimUtils.CubicOut), ref cards[ind].GetComponent<CardManager>().animImagePosEnumerator);
         LowerHand();

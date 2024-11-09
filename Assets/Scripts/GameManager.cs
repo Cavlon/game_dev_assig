@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     private Slider healthScale;
     [SerializeField]
     private TMP_Text healthText;
+    [SerializeField]
+    private Transform endScreen;
 
     [SerializeField]
     private SlotManager slotManager;
@@ -24,19 +26,24 @@ public class GameManager : MonoBehaviour
     private DeckManager deckManager;
     [SerializeField]
     private HandManager handManager;
+    [SerializeField]
+    private SoundManager soundManager;
 
     [SerializeField]
     private GameObject opponentPrefab;
 
     private Transform bytesImage;
     private TMP_Text bytesCounterText;
+    private TMP_Text endScreenText;
+    private Image endScreenPanel;
 
-    public int round = 0;
+    public int round = 1;
     public int bytes = 5;
     public int variables = 0;
     public int requiredVars = 0;
 
     public bool varSearching = false;
+    private bool gameEnd = false;
 
     private bool canEnd = true;
     private int health = 0;
@@ -52,6 +59,10 @@ public class GameManager : MonoBehaviour
 
     // Initialise the game
     void Start() {
+        endScreenText = endScreen.GetComponentInChildren<TMP_Text>();
+        endScreenPanel = endScreen.GetChild(0).GetComponent<Image>();
+        StartCoroutine(AnimUtils.TweenPos(endScreen, new Vector2(0, 1147), 1.5f, AnimUtils.QuintInOut));
+
         // Get bytes components
         bytesImage = bytesCounter.GetChild(0);
         bytesCounterText = bytesCounter.GetChild(1).GetComponent<TMP_Text>();
@@ -75,7 +86,11 @@ public class GameManager : MonoBehaviour
 
     public void EndTurn() {     // Try to end the turn
         StartCoroutine(Shake(endTurn, endTurnRotEnumerator, 3, 0));
-        if (!canEnd) return;    // Only end the turn if it's the player's turn
+        if (!canEnd) {
+            soundManager.PlaySound(8);
+            return;    // Only end the turn if it's the player's turn
+        }
+        soundManager.PlaySound(9);
         StartCoroutine(EndTurnEnum());
     }
 
@@ -91,19 +106,30 @@ public class GameManager : MonoBehaviour
         yield return slotManager.PlayerAttack();
         yield return slotManager.PlayerAlphaAttack();
 
-        // Perform opponent turn and their end-of-turn actions
-        yield return opponentScript.OpponentTurn();
-        yield return slotManager.ApplyOperationsOpponent();
-        yield return slotManager.OpponentAttack();
-        yield return slotManager.OpponentAlphaAttack();
+        if (!gameEnd) {
+            // Perform opponent turn and their end-of-turn actions
+            yield return opponentScript.OpponentTurn();
+            yield return slotManager.ApplyOperationsOpponent();
+            yield return slotManager.OpponentAttack();
+            yield return slotManager.OpponentAlphaAttack();
 
-        // Start the player's turn again
-        StartTurn();
+            if (!gameEnd) {
+                // Start the player's turn again
+                StartTurn();
+            } else {
+                yield return GameOver();
+            }
+        } else {
+            yield return GameOver();
+        }        
     }
 
     // Start the player's turn
     private void StartTurn() {
         Debug.Log("Turn Started");
+        if (deckManager.deckCards.Count == 0) {
+            StartCoroutine(deckManager.FillDeck());
+        }
         deckManager.canDraw = true;    
         round++;
         roundCounter.text = "t = " + round;
@@ -133,6 +159,26 @@ public class GameManager : MonoBehaviour
         }
         healthAnimEnumerator = TweenHealth(health);
         StartCoroutine(healthAnimEnumerator);
+        if (health <= -1000 || health >= 1000) {
+            gameEnd = true;
+        }
+    }
+
+    private IEnumerator GameOver() {
+        endScreenPanel.color = new Color(endScreenPanel.color.r, endScreenPanel.color.g, endScreenPanel.color.b, 221/225f);
+        if (health <= -1000) {
+            endScreenText.text = "YOU LOSE";
+            endScreen.localPosition = new Vector2(0, 1147);
+            endScreenText.color = new Color(224/255f, 119/255f, 119/255f);
+            soundManager.PlaySound(8);
+        } else {
+            endScreenText.text = "YOU WIN";
+            endScreen.localPosition = new Vector2(0, -1147);
+            endScreenText.color = new Color(106/255f, 185/255f, 207/255f);
+            soundManager.PlaySound(7);
+        }
+        soundManager.StopBGM();
+        yield return AnimUtils.TweenPos(endScreen, Vector2.zero, 1.5f, AnimUtils.QuintInOut);
     }
 
     // Animate the end turn icon when hovered over
@@ -158,7 +204,6 @@ public class GameManager : MonoBehaviour
     // Interpolate the health slider value
     public IEnumerator TweenHealth(int targetHealth)
     {
-        Debug.Log(targetHealth);
         float elapsed_time = 0; //Elapsed time
         float tmpHealth = healthScale.value;
         do 

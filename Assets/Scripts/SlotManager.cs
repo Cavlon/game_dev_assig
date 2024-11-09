@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using CavlonUtils;
 using System.Collections;
 using System;
+using System.Data;
 using Unity.Mathematics;
 
 public class SlotManager : MonoBehaviour
@@ -10,7 +11,12 @@ public class SlotManager : MonoBehaviour
     [SerializeField]
     private HandManager handManager;
     [SerializeField]
+    private DeckManager deckManager;
+    [SerializeField]
     private GameManager gameManager;
+    [SerializeField]
+    private SoundManager soundManager;
+
     [SerializeField]
     private GameObject cardPrefab;
 
@@ -59,11 +65,13 @@ public class SlotManager : MonoBehaviour
         if (!selectedCards[ind]) {
             if (gameManager.variables == gameManager.requiredVars) return;  // Don't sacrifice more cards than needed
             selectedCards[ind] = true;
+            soundManager.PlaySound(1);
             gameManager.variables++;
             playerCards[ind].transform.GetChild(0).Find("Generalise").gameObject.SetActive(true);
             StartCoroutine(gameManager.Shake(playerCards[ind].transform, playerCards[ind].GetComponent<CardManager>().animEnumerator, 1, 0));
         } else {
             selectedCards[ind] = false;
+            soundManager.PlaySound(1);
             gameManager.variables--;
             playerCards[ind].transform.GetChild(0).Find("Generalise").gameObject.SetActive(false);
             StartCoroutine(gameManager.Shake(playerCards[ind].transform, playerCards[ind].GetComponent<CardManager>().animEnumerator, 1, 0));
@@ -79,6 +87,7 @@ public class SlotManager : MonoBehaviour
 
     public bool CheckSlot(CardManager card, int index) {    // Check if the card can be placed in the alpha slot
         if (index == 4 && card.GetComponent<CardManager>() is not NumberCard) {
+            soundManager.PlaySound(8);
             return false;
         }
         return true;
@@ -119,10 +128,14 @@ public class SlotManager : MonoBehaviour
         // Destroy all sacrificed cards
         for (int i = 0; i < 4; i++) {
             if (selectedCards[i]) {
+                deckManager.discardPile.Add(playerCards[i].GetComponent<CardManager>().cardData);
                 StartCoroutine(DestroyCard(playerCards[i]));
                 selectedCards[i] = false;
             }
         }
+
+        soundManager.PlaySound(0);
+
     }
 
     // Opponent plays a card on a certain slot
@@ -155,7 +168,8 @@ public class SlotManager : MonoBehaviour
         // Activate the card outline
         card.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
         card.transform.GetChild(0).GetChild(0).GetComponent<Image>().color = new Color(209/255f, 114/255f, 108/255f);
-        yield return StartCoroutine(cardManager.animEnumerator);
+        yield return cardManager.animEnumerator;
+        soundManager.PlaySound(0);
     }
 
     public IEnumerator ApplyOperationsPlayer() {
@@ -192,20 +206,11 @@ public class SlotManager : MonoBehaviour
 
                     // Apply the specified operation to the alpha card
                     if (cards[i].GetComponent<CardManager>() is OperationCard opCard) {
-                        switch (opCard.operation) {
-                            case OperationCardData.Operation.Add:
-                                alphaCard.value += (ulong)opCard.operand;
-                                break;
-                            case OperationCardData.Operation.Multiply:
-                                alphaCard.value *= (ulong)opCard.operand;
-                                break;
-                            case OperationCardData.Operation.Exponentiate:
-                                alphaCard.value = (ulong)Math.Pow(alphaCard.value, opCard.operand);
-                                break;
-                        }
+                        alphaCard.value = (ulong)ParseEquationString(opCard.equation, (int)alphaCard.value);
 
                         alphaCardTrans.GetComponent<UpdateCard>().UpdateFaceText(alphaCard.value.ToString());
                         StartCoroutine(gameManager.Shake(alphaCardTrans, alphaCard.animImageRotEnumerator, 2, 0));
+                        soundManager.PlaySound(6);
                         yield return gameManager.Shake(cards[i].transform, opCard.animImageRotEnumerator, 2, 0);
                         yield return new WaitForSeconds(0.15f);
                     }
@@ -224,6 +229,7 @@ public class SlotManager : MonoBehaviour
 
                     // Animate the attack
                     yield return AnimUtils.TweenPos(attackingCards[i].transform, new Vector2(attackingCards[i].transform.localPosition.x, -60), 0.1f, AnimUtils.CubicIn);
+                    soundManager.PlaySound(3);
                     yield return AnimUtils.TweenPos(attackingCards[i].transform, new Vector2(attackingCards[i].transform.localPosition.x, 530), 0.25f, AnimUtils.CubicIn);
                     StartCoroutine(gameManager.Shake(attackingCards[i].transform, cardManager.animImageRotEnumerator, 2, 0));
 
@@ -233,6 +239,9 @@ public class SlotManager : MonoBehaviour
 
                     // Destroy the victim if it dies
                     if (oppCardManager.health <= 0) {
+                        if (victimCards == playerCards) {
+                            deckManager.discardPile.Add(oppCardManager.cardData);
+                        }
                         StartCoroutine(DestroyCard(victimCards[i]));
                     } else {
                         StartCoroutine(gameManager.Shake(victimCards[i].transform, oppCardManager.animEnumerator, 2, 0));
@@ -249,6 +258,7 @@ public class SlotManager : MonoBehaviour
     // Animates and applies the apha value to the health scale
     private IEnumerator AlphaAttack(GameObject[] cards, int playerOrOpponnent) {
         if (cards[4] != null) {
+            soundManager.PlaySound(10);
             StartCoroutine(gameManager.Shake(cards[4].transform, cards[4].GetComponent<CardManager>().animEnumerator, 2, 0));
             yield return AnimUtils.TweenScale(cards[4].transform, new Vector2(1.2f, 1.2f), 0.2f, AnimUtils.ElasticInOut);
             gameManager.TipScale((int)cards[4].GetComponent<NumberCard>().value * playerOrOpponnent);
@@ -259,10 +269,80 @@ public class SlotManager : MonoBehaviour
 
     // Animate card death
     private IEnumerator DestroyCard(GameObject card) {
+        soundManager.PlaySound(2);
         StartCoroutine(gameManager.Shake(card.transform, card.GetComponent<CardManager>().animEnumerator, 2, 0));
         yield return AnimUtils.TweenScale(card.transform, new Vector2(0.01f, 0.01f), 0.7f, AnimUtils.ElasticInOut);;
         StopCoroutine(card.GetComponent<CardManager>().animEnumerator);
         Destroy(card);
+    }
+
+    public int ParseEquationString(string equation, int alpha) {
+        string[] operations = equation.Split(';');
+        float res = alpha;
+        foreach (string op in operations) {
+
+            if (op[0] == 'r') {
+                res = (float)Math.Sqrt(res);
+            }
+
+            int pointer = 1;
+            float left = 0;
+
+            if (op[0] == 'a') left = res;
+            else if (op[0] == 't') left = gameManager.round;
+            else {
+                string num = "";
+                for (int i = 0; i < op.Length; i++) {
+                    if (char.IsDigit(op[i])) {
+                        num += op[i];
+                    } else {
+                        left = int.Parse(num);
+                        pointer = i;
+                        break;
+                    }
+                }
+            }
+
+            char operation = op[pointer];
+            pointer++;
+
+            float right = 0;
+
+            if (op[pointer] == 'a') right = res;
+            else if (op[pointer] == 't') right = gameManager.round;
+            else {
+                string num = "";
+                for (int i = pointer; i < op.Length; i++) {
+                    if (char.IsDigit(op[i])) {
+                        num += op[i];
+                    } else {
+                        right = int.Parse(num);
+                        break;
+                    }
+                }
+                right = int.Parse(num);
+            }
+
+            switch (operation) {
+                case '+':
+                    res = left + right;
+                    break;
+                case '-':
+                    res = left - right;
+                    break;
+                case '*':
+                    res = left * right;
+                    break;
+                case '/':
+                    res = left / right;
+                    break;
+                case '^':
+                    res = (float)Math.Pow(left, right);
+                    break;
+            }
+        }
+
+        return (int)res;
     }
 
 }

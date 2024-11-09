@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68633aeebbf3d0246bd52e1ed5725460, type: 3}
   m_Name: +3
   m_EditorClassIdentifier: 
-  faceValue: "\u03B1+3"
+  faceValue: "\u03B1+3t"
   cardPack: 0
   costType: 0
   health: 1
   damage: 2
   cost: 1
-  operation: 0
-  operand: 3
+  equation: a+t;a+t;a+t

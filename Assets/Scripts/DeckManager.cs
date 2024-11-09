@@ -9,7 +9,7 @@ public class DeckManager : MonoBehaviour
 {
     // The cards currently in the deck
     [SerializeField]
-    private List<CardData> deckCards = new List<CardData>();
+    public List<CardData> deckCards = new List<CardData>();
 
     [SerializeField]
     private Transform deck;
@@ -28,6 +28,10 @@ public class DeckManager : MonoBehaviour
     private GameManager gameManager;
     [SerializeField]
     private HandManager handManager;
+    [SerializeField]
+    private SoundManager soundManager;
+
+    public List<CardData> discardPile = new List<CardData>();
 
     // For deck animations
     private IEnumerator animShakeEnumerator;
@@ -36,9 +40,8 @@ public class DeckManager : MonoBehaviour
     public bool canDraw = true;
 
     public void DrawCard(bool ignore) {     // Checks if a card can be drawn and draws it
-        if (deckCards.Count == 0) return;   // Empty deck
-
         if (!canDraw || handManager.cardCount > 9) {    // Too many cards in the hand
+        soundManager.PlaySound(8);
             StartCoroutine(gameManager.Shake(deck, animShakeEnumerator, 2, 0));
             return;
         }
@@ -49,6 +52,8 @@ public class DeckManager : MonoBehaviour
         handManager.AddCard(deckCards[0]);
         deckCards.RemoveAt(0);
 
+        soundManager.PlaySound(4);
+
         if (!ignore) {  // Sometimes more than one card can be drawn (e.g. game start)
             canDraw = false;
             gameManager.CardDawn();
@@ -58,11 +63,26 @@ public class DeckManager : MonoBehaviour
         if (deckCards.Count == 0) {
             deckIcon.sprite = deckIcons[1];
             deckCard.color = new Color(deckCard.color.r, deckCard.color.g, deckCard.color.b, 50/255f);
+            if (animEnumerator != null) {
+                StopCoroutine(animEnumerator);
+            }
+            animEnumerator = AnimUtils.TweenScale(deck, new Vector3(1f, 1f, 1f), 0.2f, AnimUtils.CubicOut);
+            StartCoroutine(animEnumerator);
         }
     }
 
     public void DeckClicked() {     // If the deck is clicked, try to draw a card
         DrawCard(false);
+    }
+
+    public IEnumerator FillDeck() {
+        deckIcon.sprite = deckIcons[2];
+        yield return gameManager.Shake(deck, animShakeEnumerator, 2, 0);
+        deckIcon.sprite = deckIcons[0];
+        deckCards = discardPile;
+        discardPile = new List<CardData>();
+        deckCard.color = new Color(deckCard.color.r, deckCard.color.g, deckCard.color.b, 1f);
+        Shuffle();
     }
 
     public void OnHover() {     // Animates the deck when it is hovered over
