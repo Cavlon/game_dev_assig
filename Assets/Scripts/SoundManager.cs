@@ -11,11 +11,8 @@ public class SoundManager : MonoBehaviour
     private AudioClip[] sounds;
     private AudioSource sfx;
 
-    void Start() {
-        sfx = GetComponent<AudioSource>();
-    }
-
     public void PlaySound(int soundInd) {
+        if (sfx == null) sfx = GetComponent<AudioSource>();
         sfx.PlayOneShot(sounds[soundInd]);
     }
 

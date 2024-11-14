@@ -80,6 +80,19 @@ namespace CavlonUtils {
             } while (elapsed_time <= duration); //Inside the loop until the time expires
         }
 
+        public static IEnumerator TweenRectPos(RectTransform transform, Vector3 targetPos, float duration, EasingFunction easingFunction)
+        {
+            float elapsed_time = 0; //Elapsed time
+            Vector3 pos = transform.anchoredPosition; //Start object's position
+            do 
+            {
+                elapsed_time += Time.deltaTime; //Adds to the elapsed time the amount of time needed to skip/wait one frame
+                pos = Vector3.Lerp(pos, targetPos, easingFunction(elapsed_time / duration)); //Changes and interpolates the position
+                transform.anchoredPosition = pos;//Changes the object's position
+                yield return 0;
+            } while (elapsed_time <= duration); //Inside the loop until the time expires
+        }
+
         public static IEnumerator TweenScale(Transform transform, Vector3 targetScale, float duration, EasingFunction easingFunction)
         {
             float elapsed_time = 0; //Elapsed time
