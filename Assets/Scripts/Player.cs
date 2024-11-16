@@ -18,16 +18,19 @@ public class Player : MonoBehaviour
 
     private readonly Collider[] interactionColliders = new Collider[1];
 
-    private CharacterController characterController;
     private Animator spriteAnimator;
     private SpriteRenderer sprite;
+
+    private CharacterController characterController;
     private State state = State.Idle;
     private int dir = 1;
-    private bool canInteract = false;
-    private NPC interactTarget = null;
-    private TMP_Text promptText;
+    public bool canMove = true;
 
+    public bool canInteract = true;
+    private Interactable interactTarget = null;
+    private TMP_Text promptText;
     private IEnumerator interactPromptEnumerator = null;
+    private bool hiding = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -47,33 +50,40 @@ public class Player : MonoBehaviour
     }
 
     private void CheckInteractables() {
-        int interactablesFound = Physics.OverlapSphereNonAlloc(transform.position, interactRadius, interactionColliders, interactLayerMask);
+        if (canInteract) {
 
-        if (interactablesFound > 0 && !canInteract) {
-            canInteract = true;
-            interactTarget = interactionColliders[0].GetComponent<NPC>();
-            promptText.text = "<sprite=0> " + interactTarget.prompt;
+            int interactablesFound = Physics.OverlapSphereNonAlloc(transform.position, interactRadius, interactionColliders, interactLayerMask);
 
-            promptText.gameObject.SetActive(true);
-            if (interactPromptEnumerator != null) {
-                StopCoroutine(interactPromptEnumerator);
+            if (interactTarget == null) {
+                if (interactablesFound > 0) {
+                    interactTarget = interactionColliders[0].GetComponent<Interactable>();
+                    ShowPrompt();
+                }
+            } else {
+                if (interactablesFound == 0) {
+                    interactTarget = null;
+                    StartCoroutine(HidePrompt());
+                } else {
+                    ShowPrompt();
+                }
             }
-            interactPromptEnumerator = AnimUtils.TweenScale(promptText.transform, Vector2.one, 0.3f, AnimUtils.CubicIn);
-            StartCoroutine(interactPromptEnumerator);
 
-        } else if (interactablesFound == 0 && canInteract) {
-            canInteract = false;
-            interactTarget = null;
-            StartCoroutine(StopInteract());
-        }
+            if (Input.GetKeyDown(KeyCode.Space) && !OverworldManager.paused) {
+                interactTarget.Interact();
+            }
 
-        if (Input.GetKeyDown(KeyCode.Space) && canInteract && !OverworldManager.paused) {
-            interactTarget.Interact();
+        } else {
+            if (promptText.gameObject.activeSelf && !hiding) {
+                StartCoroutine(HidePrompt());
+            }
         }
     }
 
     private void PlayerMove() {
-        Vector3 velocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        Vector3 velocity = Vector3.zero;
+        if (canMove) {
+            velocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        }
 
         if (dir * velocity.x < 0) {
             sprite.flipX = !sprite.flipX;
@@ -99,13 +109,28 @@ public class Player : MonoBehaviour
         characterController.Move(velocity * Time.deltaTime * speed);  
     }
 
-    private IEnumerator StopInteract() {
+    private void ShowPrompt() {
+        if (!promptText.gameObject.activeSelf) {
+            promptText.text = "<sprite=0> " + interactTarget.prompt;
+
+            promptText.gameObject.SetActive(true);
+            if (interactPromptEnumerator != null) {
+                StopCoroutine(interactPromptEnumerator);
+            }
+            interactPromptEnumerator = AnimUtils.TweenScale(promptText.transform, Vector2.one, 0.3f, AnimUtils.CubicIn);
+            StartCoroutine(interactPromptEnumerator);
+        }
+    }
+
+    private IEnumerator HidePrompt() {
+        hiding = true;
         if (interactPromptEnumerator != null) {
             StopCoroutine(interactPromptEnumerator);
         }
         interactPromptEnumerator = AnimUtils.TweenScale(promptText.transform, new Vector2(0.01f, 0.01f), 0.3f, AnimUtils.CubicIn);
         yield return interactPromptEnumerator;
         promptText.gameObject.SetActive(false);
+        hiding = false;
     }
 
     private void OnDrawGizmos() {

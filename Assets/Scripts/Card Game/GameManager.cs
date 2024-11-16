@@ -29,9 +29,6 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private SoundManager soundManager;
 
-    [SerializeField]
-    private GameObject opponentPrefab;
-
     private Transform bytesImage;
     private TMP_Text bytesCounterText;
     private TMP_Text endScreenText;
@@ -69,10 +66,14 @@ public class GameManager : MonoBehaviour
         UpdateBytes(bytes);
 
         // Create and add the opponent
-        opponent = Instantiate(opponentPrefab, transform.GetChild(0).position, Quaternion.identity, transform.GetChild(0));
+        opponent = Instantiate(StaticData.nextOpponent, transform.GetChild(0).position, Quaternion.identity, transform.GetChild(0));
         opponentScript = opponent.GetComponent<Opponent>();
         opponentScript.slotManager = slotManager;
         opponentScript.gameManager = this;
+
+        for (int i = 0; i < 20; i++) {
+            deckManager.deckCards.Add(StaticData.deck[i]);
+        }
 
         // Shuffle the deck and draw the starting hand
         deckManager.Shuffle();

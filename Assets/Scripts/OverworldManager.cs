@@ -1,13 +1,15 @@
 using UnityEngine;
 using CavlonUtils;
 using System.Collections;
-using UnityEngine.Rendering;
+using UnityEngine.PlayerLoop;
 
 public class OverworldManager : MonoBehaviour
 {
 
     [SerializeField]
     private GameObject pauseMenu;
+    [SerializeField]
+    public CardData[] startingDeck = new CardData[20];
 
     private RectTransform pauseBar;
     private GameObject pauseOverlay;
@@ -23,6 +25,12 @@ public class OverworldManager : MonoBehaviour
         pauseMenu.SetActive(false);
         pauseOverlay = pauseMenu.transform.GetChild(0).gameObject;
         pauseBar = (RectTransform)pauseMenu.transform.GetChild(1);
+
+        if (StaticData.deck[0] == null) {
+            for (int i = 0; i < 20; i++) {
+                StaticData.deck[i] = startingDeck[i];
+            }
+        }
     }
 
     void Update() {

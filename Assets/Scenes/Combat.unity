@@ -807,7 +807,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 9139d20307002b04c9d2534871f4413b, type: 3}
   m_Resource: {fileID: 8300000, guid: 9139d20307002b04c9d2534871f4413b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.8
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1270,27 +1270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d93dac54a07c7c4c855e9ab4d291167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deckCards:
-  - {fileID: 11400000, guid: cd03cc753d5653f4ba5b808cf2fd2f58, type: 2}
-  - {fileID: 11400000, guid: cd03cc753d5653f4ba5b808cf2fd2f58, type: 2}
-  - {fileID: 11400000, guid: 5ee4130c51f53f943ad075a7aac26e4f, type: 2}
-  - {fileID: 11400000, guid: 5ee4130c51f53f943ad075a7aac26e4f, type: 2}
-  - {fileID: 11400000, guid: ee670e87cff01eb4cb3720e96e9687ee, type: 2}
-  - {fileID: 11400000, guid: 15d4f1adbbab28d408ddee4d4324726f, type: 2}
-  - {fileID: 11400000, guid: b4068770640851443925bcbe0d226b29, type: 2}
-  - {fileID: 11400000, guid: 17ef15d3dbc71534f84372aea5eb5a31, type: 2}
-  - {fileID: 11400000, guid: 17ef15d3dbc71534f84372aea5eb5a31, type: 2}
-  - {fileID: 11400000, guid: 17ef15d3dbc71534f84372aea5eb5a31, type: 2}
-  - {fileID: 11400000, guid: db531946e5c8c114d85335e0f34f087b, type: 2}
-  - {fileID: 11400000, guid: db531946e5c8c114d85335e0f34f087b, type: 2}
-  - {fileID: 11400000, guid: 4991d93da46f2b548ad7548e260edff9, type: 2}
-  - {fileID: 11400000, guid: 4991d93da46f2b548ad7548e260edff9, type: 2}
-  - {fileID: 11400000, guid: 7b8fee0d4b7fadf4f96993fb0444d93f, type: 2}
-  - {fileID: 11400000, guid: 36fc07d77c5310540bc0e857dba9d8a8, type: 2}
-  - {fileID: 11400000, guid: 2815b7770c099fc41b885a6295bc100c, type: 2}
-  - {fileID: 11400000, guid: 3f8ea9a178cb0b540b93006ae2bd42de, type: 2}
-  - {fileID: 11400000, guid: cd5719cc937f0064da828636a9f19d10, type: 2}
-  - {fileID: 11400000, guid: 0a600d3debdd819498487118e8cc18ee, type: 2}
+  deckCards: []
   deck: {fileID: 1016148616}
   deckIcons:
   - {fileID: 21300000, guid: 9c703d0f2f110f446a9668b48cdad61f, type: 3}
@@ -2232,8 +2212,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 23.896, y: 51.236893}
-  m_SizeDelta: {x: 47.792, y: 102.4738}
+  m_AnchoredPosition: {x: 23.896, y: 50.5851}
+  m_SizeDelta: {x: 47.792, y: 101.1701}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &889616072
 MonoBehaviour:
@@ -3191,7 +3171,6 @@ MonoBehaviour:
   deckManager: {fileID: 575232416}
   handManager: {fileID: 2022576540}
   soundManager: {fileID: 1442082056}
-  opponentPrefab: {fileID: 5387556600734212574, guid: a77783a356ae61f43a7233f55baa04cc, type: 3}
   round: 1
   bytes: 5
   variables: 0
