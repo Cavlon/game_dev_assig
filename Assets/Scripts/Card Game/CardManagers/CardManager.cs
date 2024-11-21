@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections;
+using Unity.VisualScripting;
 
 public abstract class CardManager : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public abstract class CardManager : MonoBehaviour
     }
 
     public void AddClickFunction() {    // Add a click event listener and callback
-        EventTrigger eventTrigger = transform.GetChild(0).GetComponent<EventTrigger>();
+        EventTrigger eventTrigger = transform.GetChild(0).AddComponent<EventTrigger>();
         EventTrigger.Entry entry = new EventTrigger.Entry();
         entry.eventID = EventTriggerType.PointerClick;
         entry.callback.AddListener((data) => { Clicked(); });

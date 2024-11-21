@@ -11,11 +11,11 @@ public abstract class Interactable : MonoBehaviour
     public DialogueText dialogue;
     public bool dialogueEnd = false;
 
-    void Start() {
+    protected virtual void Start() {
         dialogueManager = GameObject.Find("/DialogueManager").GetComponent<DialogueManager>();
     }
 
-    void Update() {
+    protected virtual void Update() {
         if (dialogueEnd) {
             dialogueEnd = false;
             OnDialogueEnd();

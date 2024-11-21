@@ -80,6 +80,19 @@ namespace CavlonUtils {
             } while (elapsed_time <= duration); //Inside the loop until the time expires
         }
 
+        public static IEnumerator UnTimeScaledTweenPos(Transform transform, Vector3 targetPos, float duration, EasingFunction easingFunction)
+        {
+            float elapsed_time = 0; //Elapsed time
+            Vector3 pos = transform.localPosition; //Start object's position
+            do 
+            {
+                elapsed_time += Time.unscaledDeltaTime; //Adds to the elapsed time the amount of time needed to skip/wait one frame
+                pos = Vector3.Lerp(pos, targetPos, easingFunction(elapsed_time / duration)); //Changes and interpolates the position
+                transform.localPosition = pos;//Changes the object's position
+                yield return 0;
+            } while (elapsed_time <= duration); //Inside the loop until the time expires
+        }
+
         public static IEnumerator TweenRectPos(RectTransform transform, Vector3 targetPos, float duration, EasingFunction easingFunction)
         {
             float elapsed_time = 0; //Elapsed time
@@ -106,6 +119,19 @@ namespace CavlonUtils {
             } while (elapsed_time <= duration); //Inside the loop until the time expires
         }
 
+        public static IEnumerator UnTimeScaledTweenScale(Transform transform, Vector3 targetScale, float duration, EasingFunction easingFunction)
+        {
+            float elapsed_time = 0; //Elapsed time
+            Vector3 scale = transform.localScale; //Start object's scale
+            do 
+            {
+                elapsed_time += Time.unscaledDeltaTime; //Adds to the elapsed time the amount of time needed to skip/wait one frame
+                scale = Vector3.Lerp(scale, targetScale, easingFunction(elapsed_time / duration)); //Changes and interpolates the scale
+                transform.localScale = scale;//Changes the object's scale
+                yield return 0;
+            } while (elapsed_time <= duration); //Inside the loop until the time expires
+        }
+
         public static IEnumerator TweenRotZ(Transform transform, float targetAngle, float duration, EasingFunction easingFunction)
         {
             float elapsed_time = 0; //Elapsed time
@@ -113,6 +139,19 @@ namespace CavlonUtils {
             do 
             {
                 elapsed_time += Time.deltaTime; //Adds to the elapsed time the amount of time needed to skip/wait one frame
+                angleZ = Mathf.LerpAngle(angleZ, targetAngle, easingFunction(elapsed_time / duration)); //Changes and interpolates the rotation
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, angleZ);//Changes the object's rotation
+                yield return 0;
+            } while (elapsed_time <= duration); //Inside the loop until the time expires
+        }
+
+        public static IEnumerator UnTimeScaledTweenRotZ(Transform transform, float targetAngle, float duration, EasingFunction easingFunction)
+        {
+            float elapsed_time = 0; //Elapsed time
+            float angleZ = transform.eulerAngles.z; //Start object's rotation
+            do 
+            {
+                elapsed_time += Time.unscaledDeltaTime; //Adds to the elapsed time the amount of time needed to skip/wait one frame
                 angleZ = Mathf.LerpAngle(angleZ, targetAngle, easingFunction(elapsed_time / duration)); //Changes and interpolates the rotation
                 transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, angleZ);//Changes the object's rotation
                 yield return 0;

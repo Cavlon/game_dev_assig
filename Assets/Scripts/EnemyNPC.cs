@@ -15,6 +15,6 @@ public class EnemyNPC : Interactable
 
     public override void OnDialogueEnd()
     {
-        SceneManager.LoadScene("Combat");
+        StartCoroutine(GameObject.Find("/SceneLoader").GetComponent<SceneLoader>().ChangeScene("Combat"));
     }
 }

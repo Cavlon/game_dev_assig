@@ -1,2 +1,27 @@
-newmtl __TB_empty
+newmtl 16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122
+map_Kd textures\16x16 pixelart textures 1\sprite-sheet-16x16px-seamless-textures_122.png
+
+newmtl 16x16 pixelart textures 2/carpet/Textures-16_314
+map_Kd textures\16x16 pixelart textures 2\carpet\Textures-16_314.png
+
+newmtl 16x16 pixelart textures 2/carpet/Textures-16_315
+map_Kd textures\16x16 pixelart textures 2\carpet\Textures-16_315.png
+
+newmtl 16x16 pixelart textures 2/carpet/Textures-16_336
+map_Kd textures\16x16 pixelart textures 2\carpet\Textures-16_336.png
+
+newmtl 16x16 pixelart textures 2/carpet/Textures-16_373
+map_Kd textures\16x16 pixelart textures 2\carpet\Textures-16_373.png
+
+newmtl 16x16 pixelart textures 2/dark/Textures-16_128
+map_Kd textures\16x16 pixelart textures 2\dark\Textures-16_128.png
+
+newmtl 16x16 pixelart textures 2/ground/Textures-16_157
+map_Kd textures\16x16 pixelart textures 2\ground\Textures-16_157.png
+
+newmtl 16x16 pixelart textures 2/ground/Textures-16_35
+map_Kd textures\16x16 pixelart textures 2\ground\Textures-16_35.png
+
+newmtl 16x16 pixelart textures 2/wood/Textures-16_175
+map_Kd textures\16x16 pixelart textures 2\wood\Textures-16_175.png
 
