@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4848e7e46289243b311920bdbdddf0, type: 3}
+  m_Name: RobotWinDialogue
+  m_EditorClassIdentifier: 
+  playerLines:
+  - i did it
+  - I DID IT
+  - I beat the robot!
+  - I outsmarted it!
+  - I think I'm smart enough to pass my exams now!
+  NPCLines:
+  - NOOOOOOOOOOOOOOOOOOO
+  - BRZZT... THIS BRZZT... CAN'T BE
+  - I BRZZT... AM THE PINNACLE BRZZT...
+  - BRZZT BRZZT BRZZT BRZZT BRZZT
+  - BEEEEEEEEEEEEEEEEEEEEEEP
+  speakTurnPlayer: 00000000000101010101

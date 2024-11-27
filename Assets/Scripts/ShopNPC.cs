@@ -11,7 +11,6 @@ public class ShopNPC : Interactable
 
     [SerializeField]
     private DialogueText openShopDialogue;
-    private bool introduced = false;
     private bool shopOpen = false;
 
     private OverworldManager overworldManager;
@@ -24,8 +23,7 @@ public class ShopNPC : Interactable
         overworldManager = GameObject.Find("/GameManager").GetComponent<OverworldManager>();
     }
 
-    protected override void Update() {
-        base.Update();
+    void Update() {
         if (Input.GetKeyDown(KeyCode.Escape) && shopOpen) {
             CloseShop();
         }
@@ -33,19 +31,19 @@ public class ShopNPC : Interactable
 
     public override void Interact()
     {
-        if (!introduced) {
-            dialogueManager.StartDialogue(NPCText, dialogue, this);
+        if (!StaticData.shopIntroduced) {
+            dialogueManager.StartDialogue(NPCText, dialogue, EndIntroduction);
         } else {
-            dialogueManager.StartDialogue(NPCText, openShopDialogue, this);
+            dialogueManager.StartDialogue(NPCText, openShopDialogue, OpenShop);
         }
     }
 
-    public override void OnDialogueEnd()
+    public void EndIntroduction() {
+        StaticData.shopIntroduced = true;
+    }
+
+    public void OpenShop()
     {
-        if (!introduced) {
-            introduced = true;
-            return;
-        }
         Debug.Log("Opening Shop");
         overworldManager.canPause = false;
         shopOpen = true;
@@ -60,6 +58,7 @@ public class ShopNPC : Interactable
     }
 
     public void CloseShop() {
+        if (!shop.canClick) return;
         shop.DestroyCards();
         StartCoroutine(CloseShopEnumerator());
     }

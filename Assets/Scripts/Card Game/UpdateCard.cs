@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class UpdateCard : MonoBehaviour
 {
@@ -28,7 +29,13 @@ public class UpdateCard : MonoBehaviour
 
     public void InitValues(CardData cardData) {
         healthText.text = cardData.health.ToString();
-        damageText.text = cardData.damage.ToString();
+        
+        if (cardData is SpecialCardData specCard && specCard.overrideDamageString != "") {
+            damageText.text = specCard.overrideDamageString;
+        } else {
+            damageText.text = cardData.damage.ToString();
+        }
+        
         faceText.text = cardData.faceValue;
         if (cardData.cost == 0) {
             costText.gameObject.SetActive(false);

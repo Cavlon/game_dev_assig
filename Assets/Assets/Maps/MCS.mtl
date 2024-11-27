@@ -25,3 +25,6 @@ map_Kd textures\16x16 pixelart textures 2\ground\Textures-16_35.png
 newmtl 16x16 pixelart textures 2/wood/Textures-16_175
 map_Kd textures\16x16 pixelart textures 2\wood\Textures-16_175.png
 
+newmtl Custom/Empty
+map_Kd textures\Custom\Empty.png
+

@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
+
+    public delegate void DialogueEndCallback();
+    private DialogueEndCallback dialogueEndCallback;
+
     [SerializeField]
     private float textScrollSpeed = 0.5f;
     [SerializeField]
@@ -16,7 +20,6 @@ public class DialogueManager : MonoBehaviour
 
     private TMP_Text NPCText;
     private Transform NPCTextBox;
-    private Interactable interactable;
     private DialogueText currentDialogue;
 
     public int playerInd = 0;
@@ -40,7 +43,6 @@ public class DialogueManager : MonoBehaviour
                 }
             } else {
                 Debug.Log("Ending Dialogue");
-                interactable.dialogueEnd = true;
                 if (prevPlayerTalk) {
                     StartCoroutine(CloseTextBox(playerTextBox, true));
                 } else {
@@ -50,18 +52,22 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void StartDialogue(TMP_Text _NPCText, DialogueText dialogue, Interactable _interactable) {
+    public void StartDialogue(TMP_Text _NPCText, DialogueText dialogue, DialogueEndCallback callback) {
         Debug.Log("Starting Dialogue");
-        NPCText = _NPCText;
-        NPCTextBox = _NPCText.transform.parent;
-        interactable = _interactable;
+
+        if (_NPCText != null) {
+            NPCText = _NPCText;
+            NPCTextBox = _NPCText.transform.parent;
+        }
+        
         currentDialogue = dialogue;
+        dialogueEndCallback = callback;
 
         turn = 0;
         playerInd = 0;
         NPCInd = 0;
         player.canInteract = false;
-        player.canMove = false;
+        player.canControl = false;
 
         if (currentDialogue.speakTurnPlayer[turn]) {
             StartCoroutine(DisplayPlayerText());
@@ -76,6 +82,9 @@ public class DialogueManager : MonoBehaviour
         playerText.text = string.Empty;
 
         if (turn == 0) {
+            if (playerTextBox == null) {
+                playerTextBox = playerText.transform.parent;
+            }
             playerTextBox.gameObject.SetActive(true);
             yield return AnimUtils.TweenScale(playerTextBox, Vector2.one, 0.4f, AnimUtils.CubicOut);
         } else if (!prevPlayerTalk) {
@@ -84,6 +93,7 @@ public class DialogueManager : MonoBehaviour
             yield return AnimUtils.TweenScale(playerTextBox, Vector2.one, 0.4f, AnimUtils.CubicOut);
         }
 
+        bool tag = false;
         for (int i = 0; i < currentDialogue.playerLines[playerInd].Length; i++) {
             if (newLineInd > 20 && currentDialogue.playerLines[playerInd][i] == ' ') {
                 playerText.text += "<br>";
@@ -91,9 +101,17 @@ public class DialogueManager : MonoBehaviour
                 yield return new WaitForSeconds(textScrollSpeed);
                 continue;
             }
-            playerText.text += currentDialogue.playerLines[playerInd][i];
-            newLineInd++;
-            yield return new WaitForSeconds(textScrollSpeed);
+
+            if (currentDialogue.playerLines[playerInd][i] == '<') tag = true;
+
+            if (tag) {
+                playerText.text += currentDialogue.playerLines[playerInd][i];
+                if (currentDialogue.playerLines[playerInd][i] == '>') tag = false;
+            } else {
+                playerText.text += currentDialogue.playerLines[playerInd][i];
+                newLineInd++;
+                yield return new WaitForSeconds(textScrollSpeed);
+            }
         }
         playerInd++;
         turn++;
@@ -138,7 +156,10 @@ public class DialogueManager : MonoBehaviour
         yield return AnimUtils.TweenScale(targetTextBox, new Vector2(0.01f, 0.01f), 0.4f, AnimUtils.CubicIn);
         targetTextBox.gameObject.SetActive(false);
         player.canInteract = endDialogue;
-        player.canMove = endDialogue;
+        player.canControl = endDialogue;
+        if (dialogueEndCallback != null && endDialogue) {
+            dialogueEndCallback();
+        }
     }
 
 }

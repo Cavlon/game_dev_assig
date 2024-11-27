@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4848e7e46289243b311920bdbdddf0, type: 3}
+  m_Name: AlephDialogue
+  m_EditorClassIdentifier: 
+  playerLines:
+  - <i>Aleph</i> huh...
+  - <i>A way to denote one of the many possible infinities<i>
+  - <i>Introduced by George Cantor to discretize the infinite cardinalities of sets<i>
+  - ...
+  - neat.
+  - huh.
+  - Well yeah, I don't really get big numbers like that
+  NPCLines:
+  - That's it?
+  - IS THAT IT?
+  - Infinity!
+  - Countless!
+  - Incomprehensible!
+  - And all you say is neat?!
+  - Number?!
+  - That's it, I've had enough
+  - I'll make you understand
+  - I'll make you fear the infinite
+  speakTurnPlayer: 0101010101000000000000010100000000

@@ -6,6 +6,8 @@ public abstract class Opponent : MonoBehaviour
 {
     public SlotManager slotManager;
     public GameManager gameManager;
+    public int credits;
+
     [SerializeField]
     protected CardData[] cards;
 

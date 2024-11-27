@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4848e7e46289243b311920bdbdddf0, type: 3}
+  m_Name: GimbalDialogue
+  m_EditorClassIdentifier: 
+  playerLines:
+  - <i>A Gimbal</i>
+  - <i>A support structure to facilitate the rotation of structures in 3 dimensions</i>
+  - <i>Though intuitive, its chance to lock and constrain rotation makes it unreliable</i>
+  - ...
+  - What's the point then?
+  - Looks useless
+  - hmm?
+  - I don't really get vectors and stuff but if you can lock up, what's the point?
+  - no you're not
+  NPCLines:
+  - What did you just say?
+  - You ignorant child
+  - I am NOT obselete!
+  - I am the reason you can turn your head to look at me
+  - Well yeah but still
+  - I will show you my worth
+  - I will not let quaternions take my crown
+  - Witness the Gimbal lock!
+  speakTurnPlayer: 0101010101010001010000000100000000

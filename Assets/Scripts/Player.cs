@@ -24,7 +24,8 @@ public class Player : MonoBehaviour
     private CharacterController characterController;
     private State state = State.Idle;
     private int dir = 1;
-    public bool canMove = true;
+    public bool canControl = true;
+    private bool canMove = false;
 
     public bool canInteract = true;
     private Interactable interactTarget = null;
@@ -40,13 +41,17 @@ public class Player : MonoBehaviour
         sprite = GetComponentInChildren<SpriteRenderer>();
         promptText = GetComponentInChildren<TMP_Text>();
         promptText.gameObject.SetActive(false);
+        transform.position = StaticData.playerPos;
+        StartCoroutine(DelayControl());
     }
 
     // Update is called once per frame
     void Update()
     {
         CheckInteractables();
-        PlayerMove();          
+        if (canMove) {
+            PlayerMove();
+        }        
     }
 
     private void CheckInteractables() {
@@ -68,7 +73,7 @@ public class Player : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.Space) && !OverworldManager.paused) {
+            if (Input.GetKeyDown(KeyCode.Space) && !OverworldManager.paused && interactTarget != null) {
                 interactTarget.Interact();
             }
 
@@ -81,7 +86,7 @@ public class Player : MonoBehaviour
 
     private void PlayerMove() {
         Vector3 velocity = Vector3.zero;
-        if (canMove) {
+        if (canControl) {
             velocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         }
 
@@ -136,6 +141,11 @@ public class Player : MonoBehaviour
     private void OnDrawGizmos() {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, interactRadius);
+    }
+
+    private IEnumerator DelayControl() {
+        yield return new WaitForSeconds(0.5f);
+        canMove = true;
     }
 
     private enum State {

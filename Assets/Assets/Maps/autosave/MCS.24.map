@@ -1,0 +1,1769 @@
+// Game: Generic
+// Format: Standard
+// entity 0
+{
+"classname" "worldspawn"
+"_tb_textures" "textures/16x16 pixelart textures 1;textures/16x16 pixelart textures 2/carpet;textures/16x16 pixelart textures 2/dark;textures/16x16 pixelart textures 2/ground;textures/16x16 pixelart textures 2/tiles;textures/16x16 pixelart textures 2/wood;textures/Custom"
+// brush 0
+{
+( 56 -64 16 ) ( 56 336 0 ) ( 56 336 16 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( -64 -64 16 ) ( 192 -64 16 ) ( 192 -64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 192 -64 0 ) ( 192 336 0 ) ( -64 336 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( -64 336 16 ) ( 192 336 16 ) ( 192 -64 16 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 192 512 0 ) ( 192 512 16 ) ( -64 512 16 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 192 -64 16 ) ( 192 336 16 ) ( 192 336 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 1
+{
+( 320 -64 16 ) ( 320 80 0 ) ( 320 80 16 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 176 -64 16 ) ( 336 -64 16 ) ( 336 -64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 336 -64 0 ) ( 336 80 0 ) ( 176 80 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 176 80 96 ) ( 336 80 96 ) ( 336 -64 96 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 336 32 0 ) ( 336 32 16 ) ( 176 32 16 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 336 -64 16 ) ( 336 80 16 ) ( 336 80 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 2
+{
+( 176 80 16 ) ( 176 -64 16 ) ( 176 -64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 176 -64 16 ) ( 336 -64 16 ) ( 336 -64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 336 -64 16 ) ( 336 80 16 ) ( 176 80 16 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 176 80 24 ) ( 336 80 24 ) ( 336 -64 24 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 336 32 0 ) ( 336 32 16 ) ( 176 32 16 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 192 -64 16 ) ( 192 80 16 ) ( 192 80 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 3
+{
+( -64 512 16 ) ( -64 112 16 ) ( -64 112 0 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 192 512 0 ) ( -64 512 16 ) ( 192 512 16 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 192 112 0 ) ( 192 512 0 ) ( -64 512 0 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( -64 512 592 ) ( 192 512 592 ) ( 192 112 592 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 192 528 0 ) ( 192 528 16 ) ( -64 528 16 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 208 512 16 ) ( 208 112 0 ) ( 208 112 16 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+}
+// brush 4
+{
+( 192 -64 16 ) ( 192 336 0 ) ( 192 336 16 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( -64 48 16 ) ( 192 48 16 ) ( 192 48 0 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 192 -64 0 ) ( 192 336 0 ) ( -64 336 0 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( -64 336 160 ) ( 192 336 160 ) ( 192 -64 160 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 192 512 0 ) ( 192 512 16 ) ( -64 512 16 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 208 -64 16 ) ( 208 336 16 ) ( 208 336 0 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+}
+// brush 5
+{
+( 192 32 0 ) ( 192 33 0 ) ( 192 32 1 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 208 32 0 ) ( 208 32 1 ) ( 209 32 0 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 208 32 0 ) ( 209 32 0 ) ( 208 33 0 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 336 48 176 ) ( 336 49 176 ) ( 337 48 176 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 336 48 16 ) ( 337 48 16 ) ( 336 48 17 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 576 48 16 ) ( 576 48 17 ) ( 576 49 16 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+}
+// brush 6
+{
+( -80 352 176 ) ( -80 64 176 ) ( -80 352 0 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 4 0 4 4
+( -64 64 0 ) ( -80 64 0 ) ( -64 64 176 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 4 0 4 4
+( -80 352 0 ) ( -80 64 0 ) ( -64 352 0 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 4 0 4 4
+( -64 352 288 ) ( -64 64 288 ) ( -80 352 288 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 4 0 4 4
+( -80 512 0 ) ( -64 512 0 ) ( -80 512 176 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 4 0 4 4
+( -64 352 0 ) ( -64 64 0 ) ( -64 352 176 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 4 0 4 4
+}
+// brush 7
+{
+( -80 -80 0 ) ( -80 -48 0 ) ( -80 -80 176 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+( -80 -64 176 ) ( -64 -64 176 ) ( -80 -64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+( -64 -80 0 ) ( -64 -48 0 ) ( -80 -80 0 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+( -80 -80 288 ) ( -80 -48 288 ) ( -64 -80 288 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+( -80 -48 176 ) ( -80 -48 0 ) ( -64 -48 176 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+( -64 -80 176 ) ( -64 -48 176 ) ( -64 -80 0 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+}
+// brush 8
+{
+( -80 -48 176 ) ( -80 -48 112 ) ( -80 64 176 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 4 0 4 4
+( -64 -48 176 ) ( -64 -48 112 ) ( -80 -48 176 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 4 0 4 4
+( -80 64 112 ) ( -80 -48 112 ) ( -64 64 112 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 4 0 4 4
+( -64 64 288 ) ( -64 -48 288 ) ( -80 64 288 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 4 0 4 4
+( -80 64 176 ) ( -80 64 112 ) ( -64 64 176 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 4 0 4 4
+( -64 64 176 ) ( -64 64 112 ) ( -64 -48 176 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 4 0 4 4
+}
+// brush 9
+{
+( -80 64 0 ) ( -80 64 16 ) ( -80 -48 0 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+( -80 -48 0 ) ( -80 -48 16 ) ( -64 -48 0 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+( -80 64 0 ) ( -80 -48 0 ) ( -64 64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+( -64 -48 16 ) ( -80 -48 16 ) ( -64 64 16 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+( -64 64 0 ) ( -64 64 16 ) ( -80 64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+( -64 -48 0 ) ( -64 -48 16 ) ( -64 64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+}
+// brush 10
+{
+( 128 336 176 ) ( 128 -64 176 ) ( 128 -64 160 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 48 -64 176 ) ( 192 -64 176 ) ( 192 -64 160 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 192 -64 160 ) ( 192 336 160 ) ( 48 336 160 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 48 336 176 ) ( 192 336 176 ) ( 192 -64 176 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 192 512 160 ) ( 192 512 176 ) ( 48 512 176 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 192 -64 176 ) ( 192 336 176 ) ( 192 336 160 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 11
+{
+( 432 -64 16 ) ( 432 80 0 ) ( 432 80 16 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 272 -64 16 ) ( 432 -64 16 ) ( 432 -64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 432 -64 0 ) ( 432 80 0 ) ( 272 80 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 272 80 104 ) ( 432 80 104 ) ( 432 -64 104 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 432 32 0 ) ( 432 32 16 ) ( 272 32 16 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 448 -64 16 ) ( 448 80 16 ) ( 448 80 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 12
+{
+( 448 -64 16 ) ( 448 80 0 ) ( 448 80 16 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 272 -64 16 ) ( 432 -64 16 ) ( 432 -64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 432 -64 0 ) ( 432 80 0 ) ( 272 80 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 272 80 112 ) ( 432 80 112 ) ( 432 -64 112 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 432 32 0 ) ( 432 32 16 ) ( 272 32 16 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 464 -64 16 ) ( 464 80 16 ) ( 464 80 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 13
+{
+( 464 -64 16 ) ( 464 80 0 ) ( 464 80 16 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 272 -64 16 ) ( 432 -64 16 ) ( 432 -64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 432 -64 0 ) ( 432 80 0 ) ( 272 80 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 272 80 120 ) ( 432 80 120 ) ( 432 -64 120 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 432 32 0 ) ( 432 32 16 ) ( 272 32 16 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 480 -64 16 ) ( 480 80 16 ) ( 480 80 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 14
+{
+( 480 -64 16 ) ( 480 80 0 ) ( 480 80 16 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 272 -64 16 ) ( 432 -64 16 ) ( 432 -64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 432 -64 0 ) ( 432 80 0 ) ( 272 80 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 272 80 128 ) ( 432 80 128 ) ( 432 -64 128 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 432 32 0 ) ( 432 32 16 ) ( 272 32 16 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 496 -64 16 ) ( 496 80 16 ) ( 496 80 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 15
+{
+( 496 -64 16 ) ( 496 80 0 ) ( 496 80 16 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 272 -64 16 ) ( 432 -64 16 ) ( 432 -64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 432 -64 0 ) ( 432 80 0 ) ( 272 80 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 272 80 136 ) ( 432 80 136 ) ( 432 -64 136 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 432 32 0 ) ( 432 32 16 ) ( 272 32 16 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 512 -64 16 ) ( 512 80 16 ) ( 512 80 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 16
+{
+( 512 -64 16 ) ( 512 80 0 ) ( 512 80 16 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 272 -64 16 ) ( 432 -64 16 ) ( 432 -64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 432 -64 0 ) ( 432 80 0 ) ( 272 80 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 272 80 144 ) ( 432 80 144 ) ( 432 -64 144 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 432 32 0 ) ( 432 32 16 ) ( 272 32 16 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 528 -64 16 ) ( 528 80 16 ) ( 528 80 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 17
+{
+( 528 -64 16 ) ( 528 80 0 ) ( 528 80 16 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 272 -64 16 ) ( 432 -64 16 ) ( 432 -64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 432 -64 0 ) ( 432 80 0 ) ( 272 80 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 272 80 152 ) ( 432 80 152 ) ( 432 -64 152 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 432 32 0 ) ( 432 32 16 ) ( 272 32 16 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 544 -64 16 ) ( 544 80 16 ) ( 544 80 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 18
+{
+( 192 80 160 ) ( 192 81 160 ) ( 192 80 161 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 192 48 160 ) ( 192 48 161 ) ( 193 48 160 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 192 80 160 ) ( 193 80 160 ) ( 192 81 160 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 208 336 176 ) ( 208 337 176 ) ( 209 336 176 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 208 432 176 ) ( 209 432 176 ) ( 208 432 177 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 576 336 176 ) ( 576 336 177 ) ( 576 337 176 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 19
+{
+( 544 -64 16 ) ( 544 80 0 ) ( 544 80 16 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 272 -64 16 ) ( 432 -64 16 ) ( 432 -64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 432 -64 0 ) ( 432 80 0 ) ( 272 80 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 272 80 160 ) ( 432 80 160 ) ( 432 -64 160 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 432 32 0 ) ( 432 32 16 ) ( 272 32 16 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 560 -64 16 ) ( 560 80 16 ) ( 560 80 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 20
+{
+( 560 -64 16 ) ( 560 80 0 ) ( 560 80 16 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 272 -64 16 ) ( 432 -64 16 ) ( 432 -64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 432 -64 0 ) ( 432 80 0 ) ( 272 80 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 272 80 168 ) ( 432 80 168 ) ( 432 -64 168 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 432 32 0 ) ( 432 32 16 ) ( 272 32 16 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 576 -64 16 ) ( 576 80 16 ) ( 576 80 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 21
+{
+( 576 96 160 ) ( 576 97 160 ) ( 576 96 161 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 576 -64 160 ) ( 576 -64 161 ) ( 577 -64 160 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 576 96 160 ) ( 577 96 160 ) ( 576 97 160 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 592 496 176 ) ( 592 497 176 ) ( 593 496 176 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 592 432 176 ) ( 593 432 176 ) ( 592 432 177 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1744 496 176 ) ( 1744 496 177 ) ( 1744 497 176 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 22
+{
+( 48 432 16 ) ( 48 433 16 ) ( 48 432 17 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 40 416 16 ) ( 40 416 17 ) ( 41 416 16 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 40 432 16 ) ( 41 432 16 ) ( 40 433 16 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 56 496 32 ) ( 56 497 32 ) ( 57 496 32 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 56 512 32 ) ( 57 512 32 ) ( 56 512 33 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 56 496 32 ) ( 56 496 33 ) ( 56 497 32 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+}
+// brush 23
+{
+( 56 408 16 ) ( 56 409 16 ) ( 56 408 17 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 32 416 16 ) ( 32 416 17 ) ( 33 416 16 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 32 408 16 ) ( 33 408 16 ) ( 32 409 16 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 240 424 32 ) ( 240 425 32 ) ( 241 424 32 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 240 424 32 ) ( 241 424 32 ) ( 240 424 33 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 192 424 32 ) ( 192 424 33 ) ( 192 425 32 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+}
+// brush 24
+{
+( 336 -64 80 ) ( 336 -63 80 ) ( 336 -64 81 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 336 -64 80 ) ( 336 -64 81 ) ( 337 -64 80 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 336 -64 80 ) ( 337 -64 80 ) ( 336 -63 80 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 432 80 96 ) ( 432 81 96 ) ( 433 80 96 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 432 32 96 ) ( 433 32 96 ) ( 432 32 97 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 432 80 96 ) ( 432 80 97 ) ( 432 81 96 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 25
+{
+( 336 -64 0 ) ( 336 -63 0 ) ( 336 -64 1 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 336 -64 0 ) ( 336 -64 1 ) ( 337 -64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 336 -64 0 ) ( 337 -64 0 ) ( 336 -63 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 432 -48 80 ) ( 432 -47 80 ) ( 433 -48 80 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 432 -48 80 ) ( 433 -48 80 ) ( 432 -48 81 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 432 -48 80 ) ( 432 -48 81 ) ( 432 -47 80 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 26
+{
+( 192 240 176 ) ( 192 241 176 ) ( 192 240 177 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 192 208 176 ) ( 192 208 177 ) ( 193 208 176 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 192 240 176 ) ( 193 240 176 ) ( 192 241 176 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 208 384 304 ) ( 208 385 304 ) ( 209 384 304 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 208 512 304 ) ( 209 512 304 ) ( 208 512 305 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 208 384 304 ) ( 208 384 305 ) ( 208 385 304 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+}
+// brush 27
+{
+( 720 256 176 ) ( 720 257 176 ) ( 720 256 177 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 720 208 176 ) ( 720 208 177 ) ( 721 208 176 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 720 256 176 ) ( 721 256 176 ) ( 720 257 176 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 736 384 304 ) ( 736 385 304 ) ( 737 384 304 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 736 432 304 ) ( 737 432 304 ) ( 736 432 305 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 736 384 304 ) ( 736 384 305 ) ( 736 385 304 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+}
+// brush 28
+{
+( 192 192 176 ) ( 192 208 176 ) ( 192 192 304 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 208 192 304 ) ( 304 192 304 ) ( 208 192 176 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 208 192 176 ) ( 304 192 176 ) ( 208 208 176 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 208 208 304 ) ( 304 208 304 ) ( 208 192 304 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 208 208 176 ) ( 304 208 176 ) ( 208 208 304 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 304 192 176 ) ( 304 192 304 ) ( 304 208 176 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+}
+// brush 29
+{
+( 304 192 304 ) ( 304 192 256 ) ( 304 208 304 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 464 192 304 ) ( 464 192 256 ) ( 304 192 304 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 464 192 256 ) ( 464 208 256 ) ( 304 192 256 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 464 192 304 ) ( 304 192 304 ) ( 464 208 304 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 304 208 304 ) ( 304 208 256 ) ( 464 208 304 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 416 208 304 ) ( 416 208 256 ) ( 416 192 304 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+}
+// brush 30
+{
+( 304 192 176 ) ( 304 193 176 ) ( 304 192 177 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 304 192 176 ) ( 304 192 177 ) ( 305 192 176 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 304 192 176 ) ( 305 192 176 ) ( 304 193 176 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 464 208 192 ) ( 464 209 192 ) ( 465 208 192 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 464 200 192 ) ( 465 200 192 ) ( 464 200 193 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 416 208 192 ) ( 416 208 193 ) ( 416 209 192 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+}
+// brush 31
+{
+( 624 208 304 ) ( 624 192 304 ) ( 624 208 176 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 736 192 176 ) ( 624 192 176 ) ( 736 192 304 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 736 208 176 ) ( 624 208 176 ) ( 736 192 176 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 736 192 304 ) ( 624 192 304 ) ( 736 208 304 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 736 208 304 ) ( 624 208 304 ) ( 736 208 176 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 736 192 304 ) ( 736 208 304 ) ( 736 192 176 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+}
+// brush 32
+{
+( 416 192 176 ) ( 416 208 176 ) ( 416 192 304 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 416 192 304 ) ( 512 192 304 ) ( 416 192 176 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 416 192 176 ) ( 512 192 176 ) ( 416 208 176 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 416 208 304 ) ( 512 208 304 ) ( 416 192 304 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 416 208 176 ) ( 512 208 176 ) ( 416 208 304 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 512 192 176 ) ( 512 192 304 ) ( 512 208 176 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+}
+// brush 33
+{
+( 512 192 304 ) ( 512 192 256 ) ( 512 208 304 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 624 192 304 ) ( 624 192 256 ) ( 512 192 304 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 624 192 256 ) ( 624 208 256 ) ( 512 192 256 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 624 192 304 ) ( 512 192 304 ) ( 624 208 304 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 512 208 304 ) ( 512 208 256 ) ( 624 208 304 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 624 208 304 ) ( 624 208 256 ) ( 624 192 304 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+}
+// brush 34
+{
+( 512 192 176 ) ( 512 193 176 ) ( 512 192 177 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 512 192 176 ) ( 512 192 177 ) ( 513 192 176 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 512 192 176 ) ( 513 192 176 ) ( 512 193 176 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 672 208 192 ) ( 672 209 192 ) ( 673 208 192 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 672 200 192 ) ( 673 200 192 ) ( 672 200 193 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 624 208 192 ) ( 624 208 193 ) ( 624 209 192 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+}
+// brush 35
+{
+( 448 208 176 ) ( 448 209 176 ) ( 448 208 177 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 448 208 176 ) ( 448 208 177 ) ( 449 208 176 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 448 208 176 ) ( 449 208 176 ) ( 448 209 176 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 480 384 304 ) ( 480 385 304 ) ( 481 384 304 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 480 432 192 ) ( 481 432 192 ) ( 480 432 193 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 480 384 192 ) ( 480 384 193 ) ( 480 385 192 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+}
+// brush 36
+{
+( -80 -64 128 ) ( -80 -63 128 ) ( -80 -64 129 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( -80 -64 128 ) ( -80 -64 129 ) ( -79 -64 128 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( -80 -64 288 ) ( -79 -64 288 ) ( -80 -63 288 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( -64 352 592 ) ( -64 353 592 ) ( -63 352 592 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( -64 512 144 ) ( -63 512 144 ) ( -64 512 145 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( -64 352 144 ) ( -64 352 145 ) ( -64 353 144 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+}
+// brush 37
+{
+( 128 -64 176 ) ( 128 -63 176 ) ( 128 -64 177 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 128 -64 176 ) ( 128 -64 177 ) ( 129 -64 176 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 128 -64 176 ) ( 129 -64 176 ) ( 128 -63 176 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 144 336 200 ) ( 144 337 200 ) ( 145 336 200 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 144 432 192 ) ( 145 432 192 ) ( 144 432 193 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 136 336 192 ) ( 136 336 193 ) ( 136 337 192 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 38
+{
+( 896 96 304 ) ( 896 97 304 ) ( 896 96 305 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 896 -64 304 ) ( 896 -64 305 ) ( 897 -64 304 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 896 96 304 ) ( 897 96 304 ) ( 896 97 304 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 928 304 320 ) ( 928 305 320 ) ( 929 304 320 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 928 224 320 ) ( 929 224 320 ) ( 928 224 321 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1744 304 320 ) ( 1744 304 321 ) ( 1744 305 320 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 39
+{
+( 944 224 176 ) ( 944 225 176 ) ( 944 224 177 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 928 224 176 ) ( 928 224 177 ) ( 929 224 176 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 928 224 176 ) ( 929 224 176 ) ( 928 225 176 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 1312 240 192 ) ( 1312 241 192 ) ( 1313 240 192 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 1312 232 192 ) ( 1313 232 192 ) ( 1312 232 193 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 1264 240 192 ) ( 1264 240 193 ) ( 1264 241 192 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+}
+// brush 40
+{
+( 1256 240 176 ) ( 1256 241 176 ) ( 1256 240 177 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 1248 232 176 ) ( 1248 232 177 ) ( 1249 232 176 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 1248 240 176 ) ( 1249 240 176 ) ( 1248 241 176 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 1264 416 192 ) ( 1264 417 192 ) ( 1265 416 192 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 1264 432 192 ) ( 1265 432 192 ) ( 1264 432 193 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 1264 416 192 ) ( 1264 416 193 ) ( 1264 417 192 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+}
+// brush 41
+{
+( 896 320 176 ) ( 896 321 176 ) ( 896 320 177 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 896 320 176 ) ( 896 320 177 ) ( 897 320 176 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 896 320 176 ) ( 897 320 176 ) ( 896 321 176 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 912 416 192 ) ( 912 417 192 ) ( 913 416 192 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 912 432 192 ) ( 913 432 192 ) ( 912 432 193 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 904 416 192 ) ( 904 416 193 ) ( 904 417 192 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+}
+// brush 42
+{
+( 896 208 320 ) ( 896 209 320 ) ( 896 208 321 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 896 216 320 ) ( 896 216 321 ) ( 897 216 320 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 896 208 320 ) ( 897 208 320 ) ( 896 209 320 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 224 344 ) ( 912 225 344 ) ( 913 224 344 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 224 336 ) ( 913 224 336 ) ( 912 224 337 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1184 208 320 ) ( 1184 208 321 ) ( 1184 209 320 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 43
+{
+( 624 208 448 ) ( 624 192 448 ) ( 624 208 320 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 736 192 320 ) ( 624 192 320 ) ( 736 192 448 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 736 208 320 ) ( 624 208 320 ) ( 736 192 320 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 736 192 448 ) ( 624 192 448 ) ( 736 208 448 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 736 208 448 ) ( 624 208 448 ) ( 736 208 320 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 736 192 448 ) ( 736 208 448 ) ( 736 192 320 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+}
+// brush 44
+{
+( 512 192 448 ) ( 512 192 400 ) ( 512 208 448 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 624 192 448 ) ( 624 192 400 ) ( 512 192 448 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 624 192 400 ) ( 624 208 400 ) ( 512 192 400 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 624 192 448 ) ( 512 192 448 ) ( 624 208 448 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 512 208 448 ) ( 512 208 400 ) ( 624 208 448 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 624 208 448 ) ( 624 208 400 ) ( 624 192 448 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+}
+// brush 45
+{
+( 416 192 320 ) ( 416 208 320 ) ( 416 192 448 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 416 192 448 ) ( 512 192 448 ) ( 416 192 320 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 416 192 320 ) ( 512 192 320 ) ( 416 208 320 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 416 208 448 ) ( 512 208 448 ) ( 416 192 448 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 416 208 320 ) ( 512 208 320 ) ( 416 208 448 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 512 192 320 ) ( 512 192 448 ) ( 512 208 320 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+}
+// brush 46
+{
+( 512 192 320 ) ( 512 193 320 ) ( 512 192 321 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 512 192 320 ) ( 512 192 321 ) ( 513 192 320 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 512 192 320 ) ( 513 192 320 ) ( 512 193 320 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 672 208 336 ) ( 672 209 336 ) ( 673 208 336 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 672 200 336 ) ( 673 200 336 ) ( 672 200 337 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 624 208 336 ) ( 624 208 337 ) ( 624 209 336 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+}
+// brush 47
+{
+( 448 208 320 ) ( 448 209 320 ) ( 448 208 321 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 448 208 320 ) ( 448 208 321 ) ( 449 208 320 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 448 208 320 ) ( 449 208 320 ) ( 448 209 320 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 480 384 448 ) ( 480 385 448 ) ( 481 384 448 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 480 432 336 ) ( 481 432 336 ) ( 480 432 337 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 480 384 336 ) ( 480 384 337 ) ( 480 385 336 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+}
+// brush 48
+{
+( 304 192 320 ) ( 304 193 320 ) ( 304 192 321 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 304 192 320 ) ( 304 192 321 ) ( 305 192 320 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 304 192 320 ) ( 305 192 320 ) ( 304 193 320 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 464 208 336 ) ( 464 209 336 ) ( 465 208 336 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 464 200 336 ) ( 465 200 336 ) ( 464 200 337 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 416 208 336 ) ( 416 208 337 ) ( 416 209 336 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+}
+// brush 49
+{
+( 192 240 320 ) ( 192 241 320 ) ( 192 240 321 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 192 208 320 ) ( 192 208 321 ) ( 193 208 320 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 192 240 320 ) ( 193 240 320 ) ( 192 241 320 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 208 384 448 ) ( 208 385 448 ) ( 209 384 448 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 208 512 448 ) ( 209 512 448 ) ( 208 512 449 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 208 384 448 ) ( 208 384 449 ) ( 208 385 448 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+}
+// brush 50
+{
+( 192 192 320 ) ( 192 208 320 ) ( 192 192 448 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 208 192 448 ) ( 304 192 448 ) ( 208 192 320 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 208 192 320 ) ( 304 192 320 ) ( 208 208 320 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 208 208 448 ) ( 304 208 448 ) ( 208 192 448 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 208 208 320 ) ( 304 208 320 ) ( 208 208 448 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 304 192 320 ) ( 304 192 448 ) ( 304 208 320 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+}
+// brush 51
+{
+( 304 192 448 ) ( 304 192 400 ) ( 304 208 448 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 464 192 448 ) ( 464 192 400 ) ( 304 192 448 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 464 192 400 ) ( 464 208 400 ) ( 304 192 400 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 464 192 448 ) ( 304 192 448 ) ( 464 208 448 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 304 208 448 ) ( 304 208 400 ) ( 464 208 448 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 416 208 448 ) ( 416 208 400 ) ( 416 192 448 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+}
+// brush 52
+{
+( 720 208 320 ) ( 720 209 320 ) ( 720 208 321 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 720 208 320 ) ( 720 208 321 ) ( 721 208 320 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 720 208 320 ) ( 721 208 320 ) ( 720 209 320 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 736 384 448 ) ( 736 385 448 ) ( 737 384 448 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 736 432 336 ) ( 737 432 336 ) ( 736 432 337 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 736 384 336 ) ( 736 384 337 ) ( 736 385 336 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+}
+// brush 53
+{
+( -64 208 320 ) ( -64 209 320 ) ( -64 208 321 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( -64 208 320 ) ( -64 208 321 ) ( -63 208 320 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( -64 208 320 ) ( -63 208 320 ) ( -64 209 320 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 192 216 336 ) ( 192 217 336 ) ( 193 216 336 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 192 216 328 ) ( 193 216 328 ) ( 192 216 329 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 192 216 328 ) ( 192 216 329 ) ( 192 217 328 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+}
+// brush 54
+{
+( -64 448 448 ) ( -64 449 448 ) ( -64 448 449 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 464 -64 448 ) ( 464 -64 449 ) ( 465 -64 448 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 464 448 448 ) ( 465 448 448 ) ( 464 449 448 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 896 496 464 ) ( 896 497 464 ) ( 897 496 464 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 896 432 464 ) ( 897 432 464 ) ( 896 432 465 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 896 496 464 ) ( 896 496 465 ) ( 896 497 464 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 55
+{
+( 896 96 448 ) ( 896 97 448 ) ( 896 96 449 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 896 -64 448 ) ( 896 -64 449 ) ( 897 -64 448 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 896 96 448 ) ( 897 96 448 ) ( 896 97 448 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 912 304 464 ) ( 912 305 464 ) ( 913 304 464 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 912 224 464 ) ( 913 224 464 ) ( 912 224 465 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1744 304 464 ) ( 1744 304 465 ) ( 1744 305 464 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 56
+{
+( 896 208 464 ) ( 896 209 464 ) ( 896 208 465 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 896 216 464 ) ( 896 216 465 ) ( 897 216 464 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 896 208 464 ) ( 897 208 464 ) ( 896 209 464 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 224 488 ) ( 912 225 488 ) ( 913 224 488 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 224 480 ) ( 913 224 480 ) ( 912 224 481 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1184 208 464 ) ( 1184 208 465 ) ( 1184 209 464 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 57
+{
+( 888 296 464 ) ( 888 297 464 ) ( 888 296 465 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 888 296 464 ) ( 888 296 465 ) ( 889 296 464 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 888 296 464 ) ( 889 296 464 ) ( 888 297 464 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 896 408 488 ) ( 896 409 488 ) ( 897 408 488 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 896 408 472 ) ( 897 408 472 ) ( 896 408 473 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 896 408 472 ) ( 896 408 473 ) ( 896 409 472 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 58
+{
+( 192 160 464 ) ( 192 161 464 ) ( 192 160 465 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 192 160 464 ) ( 192 160 465 ) ( 193 160 464 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 192 160 464 ) ( 193 160 464 ) ( 192 161 464 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 208 336 592 ) ( 208 337 592 ) ( 209 336 592 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 208 512 480 ) ( 209 512 480 ) ( 208 512 481 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 208 336 480 ) ( 208 336 481 ) ( 208 337 480 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+}
+// brush 59
+{
+( -80 320 592 ) ( -80 321 592 ) ( -80 320 593 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+( 208 -64 592 ) ( 208 -64 593 ) ( 209 -64 592 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+( 208 320 592 ) ( 209 320 592 ) ( 208 321 592 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+( 240 336 608 ) ( 240 337 608 ) ( 241 336 608 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+( 240 432 608 ) ( 241 432 608 ) ( 240 432 609 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+( 1744 336 608 ) ( 1744 336 609 ) ( 1744 337 608 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+}
+// brush 60
+{
+( 192 -64 464 ) ( 192 -63 464 ) ( 192 -64 465 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 192 -64 464 ) ( 192 -64 465 ) ( 193 -64 464 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 192 -64 464 ) ( 193 -64 464 ) ( 192 -63 464 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 208 16 592 ) ( 208 17 592 ) ( 209 16 592 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 208 16 480 ) ( 209 16 480 ) ( 208 16 481 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 208 16 480 ) ( 208 16 481 ) ( 208 17 480 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+}
+// brush 61
+{
+( 192 16 576 ) ( 192 17 576 ) ( 192 16 577 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 192 16 576 ) ( 192 16 577 ) ( 193 16 576 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 192 16 560 ) ( 193 16 560 ) ( 192 17 560 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 208 160 592 ) ( 208 161 592 ) ( 209 160 592 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 208 160 592 ) ( 209 160 592 ) ( 208 160 593 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 208 160 592 ) ( 208 160 593 ) ( 208 161 592 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+}
+// brush 62
+{
+( 696 288 464 ) ( 696 289 464 ) ( 696 288 465 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 696 256 464 ) ( 696 256 465 ) ( 697 256 464 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 696 288 464 ) ( 697 288 464 ) ( 696 289 464 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 704 448 480 ) ( 704 449 480 ) ( 705 448 480 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 704 432 472 ) ( 705 432 472 ) ( 704 432 473 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 704 448 472 ) ( 704 448 473 ) ( 704 449 472 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+}
+// brush 63
+{
+( 376 248 464 ) ( 376 249 464 ) ( 376 248 465 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 376 248 464 ) ( 376 248 465 ) ( 377 248 464 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 376 248 464 ) ( 377 248 464 ) ( 376 249 464 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 704 256 480 ) ( 704 257 480 ) ( 705 256 480 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 704 256 472 ) ( 705 256 472 ) ( 704 256 473 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 704 256 472 ) ( 704 256 473 ) ( 704 257 472 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+}
+// brush 64
+{
+( 376 256 464 ) ( 376 257 464 ) ( 376 256 465 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 376 256 464 ) ( 376 256 465 ) ( 377 256 464 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 376 256 464 ) ( 377 256 464 ) ( 376 257 464 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 384 448 480 ) ( 384 449 480 ) ( 385 448 480 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 384 432 472 ) ( 385 432 472 ) ( 384 432 473 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+( 384 448 472 ) ( 384 448 473 ) ( 384 449 472 ) "16x16 pixelart textures 2/carpet/Textures-16_373" 0 0 0 1 1
+}
+// brush 65
+{
+( 480 336 176 ) ( 480 337 176 ) ( 480 336 177 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 480 336 176 ) ( 480 336 177 ) ( 481 336 176 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 480 336 176 ) ( 481 336 176 ) ( 480 337 176 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 720 352 304 ) ( 720 353 304 ) ( 721 352 304 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 720 352 288 ) ( 721 352 288 ) ( 720 352 289 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 720 352 288 ) ( 720 352 289 ) ( 720 353 288 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+}
+// brush 66
+{
+( 480 336 320 ) ( 480 337 320 ) ( 480 336 321 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 480 336 320 ) ( 480 336 321 ) ( 481 336 320 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 480 336 320 ) ( 481 336 320 ) ( 480 337 320 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 640 352 448 ) ( 640 353 448 ) ( 641 352 448 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 640 352 336 ) ( 641 352 336 ) ( 640 352 337 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 720 352 336 ) ( 720 352 337 ) ( 720 353 336 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+}
+// brush 67
+{
+( 208 336 320 ) ( 208 337 320 ) ( 208 336 321 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 320 336 320 ) ( 320 336 321 ) ( 321 336 320 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 320 336 320 ) ( 321 336 320 ) ( 320 337 320 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 448 352 448 ) ( 448 353 448 ) ( 449 352 448 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 448 352 336 ) ( 449 352 336 ) ( 448 352 337 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 448 352 336 ) ( 448 352 337 ) ( 448 353 336 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+}
+// brush 68
+{
+( 208 336 176 ) ( 208 337 176 ) ( 208 336 177 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 288 336 176 ) ( 288 336 177 ) ( 289 336 176 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 288 336 176 ) ( 289 336 176 ) ( 288 337 176 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 448 352 304 ) ( 448 353 304 ) ( 449 352 304 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 448 352 192 ) ( 449 352 192 ) ( 448 352 193 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+( 448 352 192 ) ( 448 352 193 ) ( 448 353 192 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 0 1 1
+}
+// brush 69
+{
+( 184 -64 176 ) ( 184 -63 176 ) ( 184 -64 177 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 184 -64 176 ) ( 184 -64 177 ) ( 185 -64 176 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 184 -64 176 ) ( 185 -64 176 ) ( 184 -63 176 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 192 32 200 ) ( 192 33 200 ) ( 193 32 200 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 192 32 192 ) ( 193 32 192 ) ( 192 32 193 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 192 32 192 ) ( 192 32 193 ) ( 192 33 192 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 70
+{
+( 192 32 176 ) ( 192 33 176 ) ( 192 32 177 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 184 32 176 ) ( 184 32 177 ) ( 185 32 176 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 184 32 176 ) ( 185 32 176 ) ( 184 33 176 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 584 40 200 ) ( 584 41 200 ) ( 585 40 200 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 584 40 184 ) ( 585 40 184 ) ( 584 40 185 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 432 40 184 ) ( 432 40 185 ) ( 432 41 184 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 71
+{
+( -64 288 464 ) ( -64 289 464 ) ( -64 288 465 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+( -64 288 464 ) ( -64 288 465 ) ( -63 288 464 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+( -64 288 464 ) ( -63 288 464 ) ( -64 289 464 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+( 192 304 592 ) ( 192 305 592 ) ( 193 304 592 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+( 192 304 592 ) ( 193 304 592 ) ( 192 304 593 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+( 192 304 592 ) ( 192 304 593 ) ( 192 305 592 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+}
+// brush 72
+{
+( 56 128 16 ) ( 56 129 16 ) ( 56 128 17 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 56 88 16 ) ( 56 88 17 ) ( 57 88 16 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 56 128 16 ) ( 57 128 16 ) ( 56 129 16 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 72 344 48 ) ( 72 345 48 ) ( 73 344 48 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 72 344 24 ) ( 73 344 24 ) ( 72 344 25 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+( 72 344 24 ) ( 72 344 25 ) ( 72 345 24 ) "16x16 pixelart textures 2/wood/Textures-16_175" 0 0 0 1 1
+}
+// brush 73
+{
+( 40 88 16 ) ( 40 89 16 ) ( 40 88 17 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 90 1 1
+( 48 88 16 ) ( 48 88 17 ) ( 49 88 16 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 90 1 1
+( 48 88 16 ) ( 49 88 16 ) ( 48 89 16 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 90 1 1
+( 56 360 32 ) ( 56 361 32 ) ( 57 360 32 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 90 1 1
+( 56 344 24 ) ( 57 344 24 ) ( 56 344 25 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 90 1 1
+( 56 360 24 ) ( 56 360 25 ) ( 56 361 24 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 90 1 1
+}
+// brush 74
+{
+( 72 88 16 ) ( 72 89 16 ) ( 72 88 17 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 90 1 1
+( 80 88 16 ) ( 80 88 17 ) ( 81 88 16 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 90 1 1
+( 80 88 16 ) ( 81 88 16 ) ( 80 89 16 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 90 1 1
+( 88 360 32 ) ( 88 361 32 ) ( 89 360 32 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 90 1 1
+( 88 344 24 ) ( 89 344 24 ) ( 88 344 25 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 90 1 1
+( 88 360 24 ) ( 88 360 25 ) ( 88 361 24 ) "16x16 pixelart textures 2/carpet/Textures-16_314" 0 0 90 1 1
+}
+// brush 75
+{
+( -64 336 16 ) ( -64 -64 16 ) ( -64 -64 0 ) "16x16 pixelart textures 2/dark/Textures-16_128" 0 0 0 1 1
+( -64 -64 16 ) ( 192 -64 16 ) ( 192 -64 0 ) "16x16 pixelart textures 2/dark/Textures-16_128" 0 0 0 1 1
+( 192 -64 0 ) ( 192 336 0 ) ( -64 336 0 ) "16x16 pixelart textures 2/dark/Textures-16_128" 0 0 0 1 1
+( -64 336 16 ) ( 192 336 16 ) ( 192 -64 16 ) "16x16 pixelart textures 2/dark/Textures-16_128" 0 0 0 1 1
+( 192 512 0 ) ( 192 512 16 ) ( -64 512 16 ) "16x16 pixelart textures 2/dark/Textures-16_128" 0 0 0 1 1
+( 56 -64 16 ) ( 56 336 16 ) ( 56 336 0 ) "16x16 pixelart textures 2/dark/Textures-16_128" 0 0 0 1 1
+}
+// brush 76
+{
+( 192 -64 32 ) ( 192 32 0 ) ( 192 32 32 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 208 -64 32 ) ( 192 -64 0 ) ( 192 -64 32 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 208 32 0 ) ( 192 -64 0 ) ( 208 -64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 208 32 32 ) ( 192 -64 32 ) ( 192 32 32 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 208 32 32 ) ( 192 32 0 ) ( 208 32 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 208 32 32 ) ( 208 -64 0 ) ( 208 -64 32 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 77
+{
+( 208 -64 40 ) ( 208 32 0 ) ( 208 32 40 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 224 -64 40 ) ( 208 -64 0 ) ( 208 -64 40 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 224 32 0 ) ( 208 -64 0 ) ( 224 -64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 224 32 40 ) ( 208 -64 40 ) ( 208 32 40 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 224 32 40 ) ( 208 32 0 ) ( 224 32 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 224 32 40 ) ( 224 -64 0 ) ( 224 -64 40 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 78
+{
+( 224 -64 48 ) ( 224 32 0 ) ( 224 32 48 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 240 -64 48 ) ( 224 -64 0 ) ( 224 -64 48 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 240 32 0 ) ( 224 -64 0 ) ( 240 -64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 240 32 48 ) ( 224 -64 48 ) ( 224 32 48 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 240 32 48 ) ( 224 32 0 ) ( 240 32 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 240 32 48 ) ( 240 -64 0 ) ( 240 -64 48 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 79
+{
+( 240 -64 56 ) ( 240 32 0 ) ( 240 32 56 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 256 -64 56 ) ( 240 -64 0 ) ( 240 -64 56 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 256 32 0 ) ( 240 -64 0 ) ( 256 -64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 256 32 56 ) ( 240 -64 56 ) ( 240 32 56 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 256 32 56 ) ( 240 32 0 ) ( 256 32 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 256 32 56 ) ( 256 -64 0 ) ( 256 -64 56 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 80
+{
+( 256 -64 64 ) ( 256 32 0 ) ( 256 32 64 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 272 -64 64 ) ( 256 -64 0 ) ( 256 -64 64 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 272 32 0 ) ( 256 -64 0 ) ( 272 -64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 272 32 64 ) ( 256 -64 64 ) ( 256 32 64 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 272 32 64 ) ( 256 32 0 ) ( 272 32 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 272 32 64 ) ( 272 -64 0 ) ( 272 -64 64 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 81
+{
+( 272 -64 72 ) ( 272 32 0 ) ( 272 32 72 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 288 -64 72 ) ( 272 -64 0 ) ( 272 -64 72 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 288 32 0 ) ( 272 -64 0 ) ( 288 -64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 288 32 72 ) ( 272 -64 72 ) ( 272 32 72 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 288 32 72 ) ( 272 32 0 ) ( 288 32 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 288 32 72 ) ( 288 -64 0 ) ( 288 -64 72 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 82
+{
+( 288 -64 80 ) ( 288 32 0 ) ( 288 32 80 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 304 -64 80 ) ( 288 -64 0 ) ( 288 -64 80 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 304 32 0 ) ( 288 -64 0 ) ( 304 -64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 304 32 80 ) ( 288 -64 80 ) ( 288 32 80 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 304 32 80 ) ( 288 32 0 ) ( 304 32 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 304 32 80 ) ( 304 -64 0 ) ( 304 -64 80 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 83
+{
+( 304 -64 88 ) ( 304 32 0 ) ( 304 32 88 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 320 -64 88 ) ( 304 -64 0 ) ( 304 -64 88 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 320 32 0 ) ( 304 -64 0 ) ( 320 -64 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 320 32 88 ) ( 304 -64 88 ) ( 304 32 88 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 320 32 88 ) ( 304 32 0 ) ( 320 32 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 320 32 88 ) ( 320 -64 0 ) ( 320 -64 88 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 84
+{
+( -64 432 160 ) ( -64 433 160 ) ( -64 432 161 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 0 432 160 ) ( 0 432 161 ) ( 1 432 160 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 0 432 160 ) ( 1 432 160 ) ( 0 433 160 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 128 512 176 ) ( 128 513 176 ) ( 129 512 176 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 128 512 176 ) ( 129 512 176 ) ( 128 512 177 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 128 512 176 ) ( 128 512 177 ) ( 128 513 176 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 85
+{
+( -64 432 176 ) ( -64 433 176 ) ( -64 432 177 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( -64 432 176 ) ( -64 432 177 ) ( -63 432 176 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( -64 432 176 ) ( -63 432 176 ) ( -64 433 176 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 144 440 200 ) ( 144 441 200 ) ( 145 440 200 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 144 440 184 ) ( 145 440 184 ) ( 144 440 185 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 128 440 184 ) ( 128 440 185 ) ( 128 441 184 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 86
+{
+( 576 -64 144 ) ( 576 -63 144 ) ( 576 -64 145 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 576 -64 144 ) ( 576 -64 145 ) ( 577 -64 144 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 576 -64 0 ) ( 577 -64 0 ) ( 576 -63 0 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 896 -48 160 ) ( 896 -47 160 ) ( 897 -48 160 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 896 -48 160 ) ( 897 -48 160 ) ( 896 -48 161 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1744 -48 160 ) ( 1744 -48 161 ) ( 1744 -47 160 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 87
+{
+( 576 512 320 ) ( 576 -64 320 ) ( 576 512 304 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 896 -64 304 ) ( 544 -64 304 ) ( 896 -64 320 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 896 512 304 ) ( 544 512 304 ) ( 896 -64 304 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 896 -64 320 ) ( 544 -64 320 ) ( 896 512 320 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 896 432 320 ) ( 544 432 320 ) ( 896 432 304 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 896 -64 320 ) ( 896 512 320 ) ( 896 -64 304 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 88
+{
+( -64 -64 304 ) ( -64 512 304 ) ( -64 -64 320 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( -64 -64 320 ) ( 240 -64 320 ) ( -64 -64 304 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( -64 -64 304 ) ( 240 -64 304 ) ( -64 512 304 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( -64 512 320 ) ( 240 512 320 ) ( -64 -64 320 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( -64 512 304 ) ( 240 512 304 ) ( -64 512 320 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 192 -64 304 ) ( 192 -64 320 ) ( 192 512 304 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 89
+{
+( 192 512 320 ) ( 192 32 320 ) ( 192 512 304 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 544 32 320 ) ( 544 32 304 ) ( 240 32 320 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 240 512 304 ) ( 240 32 304 ) ( 544 512 304 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 544 512 320 ) ( 544 32 320 ) ( 240 512 320 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 544 432 320 ) ( 240 432 320 ) ( 544 432 304 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 576 512 304 ) ( 576 32 304 ) ( 576 512 320 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 90
+{
+( 192 32 320 ) ( 192 33 320 ) ( 192 32 321 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 184 32 320 ) ( 184 32 321 ) ( 185 32 320 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 184 32 320 ) ( 185 32 320 ) ( 184 33 320 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 584 40 344 ) ( 584 41 344 ) ( 585 40 344 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 584 40 328 ) ( 585 40 328 ) ( 584 40 329 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 432 40 328 ) ( 432 40 329 ) ( 432 41 328 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 91
+{
+( 184 -64 320 ) ( 184 -63 320 ) ( 184 -64 321 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 184 -64 320 ) ( 184 -64 321 ) ( 185 -64 320 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 184 -64 320 ) ( 185 -64 320 ) ( 184 -63 320 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 192 32 344 ) ( 192 33 344 ) ( 193 32 344 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 192 32 336 ) ( 193 32 336 ) ( 192 32 337 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 192 32 336 ) ( 192 32 337 ) ( 192 33 336 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 92
+{
+( 576 -64 320 ) ( 576 -63 320 ) ( 576 -64 321 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 576 -64 320 ) ( 576 -64 321 ) ( 577 -64 320 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" -8 0 0 1 1
+( 576 -64 320 ) ( 577 -64 320 ) ( 576 -63 320 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" -8 0 0 1 1
+( 584 32 344 ) ( 584 33 344 ) ( 585 32 344 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" -8 0 0 1 1
+( 584 32 336 ) ( 585 32 336 ) ( 584 32 337 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" -8 0 0 1 1
+( 584 32 336 ) ( 584 32 337 ) ( 584 33 336 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 93
+{
+( -80 -64 608 ) ( -80 -63 608 ) ( -80 -64 609 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+( -80 -64 608 ) ( -80 -64 609 ) ( -79 -64 608 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+( -80 -64 608 ) ( -79 -64 608 ) ( -80 -63 608 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+( 736 -48 688 ) ( 736 -47 688 ) ( 737 -48 688 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+( 736 -48 624 ) ( 737 -48 624 ) ( 736 -48 625 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+( 1744 -48 624 ) ( 1744 -48 625 ) ( 1744 -47 624 ) "16x16 pixelart textures 2/carpet/Textures-16_315" 0 0 0 1 1
+}
+// brush 94
+{
+( -624 -64 0 ) ( -624 -63 0 ) ( -624 -64 1 ) "16x16 pixelart textures 2/ground/Textures-16_35" 0 0 0 1 1
+( -256 -64 0 ) ( -256 -64 1 ) ( -255 -64 0 ) "16x16 pixelart textures 2/ground/Textures-16_35" 0 0 0 1 1
+( -256 -64 0 ) ( -255 -64 0 ) ( -256 -63 0 ) "16x16 pixelart textures 2/ground/Textures-16_35" 0 0 0 1 1
+( -80 512 16 ) ( -80 513 16 ) ( -79 512 16 ) "16x16 pixelart textures 2/ground/Textures-16_35" 0 0 0 1 1
+( -80 1088 16 ) ( -79 1088 16 ) ( -80 1088 17 ) "16x16 pixelart textures 2/ground/Textures-16_35" 0 0 0 1 1
+( -80 512 16 ) ( -80 512 17 ) ( -80 513 16 ) "16x16 pixelart textures 2/ground/Textures-16_35" 0 0 0 1 1
+}
+// brush 95
+{
+( -64 -80 0 ) ( -64 -79 0 ) ( -64 -80 1 ) Custom/Empty 0 0 0 1 1
+( -304 -80 0 ) ( -304 -80 1 ) ( -303 -80 0 ) Custom/Empty 0 0 0 1 1
+( -304 -80 0 ) ( -303 -80 0 ) ( -304 -79 0 ) Custom/Empty 0 0 0 1 1
+( 688 -64 608 ) ( 688 -63 608 ) ( 689 -64 608 ) Custom/Empty 0 0 0 1 1
+( 688 -64 16 ) ( 689 -64 16 ) ( 688 -64 17 ) Custom/Empty 0 0 0 1 1
+( 1744 -64 16 ) ( 1744 -64 17 ) ( 1744 -63 16 ) Custom/Empty 0 0 0 1 1
+}
+// brush 96
+{
+( -80 -64 16 ) ( -80 -63 16 ) ( -80 -64 17 ) Custom/Empty 0 0 0 1 1
+( -80 -64 16 ) ( -80 -64 17 ) ( -79 -64 16 ) Custom/Empty 0 0 0 1 1
+( -80 -64 16 ) ( -79 -64 16 ) ( -80 -63 16 ) Custom/Empty 0 0 0 1 1
+( -64 64 112 ) ( -64 65 112 ) ( -63 64 112 ) Custom/Empty 0 0 0 1 1
+( -64 64 32 ) ( -63 64 32 ) ( -64 64 33 ) Custom/Empty 0 0 0 1 1
+( -64 64 32 ) ( -64 64 33 ) ( -64 65 32 ) Custom/Empty 0 0 0 1 1
+}
+// brush 97
+{
+( 1344 112 176 ) ( 1344 113 176 ) ( 1344 112 177 ) Custom/Empty 16 0 0 1 1
+( 1344 -64 176 ) ( 1344 -64 177 ) ( 1345 -64 176 ) Custom/Empty 0 0 0 1 1
+( 1344 112 176 ) ( 1345 112 176 ) ( 1344 113 176 ) Custom/Empty 0 -16 0 1 1
+( 1360 496 592 ) ( 1360 497 592 ) ( 1361 496 592 ) Custom/Empty 0 -16 0 1 1
+( 1360 432 192 ) ( 1361 432 192 ) ( 1360 432 193 ) Custom/Empty 0 0 0 1 1
+( 1360 496 192 ) ( 1360 496 193 ) ( 1360 497 192 ) Custom/Empty 16 0 0 1 1
+}
+// brush 98
+{
+( 432 32 176 ) ( 432 33 176 ) ( 432 32 177 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 432 32 176 ) ( 432 32 177 ) ( 433 32 176 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 432 32 176 ) ( 433 32 176 ) ( 432 33 176 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 448 48 304 ) ( 448 49 304 ) ( 449 48 304 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 448 48 192 ) ( 449 48 192 ) ( 448 48 193 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 448 48 192 ) ( 448 48 193 ) ( 448 49 192 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+}
+// brush 99
+{
+( 432 32 320 ) ( 432 33 320 ) ( 432 32 321 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 432 32 320 ) ( 432 32 321 ) ( 433 32 320 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 432 32 320 ) ( 433 32 320 ) ( 432 33 320 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 448 48 448 ) ( 448 49 448 ) ( 449 48 448 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 448 48 336 ) ( 449 48 336 ) ( 448 48 337 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 448 48 336 ) ( 448 48 337 ) ( 448 49 336 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+}
+// brush 100
+{
+( 176 32 320 ) ( 176 33 320 ) ( 176 32 321 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 176 32 320 ) ( 176 32 321 ) ( 177 32 320 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 176 32 320 ) ( 177 32 320 ) ( 176 33 320 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 192 48 448 ) ( 192 49 448 ) ( 193 48 448 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 192 48 336 ) ( 193 48 336 ) ( 192 48 337 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 192 48 336 ) ( 192 48 337 ) ( 192 49 336 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+}
+// brush 101
+{
+( 176 32 176 ) ( 176 33 176 ) ( 176 32 177 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 176 32 176 ) ( 176 32 177 ) ( 177 32 176 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 176 32 176 ) ( 177 32 176 ) ( 176 33 176 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 192 48 304 ) ( 192 49 304 ) ( 193 48 304 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 192 48 192 ) ( 193 48 192 ) ( 192 48 193 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 192 48 192 ) ( 192 48 193 ) ( 192 49 192 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+}
+// brush 102
+{
+( 128 432 176 ) ( 128 433 176 ) ( 128 432 177 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 128 432 176 ) ( 128 432 177 ) ( 129 432 176 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 128 432 176 ) ( 129 432 176 ) ( 128 433 176 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 144 448 304 ) ( 144 449 304 ) ( 145 448 304 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 144 448 192 ) ( 145 448 192 ) ( 144 448 193 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 144 448 192 ) ( 144 448 193 ) ( 144 449 192 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+}
+// brush 103
+{
+( -64 320 320 ) ( -64 321 320 ) ( -64 320 321 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 16 320 320 ) ( 16 320 321 ) ( 17 320 320 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 16 320 320 ) ( 17 320 320 ) ( 16 321 320 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 192 336 448 ) ( 192 337 448 ) ( 193 336 448 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 192 336 336 ) ( 193 336 336 ) ( 192 336 337 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 192 336 336 ) ( 192 336 337 ) ( 192 337 336 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+}
+// brush 104
+{
+( 208 432 16 ) ( 208 32 16 ) ( 208 32 0 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 192 432 0 ) ( -64 432 16 ) ( 192 432 16 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 192 32 0 ) ( 192 432 0 ) ( -64 432 0 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( -64 432 592 ) ( 192 432 592 ) ( 192 32 592 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 192 448 0 ) ( 192 448 16 ) ( -64 448 16 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+( 1744 32 16 ) ( 1744 432 16 ) ( 1744 432 0 ) "16x16 pixelart textures 2/ground/Textures-16_157" 0 0 0 1 1
+}
+// brush 105
+{
+( 1200 208 320 ) ( 1200 209 320 ) ( 1200 208 321 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 896 216 320 ) ( 896 216 321 ) ( 897 216 320 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 896 208 320 ) ( 897 208 320 ) ( 896 209 320 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 224 344 ) ( 912 225 344 ) ( 913 224 344 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 224 336 ) ( 913 224 336 ) ( 912 224 337 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1744 224 336 ) ( 1744 224 337 ) ( 1744 225 336 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 106
+{
+( 1184 208 320 ) ( 1184 209 320 ) ( 1184 208 321 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1184 208 320 ) ( 1184 208 321 ) ( 1185 208 320 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1184 208 320 ) ( 1185 208 320 ) ( 1184 209 320 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1200 224 448 ) ( 1200 225 448 ) ( 1201 224 448 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1200 224 336 ) ( 1201 224 336 ) ( 1200 224 337 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1200 224 336 ) ( 1200 224 337 ) ( 1200 225 336 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 107
+{
+( 1200 208 464 ) ( 1200 209 464 ) ( 1200 208 465 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 896 216 464 ) ( 896 216 465 ) ( 897 216 464 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 896 208 464 ) ( 897 208 464 ) ( 896 209 464 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 224 488 ) ( 912 225 488 ) ( 913 224 488 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 224 480 ) ( 913 224 480 ) ( 912 224 481 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1744 224 480 ) ( 1744 224 481 ) ( 1744 225 480 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 108
+{
+( 1184 208 464 ) ( 1184 209 464 ) ( 1184 208 465 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1184 208 464 ) ( 1184 208 465 ) ( 1185 208 464 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1184 208 464 ) ( 1185 208 464 ) ( 1184 209 464 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1200 224 592 ) ( 1200 225 592 ) ( 1201 224 592 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1200 224 480 ) ( 1201 224 480 ) ( 1200 224 481 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1200 224 480 ) ( 1200 224 481 ) ( 1200 225 480 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+}
+// entity 1
+{
+"classname" "func_group"
+"_tb_type" "_tb_group"
+"_tb_name" "stairs"
+"_tb_id" "1"
+// brush 0
+{
+( 976 224 352 ) ( 976 225 352 ) ( 976 224 353 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 976 224 352 ) ( 976 224 353 ) ( 977 224 352 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 976 224 352 ) ( 977 224 352 ) ( 976 225 352 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 992 336 368 ) ( 992 337 368 ) ( 993 336 368 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 992 320 368 ) ( 993 320 368 ) ( 992 320 369 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 992 336 368 ) ( 992 336 369 ) ( 992 337 368 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 1
+{
+( 944 224 336 ) ( 944 225 336 ) ( 944 224 337 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 944 224 336 ) ( 944 224 337 ) ( 945 224 336 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 944 224 336 ) ( 945 224 336 ) ( 944 225 336 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 960 336 352 ) ( 960 337 352 ) ( 961 336 352 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 960 320 352 ) ( 961 320 352 ) ( 960 320 353 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 960 336 352 ) ( 960 336 353 ) ( 960 337 352 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 2
+{
+( 1096 232 248 ) ( 1096 233 248 ) ( 1096 232 249 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1096 232 248 ) ( 1096 232 249 ) ( 1097 232 248 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1096 232 248 ) ( 1097 232 248 ) ( 1096 233 248 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1104 416 272 ) ( 1104 417 272 ) ( 1105 416 272 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1104 432 272 ) ( 1105 432 272 ) ( 1104 432 273 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1104 416 272 ) ( 1104 416 273 ) ( 1104 417 272 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 3
+{
+( 912 312 472 ) ( 912 312 471 ) ( 912 313 472 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 912 320 472 ) ( 913 320 472 ) ( 912 320 471 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 928 328 448 ) ( 929 328 448 ) ( 928 329 448 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 312 472 ) ( 912 313 472 ) ( 913 312 472 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 928 328 456 ) ( 928 328 455 ) ( 929 328 456 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 928 328 456 ) ( 928 329 456 ) ( 928 328 455 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+}
+// brush 4
+{
+( 896 416 448 ) ( 896 415 448 ) ( 896 416 447 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+( 912 320 432 ) ( 913 320 432 ) ( 912 320 431 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 912 304 440 ) ( 912 303 440 ) ( 913 304 440 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 896 416 456 ) ( 897 416 456 ) ( 896 415 456 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 896 432 448 ) ( 896 432 447 ) ( 897 432 448 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 912 304 432 ) ( 912 304 431 ) ( 912 303 432 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+}
+// brush 5
+{
+( 960 312 304 ) ( 960 312 303 ) ( 960 313 304 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 960 320 304 ) ( 961 320 304 ) ( 960 320 303 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 976 328 280 ) ( 977 328 280 ) ( 976 329 280 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 960 312 304 ) ( 960 313 304 ) ( 961 312 304 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 976 328 288 ) ( 976 328 287 ) ( 977 328 288 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 976 328 288 ) ( 976 329 288 ) ( 976 328 287 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+}
+// brush 6
+{
+( 1008 224 368 ) ( 1008 225 368 ) ( 1008 224 369 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1008 224 368 ) ( 1008 224 369 ) ( 1009 224 368 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1008 224 368 ) ( 1009 224 368 ) ( 1008 225 368 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1024 336 384 ) ( 1024 337 384 ) ( 1025 336 384 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1024 320 384 ) ( 1025 320 384 ) ( 1024 320 385 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1024 336 384 ) ( 1024 336 385 ) ( 1024 337 384 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 7
+{
+( 960 224 344 ) ( 960 225 344 ) ( 960 224 345 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 960 224 344 ) ( 960 224 345 ) ( 961 224 344 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 960 224 344 ) ( 961 224 344 ) ( 960 225 344 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 976 336 360 ) ( 976 337 360 ) ( 977 336 360 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 976 320 360 ) ( 977 320 360 ) ( 976 320 361 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 976 336 360 ) ( 976 336 361 ) ( 976 337 360 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 8
+{
+( 992 224 360 ) ( 992 225 360 ) ( 992 224 361 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 992 224 360 ) ( 992 224 361 ) ( 993 224 360 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 992 224 360 ) ( 993 224 360 ) ( 992 225 360 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1008 336 376 ) ( 1008 337 376 ) ( 1009 336 376 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1008 320 376 ) ( 1009 320 376 ) ( 1008 320 377 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1008 336 376 ) ( 1008 336 377 ) ( 1008 337 376 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 9
+{
+( 928 224 328 ) ( 928 225 328 ) ( 928 224 329 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 928 224 328 ) ( 928 224 329 ) ( 929 224 328 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 928 224 328 ) ( 929 224 328 ) ( 928 225 328 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 944 336 344 ) ( 944 337 344 ) ( 945 336 344 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 944 320 344 ) ( 945 320 344 ) ( 944 320 345 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 944 336 344 ) ( 944 336 345 ) ( 944 337 344 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 10
+{
+( 928 312 464 ) ( 928 312 463 ) ( 928 313 464 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 928 320 464 ) ( 929 320 464 ) ( 928 320 463 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 944 328 440 ) ( 945 328 440 ) ( 944 329 440 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 928 312 464 ) ( 928 313 464 ) ( 929 312 464 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 944 328 448 ) ( 944 328 447 ) ( 945 328 448 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 944 328 448 ) ( 944 329 448 ) ( 944 328 447 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+}
+// brush 11
+{
+( 928 312 320 ) ( 928 312 319 ) ( 928 313 320 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 928 320 320 ) ( 929 320 320 ) ( 928 320 319 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 944 328 296 ) ( 945 328 296 ) ( 944 329 296 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 928 312 320 ) ( 928 313 320 ) ( 929 312 320 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 944 328 304 ) ( 944 328 303 ) ( 945 328 304 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 944 328 304 ) ( 944 329 304 ) ( 944 328 303 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+}
+// brush 12
+{
+( 992 312 288 ) ( 992 312 287 ) ( 992 313 288 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 992 320 288 ) ( 993 320 288 ) ( 992 320 287 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 1008 328 264 ) ( 1009 328 264 ) ( 1008 329 264 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 992 312 288 ) ( 992 313 288 ) ( 993 312 288 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1008 328 272 ) ( 1008 328 271 ) ( 1009 328 272 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 1008 328 272 ) ( 1008 329 272 ) ( 1008 328 271 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+}
+// brush 13
+{
+( 896 312 336 ) ( 896 312 335 ) ( 896 313 336 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 896 320 336 ) ( 897 320 336 ) ( 896 320 335 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 912 328 312 ) ( 913 328 312 ) ( 912 329 312 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 896 312 336 ) ( 896 313 336 ) ( 897 312 336 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 328 320 ) ( 912 328 319 ) ( 913 328 320 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 912 328 320 ) ( 912 329 320 ) ( 912 328 319 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+}
+// brush 14
+{
+( 912 224 320 ) ( 912 225 320 ) ( 912 224 321 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 912 224 320 ) ( 912 224 321 ) ( 913 224 320 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 912 224 320 ) ( 913 224 320 ) ( 912 225 320 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 928 336 336 ) ( 928 337 336 ) ( 929 336 336 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 928 320 336 ) ( 929 320 336 ) ( 928 320 337 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 928 336 336 ) ( 928 336 337 ) ( 928 337 336 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 15
+{
+( 928 416 440 ) ( 928 415 440 ) ( 928 416 439 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+( 944 320 424 ) ( 945 320 424 ) ( 944 320 423 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 944 304 424 ) ( 944 303 424 ) ( 945 304 424 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 928 416 440 ) ( 929 416 440 ) ( 928 415 440 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 928 432 440 ) ( 928 432 439 ) ( 929 432 440 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 944 304 424 ) ( 944 304 423 ) ( 944 303 424 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+}
+// brush 16
+{
+( 896 312 480 ) ( 896 312 479 ) ( 896 313 480 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 896 320 480 ) ( 897 320 480 ) ( 896 320 479 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 912 328 456 ) ( 913 328 456 ) ( 912 329 456 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 896 312 480 ) ( 896 313 480 ) ( 897 312 480 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 328 464 ) ( 912 328 463 ) ( 913 328 464 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 912 328 464 ) ( 912 329 464 ) ( 912 328 463 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+}
+// brush 17
+{
+( 912 312 328 ) ( 912 312 327 ) ( 912 313 328 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 912 320 328 ) ( 913 320 328 ) ( 912 320 327 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 928 328 304 ) ( 929 328 304 ) ( 928 329 304 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 312 328 ) ( 912 313 328 ) ( 913 312 328 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 928 328 312 ) ( 928 328 311 ) ( 929 328 312 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 928 328 312 ) ( 928 329 312 ) ( 928 328 311 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+}
+// brush 18
+{
+( 896 224 320 ) ( 896 225 320 ) ( 896 224 321 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 896 224 320 ) ( 896 224 321 ) ( 897 224 320 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 896 224 320 ) ( 897 224 320 ) ( 896 225 320 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 912 336 328 ) ( 912 337 328 ) ( 913 336 328 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 912 320 336 ) ( 913 320 336 ) ( 912 320 337 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 912 336 336 ) ( 912 336 337 ) ( 912 337 336 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 19
+{
+( 976 312 296 ) ( 976 312 295 ) ( 976 313 296 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 976 320 296 ) ( 977 320 296 ) ( 976 320 295 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 992 328 272 ) ( 993 328 272 ) ( 992 329 272 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 976 312 296 ) ( 976 313 296 ) ( 977 312 296 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 992 328 280 ) ( 992 328 279 ) ( 993 328 280 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 992 328 280 ) ( 992 329 280 ) ( 992 328 279 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+}
+// brush 20
+{
+( 912 416 448 ) ( 912 415 448 ) ( 912 416 447 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+( 928 320 432 ) ( 929 320 432 ) ( 928 320 431 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 928 304 432 ) ( 928 303 432 ) ( 929 304 432 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 912 416 448 ) ( 913 416 448 ) ( 912 415 448 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 912 432 448 ) ( 912 432 447 ) ( 913 432 448 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 928 304 432 ) ( 928 304 431 ) ( 928 303 432 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+}
+// brush 21
+{
+( 1024 216 248 ) ( 1024 217 248 ) ( 1024 216 249 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1024 224 248 ) ( 1024 224 249 ) ( 1025 224 248 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1024 216 248 ) ( 1025 216 248 ) ( 1024 217 248 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1040 232 272 ) ( 1040 233 272 ) ( 1041 232 272 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1040 232 264 ) ( 1041 232 264 ) ( 1040 232 265 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1104 232 264 ) ( 1104 232 265 ) ( 1104 233 264 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 22
+{
+( 944 312 312 ) ( 944 312 311 ) ( 944 313 312 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 944 320 312 ) ( 945 320 312 ) ( 944 320 311 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 960 328 288 ) ( 961 328 288 ) ( 960 329 288 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 944 312 312 ) ( 944 313 312 ) ( 945 312 312 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 960 328 296 ) ( 960 328 295 ) ( 961 328 296 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 960 328 296 ) ( 960 329 296 ) ( 960 328 295 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+}
+// brush 23
+{
+( 1024 224 376 ) ( 1024 225 376 ) ( 1024 224 377 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1024 224 376 ) ( 1024 224 377 ) ( 1025 224 376 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1024 224 376 ) ( 1025 224 376 ) ( 1024 225 376 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1040 336 392 ) ( 1040 337 392 ) ( 1041 336 392 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1040 432 392 ) ( 1041 432 392 ) ( 1040 432 393 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1104 336 392 ) ( 1104 336 393 ) ( 1104 337 392 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 24
+{
+( 1096 232 392 ) ( 1096 233 392 ) ( 1096 232 393 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1096 232 392 ) ( 1096 232 393 ) ( 1097 232 392 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1096 232 392 ) ( 1097 232 392 ) ( 1096 233 392 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1104 416 416 ) ( 1104 417 416 ) ( 1105 416 416 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1104 432 416 ) ( 1105 432 416 ) ( 1104 432 417 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1104 416 416 ) ( 1104 416 417 ) ( 1104 417 416 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 25
+{
+( 944 312 456 ) ( 944 312 455 ) ( 944 313 456 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 944 320 456 ) ( 945 320 456 ) ( 944 320 455 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 960 328 432 ) ( 961 328 432 ) ( 960 329 432 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 944 312 456 ) ( 944 313 456 ) ( 945 312 456 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 960 328 440 ) ( 960 328 439 ) ( 961 328 440 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 960 328 440 ) ( 960 329 440 ) ( 960 328 439 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+}
+// brush 26
+{
+( 960 312 448 ) ( 960 312 447 ) ( 960 313 448 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 960 320 448 ) ( 961 320 448 ) ( 960 320 447 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 976 328 424 ) ( 977 328 424 ) ( 976 329 424 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 960 312 448 ) ( 960 313 448 ) ( 961 312 448 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 976 328 432 ) ( 976 328 431 ) ( 977 328 432 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 976 328 432 ) ( 976 329 432 ) ( 976 328 431 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+}
+// brush 27
+{
+( 944 416 432 ) ( 944 415 432 ) ( 944 416 431 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+( 960 320 416 ) ( 961 320 416 ) ( 960 320 415 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 960 304 416 ) ( 960 303 416 ) ( 961 304 416 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 944 416 432 ) ( 945 416 432 ) ( 944 415 432 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 944 432 432 ) ( 944 432 431 ) ( 945 432 432 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 960 304 416 ) ( 960 304 415 ) ( 960 303 416 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+}
+// brush 28
+{
+( 896 304 328 ) ( 896 305 328 ) ( 896 304 329 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 896 312 328 ) ( 896 312 329 ) ( 897 312 328 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 896 304 328 ) ( 897 304 328 ) ( 896 305 328 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 320 352 ) ( 912 321 352 ) ( 913 320 352 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 320 344 ) ( 913 320 344 ) ( 912 320 345 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 320 344 ) ( 912 320 345 ) ( 912 321 344 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 29
+{
+( 1008 216 384 ) ( 1008 217 384 ) ( 1008 216 385 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1008 224 384 ) ( 1008 224 385 ) ( 1009 224 384 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1008 216 384 ) ( 1009 216 384 ) ( 1008 217 384 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1024 232 408 ) ( 1024 233 408 ) ( 1025 232 408 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1024 232 400 ) ( 1025 232 400 ) ( 1024 232 401 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1024 232 400 ) ( 1024 232 401 ) ( 1024 233 400 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 30
+{
+( 1024 216 392 ) ( 1024 217 392 ) ( 1024 216 393 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1024 224 392 ) ( 1024 224 393 ) ( 1025 224 392 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1024 216 392 ) ( 1025 216 392 ) ( 1024 217 392 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1040 232 416 ) ( 1040 233 416 ) ( 1041 232 416 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1040 232 408 ) ( 1041 232 408 ) ( 1040 232 409 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1104 232 408 ) ( 1104 232 409 ) ( 1104 233 408 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 31
+{
+( 912 304 336 ) ( 912 305 336 ) ( 912 304 337 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 312 336 ) ( 912 312 337 ) ( 913 312 336 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 304 336 ) ( 913 304 336 ) ( 912 305 336 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 928 320 360 ) ( 928 321 360 ) ( 929 320 360 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 928 320 352 ) ( 929 320 352 ) ( 928 320 353 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 928 320 352 ) ( 928 320 353 ) ( 928 321 352 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 32
+{
+( 928 304 344 ) ( 928 305 344 ) ( 928 304 345 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 928 312 344 ) ( 928 312 345 ) ( 929 312 344 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 928 304 344 ) ( 929 304 344 ) ( 928 305 344 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 944 320 368 ) ( 944 321 368 ) ( 945 320 368 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 944 320 360 ) ( 945 320 360 ) ( 944 320 361 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 944 320 360 ) ( 944 320 361 ) ( 944 321 360 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 33
+{
+( 944 304 352 ) ( 944 305 352 ) ( 944 304 353 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 944 312 352 ) ( 944 312 353 ) ( 945 312 352 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 944 304 352 ) ( 945 304 352 ) ( 944 305 352 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 960 320 376 ) ( 960 321 376 ) ( 961 320 376 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 960 320 368 ) ( 961 320 368 ) ( 960 320 369 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 960 320 368 ) ( 960 320 369 ) ( 960 321 368 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 34
+{
+( 960 304 360 ) ( 960 305 360 ) ( 960 304 361 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 960 312 360 ) ( 960 312 361 ) ( 961 312 360 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 960 304 360 ) ( 961 304 360 ) ( 960 305 360 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 976 320 384 ) ( 976 321 384 ) ( 977 320 384 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 976 320 376 ) ( 977 320 376 ) ( 976 320 377 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 976 320 376 ) ( 976 320 377 ) ( 976 321 376 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 35
+{
+( 912 216 336 ) ( 912 217 336 ) ( 912 216 337 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 224 336 ) ( 912 224 337 ) ( 913 224 336 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 216 336 ) ( 913 216 336 ) ( 912 217 336 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 928 232 360 ) ( 928 233 360 ) ( 929 232 360 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 928 232 352 ) ( 929 232 352 ) ( 928 232 353 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 928 232 352 ) ( 928 232 353 ) ( 928 233 352 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 36
+{
+( 928 216 344 ) ( 928 217 344 ) ( 928 216 345 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 928 224 344 ) ( 928 224 345 ) ( 929 224 344 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 928 216 344 ) ( 929 216 344 ) ( 928 217 344 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 944 232 368 ) ( 944 233 368 ) ( 945 232 368 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 944 232 360 ) ( 945 232 360 ) ( 944 232 361 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 944 232 360 ) ( 944 232 361 ) ( 944 233 360 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 37
+{
+( 896 216 328 ) ( 896 217 328 ) ( 896 216 329 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 896 224 328 ) ( 896 224 329 ) ( 897 224 328 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 896 216 328 ) ( 897 216 328 ) ( 896 217 328 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 232 352 ) ( 912 233 352 ) ( 913 232 352 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 232 344 ) ( 913 232 344 ) ( 912 232 345 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 232 344 ) ( 912 232 345 ) ( 912 233 344 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 38
+{
+( 960 216 360 ) ( 960 217 360 ) ( 960 216 361 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 960 224 360 ) ( 960 224 361 ) ( 961 224 360 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 960 216 360 ) ( 961 216 360 ) ( 960 217 360 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 976 232 384 ) ( 976 233 384 ) ( 977 232 384 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 976 232 376 ) ( 977 232 376 ) ( 976 232 377 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 976 232 376 ) ( 976 232 377 ) ( 976 233 376 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 39
+{
+( 976 216 368 ) ( 976 217 368 ) ( 976 216 369 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 976 224 368 ) ( 976 224 369 ) ( 977 224 368 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 976 216 368 ) ( 977 216 368 ) ( 976 217 368 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 992 232 392 ) ( 992 233 392 ) ( 993 232 392 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 992 232 384 ) ( 993 232 384 ) ( 992 232 385 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 992 232 384 ) ( 992 232 385 ) ( 992 233 384 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 40
+{
+( 944 216 352 ) ( 944 217 352 ) ( 944 216 353 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 944 224 352 ) ( 944 224 353 ) ( 945 224 352 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 944 216 352 ) ( 945 216 352 ) ( 944 217 352 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 960 232 376 ) ( 960 233 376 ) ( 961 232 376 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 960 232 368 ) ( 961 232 368 ) ( 960 232 369 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 960 232 368 ) ( 960 232 369 ) ( 960 233 368 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 41
+{
+( 992 216 376 ) ( 992 217 376 ) ( 992 216 377 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 992 224 376 ) ( 992 224 377 ) ( 993 224 376 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 992 216 376 ) ( 993 216 376 ) ( 992 217 376 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1008 232 400 ) ( 1008 233 400 ) ( 1009 232 400 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1008 232 392 ) ( 1009 232 392 ) ( 1008 232 393 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1008 232 392 ) ( 1008 232 393 ) ( 1008 233 392 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 42
+{
+( 928 224 184 ) ( 928 225 184 ) ( 928 224 185 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 928 224 184 ) ( 928 224 185 ) ( 929 224 184 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 928 224 184 ) ( 929 224 184 ) ( 928 225 184 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 944 336 200 ) ( 944 337 200 ) ( 945 336 200 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 944 320 200 ) ( 945 320 200 ) ( 944 320 201 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 944 336 200 ) ( 944 336 201 ) ( 944 337 200 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 43
+{
+( 944 224 192 ) ( 944 225 192 ) ( 944 224 193 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 944 224 192 ) ( 944 224 193 ) ( 945 224 192 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 944 224 192 ) ( 945 224 192 ) ( 944 225 192 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 960 336 208 ) ( 960 337 208 ) ( 961 336 208 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 960 320 208 ) ( 961 320 208 ) ( 960 320 209 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 960 336 208 ) ( 960 336 209 ) ( 960 337 208 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 44
+{
+( 960 224 200 ) ( 960 225 200 ) ( 960 224 201 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 960 224 200 ) ( 960 224 201 ) ( 961 224 200 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 960 224 200 ) ( 961 224 200 ) ( 960 225 200 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 976 336 216 ) ( 976 337 216 ) ( 977 336 216 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 976 320 216 ) ( 977 320 216 ) ( 976 320 217 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 976 336 216 ) ( 976 336 217 ) ( 976 337 216 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 45
+{
+( 976 224 208 ) ( 976 225 208 ) ( 976 224 209 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 976 224 208 ) ( 976 224 209 ) ( 977 224 208 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 976 224 208 ) ( 977 224 208 ) ( 976 225 208 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 992 336 224 ) ( 992 337 224 ) ( 993 336 224 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 992 320 224 ) ( 993 320 224 ) ( 992 320 225 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 992 336 224 ) ( 992 336 225 ) ( 992 337 224 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 46
+{
+( 912 224 176 ) ( 912 225 176 ) ( 912 224 177 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 912 224 176 ) ( 912 224 177 ) ( 913 224 176 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 912 224 176 ) ( 913 224 176 ) ( 912 225 176 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 928 336 192 ) ( 928 337 192 ) ( 929 336 192 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 928 320 192 ) ( 929 320 192 ) ( 928 320 193 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 928 336 192 ) ( 928 336 193 ) ( 928 337 192 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 47
+{
+( 992 224 216 ) ( 992 225 216 ) ( 992 224 217 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 992 224 216 ) ( 992 224 217 ) ( 993 224 216 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 992 224 216 ) ( 993 224 216 ) ( 992 225 216 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1008 336 232 ) ( 1008 337 232 ) ( 1009 336 232 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1008 320 232 ) ( 1009 320 232 ) ( 1008 320 233 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1008 336 232 ) ( 1008 336 233 ) ( 1008 337 232 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 48
+{
+( 1008 224 224 ) ( 1008 225 224 ) ( 1008 224 225 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1008 224 224 ) ( 1008 224 225 ) ( 1009 224 224 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1008 224 224 ) ( 1009 224 224 ) ( 1008 225 224 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1024 336 240 ) ( 1024 337 240 ) ( 1025 336 240 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1024 320 240 ) ( 1025 320 240 ) ( 1024 320 241 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1024 336 240 ) ( 1024 336 241 ) ( 1024 337 240 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 49
+{
+( 912 304 192 ) ( 912 305 192 ) ( 912 304 193 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 312 192 ) ( 912 312 193 ) ( 913 312 192 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 304 192 ) ( 913 304 192 ) ( 912 305 192 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 928 320 216 ) ( 928 321 216 ) ( 929 320 216 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 928 320 208 ) ( 929 320 208 ) ( 928 320 209 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 928 320 208 ) ( 928 320 209 ) ( 928 321 208 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 50
+{
+( 944 304 208 ) ( 944 305 208 ) ( 944 304 209 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 944 312 208 ) ( 944 312 209 ) ( 945 312 208 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 944 304 208 ) ( 945 304 208 ) ( 944 305 208 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 960 320 232 ) ( 960 321 232 ) ( 961 320 232 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 960 320 224 ) ( 961 320 224 ) ( 960 320 225 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 960 320 224 ) ( 960 320 225 ) ( 960 321 224 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 51
+{
+( 896 304 184 ) ( 896 305 184 ) ( 896 304 185 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 896 312 184 ) ( 896 312 185 ) ( 897 312 184 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 896 304 184 ) ( 897 304 184 ) ( 896 305 184 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 320 208 ) ( 912 321 208 ) ( 913 320 208 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 320 200 ) ( 913 320 200 ) ( 912 320 201 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 320 200 ) ( 912 320 201 ) ( 912 321 200 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 52
+{
+( 928 416 296 ) ( 928 415 296 ) ( 928 416 295 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+( 944 320 280 ) ( 945 320 280 ) ( 944 320 279 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 944 304 280 ) ( 944 303 280 ) ( 945 304 280 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 928 416 296 ) ( 929 416 296 ) ( 928 415 296 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 928 432 296 ) ( 928 432 295 ) ( 929 432 296 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 944 304 280 ) ( 944 304 279 ) ( 944 303 280 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+}
+// brush 53
+{
+( 1024 224 232 ) ( 1024 225 232 ) ( 1024 224 233 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1024 224 232 ) ( 1024 224 233 ) ( 1025 224 232 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1024 224 232 ) ( 1025 224 232 ) ( 1024 225 232 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1040 336 248 ) ( 1040 337 248 ) ( 1041 336 248 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1040 432 248 ) ( 1041 432 248 ) ( 1040 432 249 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 1104 336 248 ) ( 1104 336 249 ) ( 1104 337 248 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 54
+{
+( 960 416 280 ) ( 960 415 280 ) ( 960 416 279 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+( 976 320 264 ) ( 977 320 264 ) ( 976 320 263 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 976 304 264 ) ( 976 303 264 ) ( 977 304 264 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 960 416 280 ) ( 961 416 280 ) ( 960 415 280 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 960 432 280 ) ( 960 432 279 ) ( 961 432 280 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 976 304 264 ) ( 976 304 263 ) ( 976 303 264 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+}
+// brush 55
+{
+( 944 416 288 ) ( 944 415 288 ) ( 944 416 287 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+( 960 320 272 ) ( 961 320 272 ) ( 960 320 271 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 960 304 272 ) ( 960 303 272 ) ( 961 304 272 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 944 416 288 ) ( 945 416 288 ) ( 944 415 288 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 944 432 288 ) ( 944 432 287 ) ( 945 432 288 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 960 304 272 ) ( 960 304 271 ) ( 960 303 272 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+}
+// brush 56
+{
+( 1008 416 256 ) ( 1008 415 256 ) ( 1008 416 255 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+( 1024 320 240 ) ( 1025 320 240 ) ( 1024 320 239 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 1024 304 240 ) ( 1024 303 240 ) ( 1025 304 240 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 1008 416 256 ) ( 1009 416 256 ) ( 1008 415 256 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 1008 432 256 ) ( 1008 432 255 ) ( 1009 432 256 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 1024 304 240 ) ( 1024 304 239 ) ( 1024 303 240 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+}
+// brush 57
+{
+( 992 416 264 ) ( 992 415 264 ) ( 992 416 263 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+( 1008 320 248 ) ( 1009 320 248 ) ( 1008 320 247 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 1008 304 248 ) ( 1008 303 248 ) ( 1009 304 248 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 992 416 264 ) ( 993 416 264 ) ( 992 415 264 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 992 432 264 ) ( 992 432 263 ) ( 993 432 264 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 1008 304 248 ) ( 1008 304 247 ) ( 1008 303 248 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+}
+// brush 58
+{
+( 912 416 304 ) ( 912 415 304 ) ( 912 416 303 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+( 928 320 288 ) ( 929 320 288 ) ( 928 320 287 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 928 304 288 ) ( 928 303 288 ) ( 929 304 288 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 912 416 304 ) ( 913 416 304 ) ( 912 415 304 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 912 432 304 ) ( 912 432 303 ) ( 913 432 304 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 928 304 288 ) ( 928 304 287 ) ( 928 303 288 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+}
+// brush 59
+{
+( 896 416 304 ) ( 896 415 304 ) ( 896 416 303 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+( 912 320 288 ) ( 913 320 288 ) ( 912 320 287 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 912 304 296 ) ( 912 303 296 ) ( 913 304 296 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 896 416 312 ) ( 897 416 312 ) ( 896 415 312 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 896 432 304 ) ( 896 432 303 ) ( 897 432 304 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 912 304 288 ) ( 912 304 287 ) ( 912 303 288 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+}
+// brush 60
+{
+( 976 416 272 ) ( 976 415 272 ) ( 976 416 271 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+( 992 320 256 ) ( 993 320 256 ) ( 992 320 255 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 992 304 256 ) ( 992 303 256 ) ( 993 304 256 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 976 416 272 ) ( 977 416 272 ) ( 976 415 272 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 976 432 272 ) ( 976 432 271 ) ( 977 432 272 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 992 304 256 ) ( 992 304 255 ) ( 992 303 256 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+}
+// brush 61
+{
+( 928 304 200 ) ( 928 305 200 ) ( 928 304 201 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 928 312 200 ) ( 928 312 201 ) ( 929 312 200 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 928 304 200 ) ( 929 304 200 ) ( 928 305 200 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 944 320 224 ) ( 944 321 224 ) ( 945 320 224 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 944 320 216 ) ( 945 320 216 ) ( 944 320 217 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 944 320 216 ) ( 944 320 217 ) ( 944 321 216 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 62
+{
+( 1008 312 280 ) ( 1008 312 279 ) ( 1008 313 280 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 1008 320 280 ) ( 1009 320 280 ) ( 1008 320 279 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 1024 328 256 ) ( 1025 328 256 ) ( 1024 329 256 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1008 312 280 ) ( 1008 313 280 ) ( 1009 312 280 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1024 328 264 ) ( 1024 328 263 ) ( 1025 328 264 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 1024 328 264 ) ( 1024 329 264 ) ( 1024 328 263 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+}
+// brush 63
+{
+( 992 304 232 ) ( 992 305 232 ) ( 992 304 233 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 992 312 232 ) ( 992 312 233 ) ( 993 312 232 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 992 304 232 ) ( 993 304 232 ) ( 992 305 232 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1008 320 256 ) ( 1008 321 256 ) ( 1009 320 256 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1008 320 248 ) ( 1009 320 248 ) ( 1008 320 249 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1008 320 248 ) ( 1008 320 249 ) ( 1008 321 248 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 64
+{
+( 944 216 208 ) ( 944 217 208 ) ( 944 216 209 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 944 224 208 ) ( 944 224 209 ) ( 945 224 208 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 944 216 208 ) ( 945 216 208 ) ( 944 217 208 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 960 232 232 ) ( 960 233 232 ) ( 961 232 232 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 960 232 224 ) ( 961 232 224 ) ( 960 232 225 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 960 232 224 ) ( 960 232 225 ) ( 960 233 224 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 65
+{
+( 912 216 192 ) ( 912 217 192 ) ( 912 216 193 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 224 192 ) ( 912 224 193 ) ( 913 224 192 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 216 192 ) ( 913 216 192 ) ( 912 217 192 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 928 232 216 ) ( 928 233 216 ) ( 929 232 216 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 928 232 208 ) ( 929 232 208 ) ( 928 232 209 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 928 232 208 ) ( 928 232 209 ) ( 928 233 208 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 66
+{
+( 928 216 200 ) ( 928 217 200 ) ( 928 216 201 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 928 224 200 ) ( 928 224 201 ) ( 929 224 200 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 928 216 200 ) ( 929 216 200 ) ( 928 217 200 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 944 232 224 ) ( 944 233 224 ) ( 945 232 224 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 944 232 216 ) ( 945 232 216 ) ( 944 232 217 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 944 232 216 ) ( 944 232 217 ) ( 944 233 216 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 67
+{
+( 992 216 232 ) ( 992 217 232 ) ( 992 216 233 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 992 224 232 ) ( 992 224 233 ) ( 993 224 232 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 992 216 232 ) ( 993 216 232 ) ( 992 217 232 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1008 232 256 ) ( 1008 233 256 ) ( 1009 232 256 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1008 232 248 ) ( 1009 232 248 ) ( 1008 232 249 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1008 232 248 ) ( 1008 232 249 ) ( 1008 233 248 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 68
+{
+( 1008 304 240 ) ( 1008 305 240 ) ( 1008 304 241 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1008 312 240 ) ( 1008 312 241 ) ( 1009 312 240 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1008 304 240 ) ( 1009 304 240 ) ( 1008 305 240 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1024 320 264 ) ( 1024 321 264 ) ( 1025 320 264 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1024 320 256 ) ( 1025 320 256 ) ( 1024 320 257 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1024 320 256 ) ( 1024 320 257 ) ( 1024 321 256 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 69
+{
+( 960 216 216 ) ( 960 217 216 ) ( 960 216 217 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 960 224 216 ) ( 960 224 217 ) ( 961 224 216 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 960 216 216 ) ( 961 216 216 ) ( 960 217 216 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 976 232 240 ) ( 976 233 240 ) ( 977 232 240 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 976 232 232 ) ( 977 232 232 ) ( 976 232 233 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 976 232 232 ) ( 976 232 233 ) ( 976 233 232 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 70
+{
+( 976 304 224 ) ( 976 305 224 ) ( 976 304 225 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 976 312 224 ) ( 976 312 225 ) ( 977 312 224 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 976 304 224 ) ( 977 304 224 ) ( 976 305 224 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 992 320 248 ) ( 992 321 248 ) ( 993 320 248 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 992 320 240 ) ( 993 320 240 ) ( 992 320 241 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 992 320 240 ) ( 992 320 241 ) ( 992 321 240 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 71
+{
+( 976 216 224 ) ( 976 217 224 ) ( 976 216 225 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 976 224 224 ) ( 976 224 225 ) ( 977 224 224 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 976 216 224 ) ( 977 216 224 ) ( 976 217 224 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 992 232 248 ) ( 992 233 248 ) ( 993 232 248 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 992 232 240 ) ( 993 232 240 ) ( 992 232 241 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 992 232 240 ) ( 992 232 241 ) ( 992 233 240 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 72
+{
+( 960 304 216 ) ( 960 305 216 ) ( 960 304 217 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 960 312 216 ) ( 960 312 217 ) ( 961 312 216 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 960 304 216 ) ( 961 304 216 ) ( 960 305 216 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 976 320 240 ) ( 976 321 240 ) ( 977 320 240 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 976 320 232 ) ( 977 320 232 ) ( 976 320 233 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 976 320 232 ) ( 976 320 233 ) ( 976 321 232 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 73
+{
+( 896 216 184 ) ( 896 217 184 ) ( 896 216 185 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 896 224 184 ) ( 896 224 185 ) ( 897 224 184 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 896 216 184 ) ( 897 216 184 ) ( 896 217 184 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 232 208 ) ( 912 233 208 ) ( 913 232 208 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 232 200 ) ( 913 232 200 ) ( 912 232 201 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 912 232 200 ) ( 912 232 201 ) ( 912 233 200 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 74
+{
+( 1008 216 240 ) ( 1008 217 240 ) ( 1008 216 241 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1008 224 240 ) ( 1008 224 241 ) ( 1009 224 240 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1008 216 240 ) ( 1009 216 240 ) ( 1008 217 240 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1024 232 264 ) ( 1024 233 264 ) ( 1025 232 264 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1024 232 256 ) ( 1025 232 256 ) ( 1024 232 257 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1024 232 256 ) ( 1024 232 257 ) ( 1024 233 256 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 75
+{
+( 992 304 376 ) ( 992 305 376 ) ( 992 304 377 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 992 312 376 ) ( 992 312 377 ) ( 993 312 376 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 992 304 376 ) ( 993 304 376 ) ( 992 305 376 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1008 320 400 ) ( 1008 321 400 ) ( 1009 320 400 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1008 320 392 ) ( 1009 320 392 ) ( 1008 320 393 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1008 320 392 ) ( 1008 320 393 ) ( 1008 321 392 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 76
+{
+( 1008 304 384 ) ( 1008 305 384 ) ( 1008 304 385 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1008 312 384 ) ( 1008 312 385 ) ( 1009 312 384 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1008 304 384 ) ( 1009 304 384 ) ( 1008 305 384 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1024 320 408 ) ( 1024 321 408 ) ( 1025 320 408 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1024 320 400 ) ( 1025 320 400 ) ( 1024 320 401 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1024 320 400 ) ( 1024 320 401 ) ( 1024 321 400 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 77
+{
+( 960 416 424 ) ( 960 415 424 ) ( 960 416 423 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+( 976 320 408 ) ( 977 320 408 ) ( 976 320 407 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 976 304 408 ) ( 976 303 408 ) ( 977 304 408 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 960 416 424 ) ( 961 416 424 ) ( 960 415 424 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 960 432 424 ) ( 960 432 423 ) ( 961 432 424 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 976 304 408 ) ( 976 304 407 ) ( 976 303 408 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+}
+// brush 78
+{
+( 976 416 416 ) ( 976 415 416 ) ( 976 416 415 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+( 992 320 400 ) ( 993 320 400 ) ( 992 320 399 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 992 304 400 ) ( 992 303 400 ) ( 993 304 400 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 976 416 416 ) ( 977 416 416 ) ( 976 415 416 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 976 432 416 ) ( 976 432 415 ) ( 977 432 416 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 992 304 400 ) ( 992 304 399 ) ( 992 303 400 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+}
+// brush 79
+{
+( 1008 416 400 ) ( 1008 415 400 ) ( 1008 416 399 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+( 1024 320 384 ) ( 1025 320 384 ) ( 1024 320 383 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 1024 304 384 ) ( 1024 303 384 ) ( 1025 304 384 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 1008 416 400 ) ( 1009 416 400 ) ( 1008 415 400 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 1008 432 400 ) ( 1008 432 399 ) ( 1009 432 400 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 1024 304 384 ) ( 1024 304 383 ) ( 1024 303 384 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+}
+// brush 80
+{
+( 976 304 368 ) ( 976 305 368 ) ( 976 304 369 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 976 312 368 ) ( 976 312 369 ) ( 977 312 368 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 976 304 368 ) ( 977 304 368 ) ( 976 305 368 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 992 320 392 ) ( 992 321 392 ) ( 993 320 392 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 992 320 384 ) ( 993 320 384 ) ( 992 320 385 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 992 320 384 ) ( 992 320 385 ) ( 992 321 384 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+}
+// brush 81
+{
+( 992 416 408 ) ( 992 415 408 ) ( 992 416 407 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+( 1008 320 392 ) ( 1009 320 392 ) ( 1008 320 391 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 1008 304 392 ) ( 1008 303 392 ) ( 1009 304 392 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 992 416 408 ) ( 993 416 408 ) ( 992 415 408 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 992 432 408 ) ( 992 432 407 ) ( 993 432 408 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 -1
+( 1008 304 392 ) ( 1008 304 391 ) ( 1008 303 392 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 180 1 1
+}
+// brush 82
+{
+( 896 224 176 ) ( 896 225 176 ) ( 896 224 177 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 896 224 176 ) ( 896 224 177 ) ( 897 224 176 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 896 224 176 ) ( 897 224 176 ) ( 896 225 176 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 912 336 184 ) ( 912 337 184 ) ( 913 336 184 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 912 320 192 ) ( 913 320 192 ) ( 912 320 193 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+( 912 336 192 ) ( 912 336 193 ) ( 912 337 192 ) "16x16 pixelart textures 2/carpet/Textures-16_336" 0 0 0 1 1
+}
+// brush 83
+{
+( 992 312 432 ) ( 992 312 431 ) ( 992 313 432 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 992 320 432 ) ( 993 320 432 ) ( 992 320 431 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 1008 328 408 ) ( 1009 328 408 ) ( 1008 329 408 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 992 312 432 ) ( 992 313 432 ) ( 993 312 432 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1008 328 416 ) ( 1008 328 415 ) ( 1009 328 416 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 1008 328 416 ) ( 1008 329 416 ) ( 1008 328 415 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+}
+// brush 84
+{
+( 976 312 440 ) ( 976 312 439 ) ( 976 313 440 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 976 320 440 ) ( 977 320 440 ) ( 976 320 439 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 992 328 416 ) ( 993 328 416 ) ( 992 329 416 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 976 312 440 ) ( 976 313 440 ) ( 977 312 440 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 992 328 424 ) ( 992 328 423 ) ( 993 328 424 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 992 328 424 ) ( 992 329 424 ) ( 992 328 423 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+}
+// brush 85
+{
+( 1008 312 424 ) ( 1008 312 423 ) ( 1008 313 424 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 1008 320 424 ) ( 1009 320 424 ) ( 1008 320 423 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 1024 328 400 ) ( 1025 328 400 ) ( 1024 329 400 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1008 312 424 ) ( 1008 313 424 ) ( 1009 312 424 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 1
+( 1024 328 408 ) ( 1024 328 407 ) ( 1025 328 408 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+( 1024 328 408 ) ( 1024 329 408 ) ( 1024 328 407 ) "16x16 pixelart textures 1/sprite-sheet-16x16px-seamless-textures_122" 0 0 0 1 -1
+}
+}

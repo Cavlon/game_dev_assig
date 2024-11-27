@@ -1,6 +1,7 @@
 using UnityEngine;
 using CavlonUtils;
 using System.Collections;
+using TMPro;
 
 public class OverworldManager : MonoBehaviour
 {
@@ -8,11 +9,21 @@ public class OverworldManager : MonoBehaviour
     private GameObject pauseMenu;
     [SerializeField]
     public CardData[] startingDeck = new CardData[20];
+    [SerializeField]
+    private GameObject[] invisWalls = new GameObject[2];
+
+    [SerializeField]
+    private DialogueText bossBeatDialogue;
+    [SerializeField]
+    private DialogueText startDialogue;
 
     private RectTransform pauseBar;
     private GameObject pauseOverlay;
+    private TMP_Text creditsText;
 
     private InventoryManager inventoryMenu;
+
+    private DialogueManager dialogueManager;
 
     public static bool paused = false;
     public bool canPause = false;
@@ -25,6 +36,9 @@ public class OverworldManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        creditsText = transform.Find("HUD").Find("Credits").Find("CreditsText").GetComponent<TMP_Text>();
+        UpdateHUD();
+
         pauseMenu = transform.Find("PauseMenu").gameObject;
         canPause = false;
         pauseMenu.SetActive(false);
@@ -34,12 +48,18 @@ public class OverworldManager : MonoBehaviour
         inventoryMenu = pauseMenu.transform.Find("InventoryMenu").GetComponent<InventoryManager>();
         inventoryMenu.gameObject.SetActive(false);
 
-        if (StaticData.deck.Count == 0) {
+        dialogueManager = GameObject.Find("/DialogueManager").GetComponent<DialogueManager>();
+
+        DestroyBarriers();
+
+        if (StaticData.firstLoad) {
             for (int i = 0; i < 20; i++) {
                 StaticData.AddCardToInventory(startingDeck[i]);
                 StaticData.deck.Add(startingDeck[i]); 
                 StaticData.AddCardToDeck(startingDeck[i]);
             }
+
+            dialogueManager.StartDialogue(null, startDialogue, null);
         }
     }
 
@@ -55,6 +75,10 @@ public class OverworldManager : MonoBehaviour
                 CloseInventory();
             }           
         }
+    }
+
+    public void UpdateHUD() {
+        creditsText.text = "x" + StaticData.credits;
     }
 
     public void PauseGame() {
@@ -114,5 +138,20 @@ public class OverworldManager : MonoBehaviour
         yield return invMenuEnumerator;
         invOpen = false;
         inventoryMenu.gameObject.SetActive(false);
+    }
+
+    public void BossJustBeat() {
+        if (StaticData.bossesBeat == 3) return;
+        dialogueManager.StartDialogue(null, bossBeatDialogue, null);
+        DestroyBarriers();
+    }
+
+    private void DestroyBarriers() {
+        if (StaticData.bossesBeat > 0) {
+            Destroy(invisWalls[0]);
+            if (StaticData.bossesBeat > 1) {
+                Destroy(invisWalls[1]);
+            }
+        }
     }
 }

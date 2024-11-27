@@ -7,6 +7,7 @@ using System;
 
 public class GameManager : MonoBehaviour
 {
+
     [SerializeField]
     private TMP_Text roundCounter;
     [SerializeField]
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
     private Transform bytesImage;
     private TMP_Text bytesCounterText;
     private TMP_Text endScreenText;
+    private TMP_Text endScreenCreditsText;
     private Image endScreenPanel;
 
     public int round = 1;
@@ -56,9 +58,9 @@ public class GameManager : MonoBehaviour
 
     // Initialise the game
     void Start() {
-        endScreenText = endScreen.GetComponentInChildren<TMP_Text>();
+        endScreenText = endScreen.Find("EndText").GetComponent<TMP_Text>();
+        endScreenCreditsText = endScreen.Find("CreditsText").GetComponent<TMP_Text>();
         endScreenPanel = endScreen.GetChild(0).GetComponent<Image>();
-        StartCoroutine(AnimUtils.TweenPos(endScreen, new Vector2(0, 1147), 1.5f, AnimUtils.QuintInOut));
 
         // Get bytes components
         bytesImage = bytesCounter.GetChild(0);
@@ -70,6 +72,7 @@ public class GameManager : MonoBehaviour
         opponentScript = opponent.GetComponent<Opponent>();
         opponentScript.slotManager = slotManager;
         opponentScript.gameManager = this;
+        
 
         for (int i = 0; i < 20; i++) {
             deckManager.deckCards.Add(StaticData.deck[i]);
@@ -169,17 +172,31 @@ public class GameManager : MonoBehaviour
         endScreenPanel.color = new Color(endScreenPanel.color.r, endScreenPanel.color.g, endScreenPanel.color.b, 221/225f);
         if (health <= -1000) {
             endScreenText.text = "YOU LOSE";
+
+            endScreenCreditsText.text = "+ " + opponentScript.credits / 3 + " Credits";
+            StaticData.credits += opponentScript.credits / 3;
+
+            StaticData.battleWon = false;
+
             endScreen.localPosition = new Vector2(0, 1147);
             endScreenText.color = new Color(224/255f, 119/255f, 119/255f);
             soundManager.PlaySound(8);
         } else {
             endScreenText.text = "YOU WIN";
+
+            endScreenCreditsText.text = "+ " + opponentScript.credits + " Credits";
+            StaticData.credits += opponentScript.credits;
+
+            StaticData.battleWon = true;
+
             endScreen.localPosition = new Vector2(0, -1147);
             endScreenText.color = new Color(106/255f, 185/255f, 207/255f);
             soundManager.PlaySound(7);
         }
         soundManager.StopBGM();
         yield return AnimUtils.TweenPos(endScreen, Vector2.zero, 1.5f, AnimUtils.QuintInOut);
+        yield return new WaitForSeconds(2f);
+        yield return GameObject.Find("/SceneLoader").GetComponent<SceneLoader>().ChangeScene("Overworld");
     }
 
     // Animate the end turn icon when hovered over

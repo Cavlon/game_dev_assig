@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class SpecialCard : CardManager
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public string specialKey;
+    public int[] abilityArgs;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private new SpecialCardData cardData;
+
+    public override void Init(int newId, CardData newCardData) {
+        base.Init(newId, newCardData);
+        cardData = newCardData as SpecialCardData;
+        specialKey = cardData.specialKey;
+        abilityArgs = cardData.abilityArgs;
     }
 }

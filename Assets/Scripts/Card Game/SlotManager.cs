@@ -2,12 +2,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using CavlonUtils;
 using System.Collections;
+using System.Collections.Generic;
 using System;
 using System.Data;
 using Unity.Mathematics;
 
 public class SlotManager : MonoBehaviour
 {
+
+    private delegate IEnumerator SpecialAbility(int cardInd, CardManager cardManager, GameObject[] attackingCards, GameObject[] victimCards, int[] args);
+
+
+    private Dictionary<string, SpecialAbility> abilityDict = new Dictionary<string, SpecialAbility>();
+
     [SerializeField]
     private HandManager handManager;
     [SerializeField]
@@ -29,7 +36,15 @@ public class SlotManager : MonoBehaviour
     // Which cards have been selected for sacrifice
     private bool[] selectedCards = new bool[4];
 
+    private bool skipCard = false;
+
     void Start() {
+
+        abilityDict.Add("DoubleAttack", DoubleAttack);
+        abilityDict.Add("TripleAttack", TripleAttack);
+        abilityDict.Add("Move", Move);
+        abilityDict.Add("Push", Push);
+
         // Initialise all the slots
         Transform operationSlots = transform.parent.Find("PlayerSlots").GetChild(0);
         for (int i = 0; i < 4; i++) {
@@ -104,7 +119,7 @@ public class SlotManager : MonoBehaviour
         if (cardManager.animEnumerator != null) {
             StopCoroutine(cardManager.animEnumerator);
         }
-        cardManager.animEnumerator = AnimUtils.TweenPos(card.transform, new Vector2(0, 0), 0.25f, AnimUtils.CubicOut);
+        cardManager.animEnumerator = AnimUtils.TweenPos(card.transform, Vector2.zero, 0.25f, AnimUtils.CubicOut);
         StartCoroutine(cardManager.animEnumerator);
 
         // Assign click callback
@@ -222,34 +237,17 @@ public class SlotManager : MonoBehaviour
     // Attack with all cards
     private IEnumerator Attack(GameObject[] attackingCards, GameObject[] victimCards) {
         for (int i = 0; i < 4; i++) {       // Iterate through all the played cards
-            if (attackingCards[i] != null && victimCards[i] != null) {       // Only attack if there is a played card and there is a valid opponent
+            if (skipCard) {
+                skipCard = false;
+                continue;
+            }
+            if (attackingCards[i] != null) {
                 CardManager cardManager = attackingCards[i].GetComponent<CardManager>();
-                CardManager oppCardManager = victimCards[i].GetComponent<CardManager>();
-                if (cardManager.damage != 0) {      // Only attack if there is damage to be dealt
 
-                    // Animate the attack
-                    yield return AnimUtils.TweenPos(attackingCards[i].transform, new Vector2(attackingCards[i].transform.localPosition.x, -60), 0.1f, AnimUtils.CubicIn);
-                    soundManager.PlaySound(3);
-                    yield return AnimUtils.TweenPos(attackingCards[i].transform, new Vector2(attackingCards[i].transform.localPosition.x, 530), 0.25f, AnimUtils.CubicIn);
-                    StartCoroutine(gameManager.Shake(attackingCards[i].transform, cardManager.animImageRotEnumerator, 2, 0));
-
-                    // Deal damage to the victim card
-                    oppCardManager.health = Math.Max(0, oppCardManager.health - cardManager.damage);
-                    victimCards[i].GetComponent<UpdateCard>().UpdateHealth(oppCardManager.health);
-
-                    // Destroy the victim if it dies
-                    if (oppCardManager.health <= 0) {
-                        if (victimCards == playerCards) {
-                            deckManager.discardPile.Add(oppCardManager.cardData);
-                        }
-                        StartCoroutine(DestroyCard(victimCards[i]));
-                    } else {
-                        StartCoroutine(gameManager.Shake(victimCards[i].transform, oppCardManager.animEnumerator, 2, 0));
-                    }
-
-                    // Return the card to the slot
-                    yield return AnimUtils.TweenPos(attackingCards[i].transform, new Vector2(attackingCards[i].transform.localPosition.x, 0), 1.2f, AnimUtils.QuintInOut);
-                    yield return new WaitForSeconds(0.05f);
+                if (cardManager is SpecialCard specCard) {
+                    yield return abilityDict[specCard.specialKey](i, cardManager, attackingCards, victimCards, specCard.abilityArgs);
+                } else {
+                    yield return NormalAttack(i, i, cardManager.damage, cardManager, attackingCards, victimCards);
                 }
             }
         }
@@ -345,4 +343,138 @@ public class SlotManager : MonoBehaviour
         return (int)res;
     }
 
+    private IEnumerator NormalAttack(int attackInd, int victimInd, int damage, CardManager cardManager, GameObject[] attackingCards, GameObject[] victimCards) {
+        if (victimCards[victimInd] != null && damage != 0) {       // Only attack if there is a played card and there is a valid opponent           
+            CardManager oppCardManager = victimCards[victimInd].GetComponent<CardManager>();
+
+            Vector2 initPos = attackingCards[attackInd].transform.localPosition;
+
+            // Animate the attack
+            yield return AnimUtils.TweenPos(attackingCards[attackInd].transform, new Vector2(initPos.x, -60), 0.1f, AnimUtils.CubicIn);
+            soundManager.PlaySound(3);
+            yield return AnimUtils.TweenPos(attackingCards[attackInd].transform, new Vector2(attackingCards[attackInd].transform.InverseTransformPoint(victimCards[victimInd].transform.position).x, 530), 0.25f, AnimUtils.CubicIn);
+            StartCoroutine(gameManager.Shake(attackingCards[attackInd].transform, cardManager.animImageRotEnumerator, 2, 0));
+
+            // Deal damage to the victim card
+            oppCardManager.health = Math.Max(0, oppCardManager.health - damage);
+            victimCards[victimInd].GetComponent<UpdateCard>().UpdateHealth(oppCardManager.health);
+
+            // Destroy the victim if it dies
+            if (oppCardManager.health <= 0) {
+                if (victimCards == playerCards) {
+                    deckManager.discardPile.Add(oppCardManager.cardData);
+                }
+                StartCoroutine(DestroyCard(victimCards[victimInd]));
+            } else {
+                StartCoroutine(gameManager.Shake(victimCards[victimInd].transform, oppCardManager.animEnumerator, 2, 0));
+            }
+
+            // Return the card to the slot
+            yield return AnimUtils.TweenPos(attackingCards[attackInd].transform, initPos, 1.2f, AnimUtils.QuintInOut);
+            yield return new WaitForSeconds(0.04f);
+
+        }
+    }
+    private IEnumerator DoubleAttack(int cardInd, CardManager cardManager, GameObject[] attackingCards, GameObject[] victimCards, int[] damages) {
+
+        if (cardInd == 0) {
+
+            yield return NormalAttack(cardInd, cardInd+1, damages[1], cardManager, attackingCards, victimCards);
+
+        } else if (cardInd == 3 && victimCards[cardInd-1] != null) {
+
+            yield return NormalAttack(cardInd, cardInd-1, damages[0], cardManager, attackingCards, victimCards);
+
+        } else {
+            yield return NormalAttack(cardInd, cardInd-1, damages[0], cardManager, attackingCards, victimCards);
+            yield return NormalAttack(cardInd, cardInd+1, damages[1], cardManager, attackingCards, victimCards);
+        }
+    }
+
+    private IEnumerator TripleAttack(int cardInd, CardManager cardManager, GameObject[] attackingCards, GameObject[] victimCards, int[] damages) {
+
+        if (cardInd == 0) {
+
+            yield return NormalAttack(cardInd, cardInd, damages[1], cardManager, attackingCards, victimCards);
+            yield return NormalAttack(cardInd, cardInd+1, damages[2], cardManager, attackingCards, victimCards);
+
+        } else if (cardInd == 3 && victimCards[cardInd-1] != null) {
+
+            yield return NormalAttack(cardInd, cardInd-1, damages[0], cardManager, attackingCards, victimCards);
+            yield return NormalAttack(cardInd, cardInd, damages[1], cardManager, attackingCards, victimCards);
+
+        } else {
+            yield return NormalAttack(cardInd, cardInd-1, damages[0], cardManager, attackingCards, victimCards);
+            yield return NormalAttack(cardInd, cardInd, damages[1], cardManager, attackingCards, victimCards);
+            yield return NormalAttack(cardInd, cardInd+1, damages[2], cardManager, attackingCards, victimCards);
+        }
+    }
+
+    private IEnumerator Move(int cardInd, CardManager cardManager, GameObject[] attackingCards, GameObject[] victimCards, int[] args) {
+        int moveDir = args[0];
+
+        if (victimCards[cardInd] != null) {
+            yield return NormalAttack(cardInd, cardInd, cardManager.damage, cardManager, attackingCards, victimCards);
+        }
+
+        if (cardInd + moveDir > -1 && cardInd + moveDir < 4 && attackingCards[cardInd + moveDir] == null) {
+            attackingCards[cardInd + moveDir] = attackingCards[cardInd];
+            attackingCards[cardInd] = null;
+            if (attackingCards == playerCards) {
+                attackingCards[cardInd + moveDir].transform.SetParent(playerSlots[cardInd + moveDir]);
+            } else {
+                attackingCards[cardInd + moveDir].transform.SetParent(opponentSlots[cardInd + moveDir]);
+            }
+            
+            yield return AnimUtils.TweenPos(attackingCards[cardInd + moveDir].transform, Vector2.zero, 0.7f, AnimUtils.CubicOut);
+            yield return new WaitForSeconds(0.04f);
+
+            skipCard = true;
+        }
+    }
+
+    private IEnumerator Push(int cardInd, CardManager cardManager, GameObject[] attackingCards, GameObject[] victimCards, int[] args) {
+        int moveDir = args[0];
+
+        if (victimCards[cardInd] != null) {
+            yield return NormalAttack(cardInd, cardInd, cardManager.damage, cardManager, attackingCards, victimCards);
+        }
+
+        int nullInd = -1;
+
+        for (int i = cardInd; cardInd + moveDir > -1 && cardInd + moveDir < 4; i += moveDir) {
+            if (attackingCards[i] == null) {
+                nullInd = i;
+                break;
+            }
+        }
+
+        if (nullInd != -1) {
+            while (nullInd != cardInd) {
+                attackingCards[nullInd] = attackingCards[nullInd - moveDir];
+                if (attackingCards == playerCards) {
+                    attackingCards[nullInd].transform.SetParent(playerSlots[nullInd]);
+                } else {
+                    attackingCards[nullInd].transform.SetParent(opponentSlots[nullInd]);
+                }
+                
+                StartCoroutine(AnimUtils.TweenPos(attackingCards[nullInd].transform, Vector2.zero, 0.7f, AnimUtils.CubicOut));
+
+                nullInd = nullInd - moveDir;
+            }
+
+            attackingCards[cardInd + moveDir] = attackingCards[cardInd];
+            attackingCards[cardInd] = null;
+            if (attackingCards == playerCards) {
+                attackingCards[cardInd + moveDir].transform.SetParent(playerSlots[cardInd + moveDir]);
+            } else {
+                attackingCards[cardInd + moveDir].transform.SetParent(opponentSlots[cardInd + moveDir]);
+            }
+            
+            yield return AnimUtils.TweenPos(attackingCards[cardInd + moveDir].transform, Vector2.zero, 0.7f, AnimUtils.CubicOut);
+            yield return new WaitForSeconds(0.04f);
+            
+            skipCard = true;
+        }
+    }
 }

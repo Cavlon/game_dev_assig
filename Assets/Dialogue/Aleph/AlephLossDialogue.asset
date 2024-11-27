@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4848e7e46289243b311920bdbdddf0, type: 3}
+  m_Name: AlephLossDialogue
+  m_EditorClassIdentifier: 
+  playerLines:
+  - dang it
+  - I guess I still have no clue what's going on
+  - I should probably check out the other exhibits until I understand arithmetic
+  NPCLines:
+  - HAHA
+  - Looks like you couldn't comprehend me after all
+  speakTurnPlayer: 0000010101

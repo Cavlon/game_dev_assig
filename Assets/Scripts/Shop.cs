@@ -1,7 +1,6 @@
 using System.Collections;
 using CavlonUtils;
 using TMPro;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,16 +25,18 @@ public class Shop : MonoBehaviour
     [SerializeField]
     private GameObject cardPrefab;
 
-
     private TMP_Text creditsText;
-    private bool canClick = true;
+    public bool canClick = true;
     private Transform newCardsHolder;
     private GameObject newCardsText;
     public bool cardsDrawn = false;
+    private OverworldManager overworldManager;
 
     private IEnumerator[] packEnumerators = new IEnumerator[4];
 
     void Start() {
+        overworldManager = GameObject.Find("/GameManager").GetComponent<OverworldManager>();
+
         for (int i = 0; i < 4; i++) {
             cardPacks[i] = transform.Find("CardPacks").GetChild(i);
         }
@@ -62,6 +63,7 @@ public class Shop : MonoBehaviour
 
             StaticData.credits -= 5;
             UpdateVisuals();
+            overworldManager.UpdateHUD();
 
             newCardsText.SetActive(true);
         }
