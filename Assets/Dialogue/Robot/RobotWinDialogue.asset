@@ -18,10 +18,11 @@ MonoBehaviour:
   - I beat the robot!
   - I outsmarted it!
   - I think I'm smart enough to pass my exams now!
+  - I can finally make those credits!
   NPCLines:
   - NOOOOOOOOOOOOOOOOOOO
   - BRZZT... THIS BRZZT... CAN'T BE
   - I BRZZT... AM THE PINNACLE BRZZT...
   - BRZZT BRZZT BRZZT BRZZT BRZZT
   - BEEEEEEEEEEEEEEEEEEEEEEP
-  speakTurnPlayer: 00000000000101010101
+  speakTurnPlayer: 0000000000010101010101

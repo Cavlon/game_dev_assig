@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4848e7e46289243b311920bdbdddf0, type: 3}
+  m_Name: AI
+  m_EditorClassIdentifier: 
+  playerLines:
+  - AI seems like magic to me, I write something in and it magicall give me a response
+  - Seems like its straight out of science fiction
+  - I'm a bit worried about society getting taken over though
+  - <i>hmm...</i>
+  - <i>If I'm patient enough, I may be able to figure out and exploit the actions
+    of AI</i>
+  NPCLines:
+  - Artificial beings have been speculated about since ancient times with stories
+    of Talos and Paracelsis
+  - Nowadays, AI seems to be a common part of society
+  - Most people don't seem to understand AI but they may be simpler than you think
+  - They aim to imitate the human ability to learn by trying to find the best solution
+    to several equations
+  - They iteratively learn over time to achieve this
+  - One of the first instances of neural networks appeared in 1943 by Walter Pitts
+    and Warren McCulloch
+  - AI istelf has several different fields such as reinforcement learning, deep learning,
+    computer vision and more
+  - At the end of the day, AI is just a series of self-learning equations, given
+    enough thought and patience, they can be exploited
+  speakTurnPlayer: 01000000000001000001000101

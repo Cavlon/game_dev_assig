@@ -17,6 +17,7 @@ public class StaticData : MonoBehaviour
     public static bool battleWon = false;
     public static bool firstLoad = true;
     public static bool shopIntroduced = false;
+    public static bool lowDetail = false;
 
     public static Vector3 playerPos = new Vector3(0, 1.07f, 0);
 

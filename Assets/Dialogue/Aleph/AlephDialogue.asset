@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLines:
   - <i>Aleph</i> huh...
-  - <i>A way to denote one of the many possible infinities<i>
+  - <i>A way to denote one of the many possible infinities, borring a character from
+    the Hebrew alphabet<i>
   - <i>Introduced by George Cantor to discretize the infinite cardinalities of sets<i>
   - ...
   - neat.

@@ -22,6 +22,8 @@ public class DialogueManager : MonoBehaviour
     private Transform NPCTextBox;
     private DialogueText currentDialogue;
 
+    private SoundManager soundManager;
+
     public int playerInd = 0;
     public int NPCInd = 0;
     public int turn = 0;
@@ -30,6 +32,7 @@ public class DialogueManager : MonoBehaviour
 
     void Start() {
         playerTextBox = playerText.transform.parent;
+        soundManager = GameObject.Find("/SoundManager").GetComponent<SoundManager>();
     }
 
     void Update() {
@@ -43,6 +46,7 @@ public class DialogueManager : MonoBehaviour
                 }
             } else {
                 Debug.Log("Ending Dialogue");
+                soundManager.PlaySound(5);
                 if (prevPlayerTalk) {
                     StartCoroutine(CloseTextBox(playerTextBox, true));
                 } else {
@@ -58,6 +62,10 @@ public class DialogueManager : MonoBehaviour
         if (_NPCText != null) {
             NPCText = _NPCText;
             NPCTextBox = _NPCText.transform.parent;
+        }
+
+        if (soundManager == null) {
+            soundManager = GameObject.Find("/SoundManager").GetComponent<SoundManager>();
         }
         
         currentDialogue = dialogue;
@@ -80,6 +88,8 @@ public class DialogueManager : MonoBehaviour
         int newLineInd = 0;
 
         playerText.text = string.Empty;
+
+        soundManager.PlaySound(5);
 
         if (turn == 0) {
             if (playerTextBox == null) {
@@ -110,6 +120,7 @@ public class DialogueManager : MonoBehaviour
             } else {
                 playerText.text += currentDialogue.playerLines[playerInd][i];
                 newLineInd++;
+                soundManager.PlaySound(5);
                 yield return new WaitForSeconds(textScrollSpeed);
             }
         }
@@ -122,6 +133,8 @@ public class DialogueManager : MonoBehaviour
 
     public IEnumerator DisplayNPCText() {
         int newLineInd = 0;
+
+        soundManager.PlaySound(5);
 
         NPCText.text = string.Empty;
 
@@ -143,6 +156,7 @@ public class DialogueManager : MonoBehaviour
             }
             NPCText.text += currentDialogue.NPCLines[NPCInd][i];
             newLineInd++;
+            soundManager.PlaySound(5);
             yield return new WaitForSeconds(textScrollSpeed);
         }
         NPCInd++;

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4848e7e46289243b311920bdbdddf0, type: 3}
+  m_Name: Pathfinding
+  m_EditorClassIdentifier: 
+  playerLines:
+  - Navigation systems are wild
+  - How do they know how to get from one place to another?
+  - Neat. So that's how my games work
+  - <i>hmm...</i>
+  - <i>So pathfinding can move certain objects into empty spaces</i>
+  - <i>Some objects can even push other objects along</i>
+  NPCLines:
+  - Pathfinding is an integral study for a variety of fields ranging from graph theory
+    and AI to engineering
+  - One of the simplest and most intuitive methods of pathfinding was introduced
+    by Edsger W. Dijkstra in 1956
+  - Dijkstra's algorithm outlines a simple method to iteratively find the shortest
+    path between 2 points relatively quickly
+  - A* is a more effective varient of Dijkstra's algorithm which is more widely used
+    in a variety of applications such as video games and car navigation
+  - It takes a heuristic approach to pathfinding, considering the distance to the
+    destination as well the start
+  - Pathfinding algorithms can be used to take anything from one point to another
+  - Depending on the object, they may even push other objects out of the way to reach
+    their goal
+  speakTurnPlayer: 01010000000000010000010101

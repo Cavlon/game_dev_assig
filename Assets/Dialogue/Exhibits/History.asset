@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4848e7e46289243b311920bdbdddf0, type: 3}
+  m_Name: History
+  m_EditorClassIdentifier: 
+  playerLines:
+  - I never really got linear algebra
+  - I just see equations and my mind goes blank
+  - Huh... I still don't get the equations though
+  - <i>huh...</i>
+  - <i>So certain equations can only be used when generalising existing equations</i>
+  - <i>If I select which equation I want to use, I should be able to also select
+    which equations I want to generalise to use my chosen equation</i>
+  NPCLines:
+  - Linear algebra is a fundamental field of mathematics
+  - Sequences of linear equations pop up all over the place and solving them is a
+    very important skill
+  - What is now known as Gaussian elimination first popped up around the 2nd century
+    BCE in <i>The Nine Chapters on the Mathematical Art</i>
+  - It has since evolved with the introduction of several concepts such as matrices
+    and vector spaces
+  - These systems of equations operate on several variables at once
+  - These equations are generalisations of certain transformations and such require
+    the generalisation of certain numbers to use the equation
+  speakTurnPlayer: 010100000000010000010101

@@ -157,6 +157,7 @@ public class SlotManager : MonoBehaviour
     public IEnumerator OpponentPlayCard(CardData cardData, Vector2 oppPos, int index) {
         // Create the card and assign it to the slot
         GameObject card = Instantiate(cardPrefab, oppPos, Quaternion.identity, opponentSlots[index]);
+        card.transform.GetChild(0).transform.localScale = new Vector2(1, -1);
         opponentCards[index] = card;
 
         CardManager cardManager;
@@ -177,8 +178,7 @@ public class SlotManager : MonoBehaviour
         if (cardManager.animEnumerator != null) {
             StopCoroutine(cardManager.animEnumerator);
         }
-        cardManager.animEnumerator = AnimUtils.TweenPos(card.transform, new Vector2(0, 0), 0.25f, AnimUtils.CubicOut);
-        card.transform.localScale = opponentSlots[index].localScale;
+        cardManager.animEnumerator = AnimUtils.TweenPos(card.transform, Vector2.zero, 0.25f, AnimUtils.CubicOut);
 
         // Activate the card outline
         card.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
@@ -236,6 +236,7 @@ public class SlotManager : MonoBehaviour
 
     // Attack with all cards
     private IEnumerator Attack(GameObject[] attackingCards, GameObject[] victimCards) {
+        skipCard = false;
         for (int i = 0; i < 4; i++) {       // Iterate through all the played cards
             if (skipCard) {
                 skipCard = false;
@@ -344,7 +345,7 @@ public class SlotManager : MonoBehaviour
     }
 
     private IEnumerator NormalAttack(int attackInd, int victimInd, int damage, CardManager cardManager, GameObject[] attackingCards, GameObject[] victimCards) {
-        if (victimCards[victimInd] != null && damage != 0) {       // Only attack if there is a played card and there is a valid opponent           
+        if (victimInd > -1 && victimInd < 4 && victimCards[victimInd] != null && damage != 0) {       // Only attack if there is a played card and there is a valid opponent           
             CardManager oppCardManager = victimCards[victimInd].GetComponent<CardManager>();
 
             Vector2 initPos = attackingCards[attackInd].transform.localPosition;
@@ -377,37 +378,15 @@ public class SlotManager : MonoBehaviour
     }
     private IEnumerator DoubleAttack(int cardInd, CardManager cardManager, GameObject[] attackingCards, GameObject[] victimCards, int[] damages) {
 
-        if (cardInd == 0) {
-
-            yield return NormalAttack(cardInd, cardInd+1, damages[1], cardManager, attackingCards, victimCards);
-
-        } else if (cardInd == 3 && victimCards[cardInd-1] != null) {
-
-            yield return NormalAttack(cardInd, cardInd-1, damages[0], cardManager, attackingCards, victimCards);
-
-        } else {
-            yield return NormalAttack(cardInd, cardInd-1, damages[0], cardManager, attackingCards, victimCards);
-            yield return NormalAttack(cardInd, cardInd+1, damages[1], cardManager, attackingCards, victimCards);
-        }
+        yield return NormalAttack(cardInd, cardInd-1, damages[0], cardManager, attackingCards, victimCards);
+        yield return NormalAttack(cardInd, cardInd+1, damages[1], cardManager, attackingCards, victimCards);
     }
 
     private IEnumerator TripleAttack(int cardInd, CardManager cardManager, GameObject[] attackingCards, GameObject[] victimCards, int[] damages) {
 
-        if (cardInd == 0) {
-
-            yield return NormalAttack(cardInd, cardInd, damages[1], cardManager, attackingCards, victimCards);
-            yield return NormalAttack(cardInd, cardInd+1, damages[2], cardManager, attackingCards, victimCards);
-
-        } else if (cardInd == 3 && victimCards[cardInd-1] != null) {
-
-            yield return NormalAttack(cardInd, cardInd-1, damages[0], cardManager, attackingCards, victimCards);
-            yield return NormalAttack(cardInd, cardInd, damages[1], cardManager, attackingCards, victimCards);
-
-        } else {
-            yield return NormalAttack(cardInd, cardInd-1, damages[0], cardManager, attackingCards, victimCards);
-            yield return NormalAttack(cardInd, cardInd, damages[1], cardManager, attackingCards, victimCards);
-            yield return NormalAttack(cardInd, cardInd+1, damages[2], cardManager, attackingCards, victimCards);
-        }
+        yield return NormalAttack(cardInd, cardInd-1, damages[0], cardManager, attackingCards, victimCards);
+        yield return NormalAttack(cardInd, cardInd, damages[1], cardManager, attackingCards, victimCards);
+        yield return NormalAttack(cardInd, cardInd+1, damages[2], cardManager, attackingCards, victimCards);
     }
 
     private IEnumerator Move(int cardInd, CardManager cardManager, GameObject[] attackingCards, GameObject[] victimCards, int[] args) {
@@ -442,7 +421,7 @@ public class SlotManager : MonoBehaviour
 
         int nullInd = -1;
 
-        for (int i = cardInd; cardInd + moveDir > -1 && cardInd + moveDir < 4; i += moveDir) {
+        for (int i = cardInd; i > -1 && i < 4; i += moveDir) {
             if (attackingCards[i] == null) {
                 nullInd = i;
                 break;

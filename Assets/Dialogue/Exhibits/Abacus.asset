@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4848e7e46289243b311920bdbdddf0, type: 3}
+  m_Name: Abacus
+  m_EditorClassIdentifier: 
+  playerLines:
+  - An abacus huh...
+  - What's that?
+  - That sounds quite useful
+  - Though we have calculators now instead
+  - <i>hmm...</i>
+  - <i>So using operations apply those operations on a number</i>
+  - <i>If this number is large enough, it can overwhelm an opponent</i>
+  NPCLines:
+  - It's a tool that was used millenia ago by ancient people
+  - They were used to assist in counting and simple calculations
+  - The first abacus appeared in ancient Mesopotamia but looked very different to
+    the abacus we're used to now
+  - The first abacus was in base 60 and allowed the calculation of very large numbers
+  - These large numbers could get very overwhelming very quickly depending on the
+    operations performed
+  - Remember, if you're ever in a tight spot, try applying whatever powerful operations
+    you can to overwhelm your opponent
+  - Operations can come in several types and have a variety of effects on whatever
+    number you want
+  speakTurnPlayer: 0101000000010100000000010101

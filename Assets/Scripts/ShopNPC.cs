@@ -11,9 +11,13 @@ public class ShopNPC : Interactable
 
     [SerializeField]
     private DialogueText openShopDialogue;
+    [SerializeField]
+    private DialogueText closeShopDialogue;
     private bool shopOpen = false;
 
     private OverworldManager overworldManager;
+    private SoundManager soundManager;
+    private Player player;
 
     protected override void Start() {
         base.Start();
@@ -21,6 +25,8 @@ public class ShopNPC : Interactable
         shop = shopUI.GetComponent<Shop>();
         shopUI.gameObject.SetActive(false);
         overworldManager = GameObject.Find("/GameManager").GetComponent<OverworldManager>();
+        soundManager = GameObject.Find("/SoundManager").GetComponent<SoundManager>();
+        player = GameObject.Find("/Player").GetComponent<Player>();
     }
 
     void Update() {
@@ -50,6 +56,11 @@ public class ShopNPC : Interactable
         shop.cardsDrawn = false;
         shopUI.gameObject.SetActive(true);
         shop.UpdateVisuals();
+        soundManager.PlaySound(2);
+
+        player.canInteract = false;
+        player.canControl = false;
+
         if (shopOpenEnumerator != null) {
             StopCoroutine(shopOpenEnumerator);
         }
@@ -59,11 +70,14 @@ public class ShopNPC : Interactable
 
     public void CloseShop() {
         if (!shop.canClick) return;
+        dialogueManager.StartDialogue(NPCText, closeShopDialogue, null);
+        soundManager.PlaySound(2);
         shop.DestroyCards();
         StartCoroutine(CloseShopEnumerator());
     }
 
     private IEnumerator CloseShopEnumerator() {
+        shop.canClick = false;
         if (shopOpenEnumerator != null) {
             StopCoroutine(shopOpenEnumerator);
         }

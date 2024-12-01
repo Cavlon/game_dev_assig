@@ -18,7 +18,8 @@ MonoBehaviour:
   - My last hope
   - With the way my grades are looking, I really am banking on this museum event
   - Hopefully I finally understand my course content
+  - I really need to make some credits soon
   - Alright
   - Let's check this out!
   NPCLines: []
-  speakTurnPlayer: 01010101010101
+  speakTurnPlayer: 0101010101010101

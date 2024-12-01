@@ -31,11 +31,13 @@ public class Shop : MonoBehaviour
     private GameObject newCardsText;
     public bool cardsDrawn = false;
     private OverworldManager overworldManager;
+    private SoundManager soundManager;
 
     private IEnumerator[] packEnumerators = new IEnumerator[4];
 
     void Start() {
         overworldManager = GameObject.Find("/GameManager").GetComponent<OverworldManager>();
+        soundManager = GameObject.Find("/SoundManager").GetComponent<SoundManager>();
 
         for (int i = 0; i < 4; i++) {
             cardPacks[i] = transform.Find("CardPacks").GetChild(i);
@@ -55,6 +57,8 @@ public class Shop : MonoBehaviour
         StartCoroutine(Shake(cardPacks[ind].transform, 2, 0));
 
         if (StaticData.credits > 4) {
+
+            soundManager.PlaySound(4);
             DestroyCards();
 
             cardsDrawn = true;
@@ -79,6 +83,7 @@ public class Shop : MonoBehaviour
             GameObject newCard = Instantiate(cardPrefab, cardPacks[ind].position, Quaternion.identity, newCardsHolder.GetChild(i));
             newCard.transform.localScale = new Vector2(0.7f, 0.7f);
             newCard.GetComponent<UpdateCard>().InitValues(pickedCards[i]);
+            soundManager.PlaySound(0);
             yield return AnimUtils.TweenPos(newCard.transform, Vector2.zero, 0.5f, AnimUtils.QuintOut);
         }
 
@@ -115,6 +120,7 @@ public class Shop : MonoBehaviour
 
     public void DestroyCards() {
         if (cardsDrawn) {
+            soundManager.PlaySound(2);
             for (int i = 0; i < 3; i++) {
                 StartCoroutine(DestroyCard(newCardsHolder.GetChild(i).GetChild(0).gameObject));
             }

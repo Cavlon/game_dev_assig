@@ -20,6 +20,8 @@ public class InventoryManager : MonoBehaviour
     private Transform deckText;
     private IEnumerator deckEnumerator;
 
+    private SoundManager soundManager;
+
     void Start() {
         deckText = transform.GetChild(0).Find("DeckText");
 
@@ -28,6 +30,8 @@ public class InventoryManager : MonoBehaviour
 
         deckContent = transform.GetChild(0).Find("ScrollArea/Viewport/Content");
         invContent = transform.GetChild(1).Find("ScrollArea/Viewport/Content");
+
+        soundManager = GameObject.Find("/SoundManager").GetComponent<SoundManager>();
     }
 
     public void UpdateInventory() {
@@ -66,6 +70,8 @@ public class InventoryManager : MonoBehaviour
 
     public void InventoryItemClicked(CardData card) {
         if (StaticData.deck.Count < 20) {
+            soundManager.PlaySound(1);
+
             if (StaticData.deckDict.ContainsKey(card)) {
                 if (StaticData.inventory[card] > StaticData.deckDict[card]) {
                     StaticData.deck.Add(card); 
@@ -82,6 +88,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     public void EmptyDeck() {
+        soundManager.PlaySound(2);
         StaticData.deck.Clear();
         StaticData.deckDict.Clear();
         UpdateDeck();
@@ -89,6 +96,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     public void ShakeDeck() {
+        soundManager.PlaySound(9);
         if (deckEnumerator != null) {
             StopCoroutine(deckEnumerator);
         }

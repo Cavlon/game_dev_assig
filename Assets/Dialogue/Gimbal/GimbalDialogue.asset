@@ -15,6 +15,7 @@ MonoBehaviour:
   playerLines:
   - <i>A Gimbal</i>
   - <i>A support structure to facilitate the rotation of structures in 3 dimensions</i>
+  - <i>First described by Philo of Byzantium in 280 to 220 BCE</i>
   - <i>Though intuitive, its chance to lock and constrain rotation makes it unreliable</i>
   - ...
   - What's the point then?
@@ -31,4 +32,4 @@ MonoBehaviour:
   - I will show you my worth
   - I will not let quaternions take my crown
   - Witness the Gimbal lock!
-  speakTurnPlayer: 0101010101010001010000000100000000
+  speakTurnPlayer: 010101010101010001010000000100000000

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4848e7e46289243b311920bdbdddf0, type: 3}
+  m_Name: Cryptography
+  m_EditorClassIdentifier: 
+  playerLines:
+  - I always wondered how my messages get encrypted so other can't understand them
+  - I mean I barely understand how it works myself
+  - Wow I didn't realize how important it was
+  - <i>hmm...</i>
+  - <i>Understanding what your opponent is doing seems to be vital to winning battles</i>
+  - <i>Deciphering how things work and the opponent's strategy for myself is something
+    I may need to consider</i>
+  NPCLines:
+  - Cryptography is one of the most important studies for everyday life
+  - It keeps us safe from attackers out to steal our data
+  - One of the simplest encryption techniques is the Ceasar cipher
+  - One of the simplest and most well-known encryption techniques is the Caesar cipher
+  - Named and used by Julius Caesar in the 1st century BCE, it is a simple substitution
+    cipher
+  - Letters are replaced by shifting the alphabet across
+  - Another famous encryption system was the Enigma machine
+  - The importance of cracking this system is one of the biggest reasons computer
+    science exists these days
+  - 'The primitive computer: <i>bombe</i> that Alan Turing designed in Bletchley
+    Park was one of the deciding factors of WW2'
+  speakTurnPlayer: 010100000000000001000000010101

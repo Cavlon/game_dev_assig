@@ -1,0 +1,7 @@
+Overworld Icons: Flaticon
+SFX: Universfield on pixabay
+Music: Somewhat Good: Lofi by flowerhead & Relaxing & Cozy Music Loop by Alex Cook from itch.io
+Card Icons: Kenney Board Game Icons on itch.io
+Map Textures: PiiiXL on itch.io
+Original Unedited Character (All Characters In-Game are Custom Edited): Buck Borris by Penusbmic from itch.io
+Tweening Functions: Commented in the script

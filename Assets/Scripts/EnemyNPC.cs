@@ -28,6 +28,7 @@ public class EnemyNPC : Interactable
         StaticData.playerPos = GameObject.Find("/Player").transform.position;
         StaticData.nextOpponent = opponentPrefab;
         StaticData.enemyVal = bossVal;
+        GameObject.Find("/GameManager").GetComponent<OverworldManager>().canPause = false;
         StartCoroutine(GameObject.Find("/SceneLoader").GetComponent<SceneLoader>().ChangeScene("Combat"));
     }
 

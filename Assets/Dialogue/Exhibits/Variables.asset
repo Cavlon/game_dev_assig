@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f4848e7e46289243b311920bdbdddf0, type: 3}
+  m_Name: Variables
+  m_EditorClassIdentifier: 
+  playerLines:
+  - Woah
+  - What's with these wacky symbols?
+  - I can assign any value I want to these variables?
+  - <i>hmm...</i>
+  - <i>So I can first assign a number to a variable</i>
+  - <i>Then I can use operations on this variable</i>
+  - <i>Even time can be represented as a variable</i>
+  NPCLines:
+  - This is the greek alphabet, used extensively in all of science
+  - And most scientists aren't greek
+  - The Greek alphabet was created around 1000 BCE and is the ancestor of all modern
+    European alphabets
+  - These symbols are the building blocks of algebra
+  - These symbols can denote numbers and operations can be applied on these variables
+  - "Fran\xE7ois Vi\xE8te introduced the concept of the modern variable in the late
+    16th century"
+  - No, remember only a number can be used as a variable
+  - Operations are then performed on this number
+  speakTurnPlayer: 0101000000000000010000010101

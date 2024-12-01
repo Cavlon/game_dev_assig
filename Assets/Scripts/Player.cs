@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private LayerMask interactLayerMask;
 
+    private SoundManager soundManager;
+
     private readonly Collider[] interactionColliders = new Collider[1];
 
     private Animator spriteAnimator;
@@ -26,6 +28,7 @@ public class Player : MonoBehaviour
     private int dir = 1;
     public bool canControl = true;
     private bool canMove = false;
+    private float stepDelay = 0.3f;
 
     public bool canInteract = true;
     private Interactable interactTarget = null;
@@ -36,6 +39,7 @@ public class Player : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        soundManager = GameObject.Find("/SoundManager").GetComponent<SoundManager>();
         characterController = GetComponent<CharacterController>();
         spriteAnimator = GetComponentInChildren<Animator>();
         sprite = GetComponentInChildren<SpriteRenderer>();
@@ -103,6 +107,15 @@ public class Player : MonoBehaviour
         } else if (mag == 0 && state != State.Idle) {
             spriteAnimator.Play("PlayerIdle");
             state = State.Idle;
+            stepDelay = 0.05f;
+        }
+
+        if (state == State.Run) {
+            stepDelay -= Time.deltaTime;
+            if (stepDelay < 0) {
+                soundManager.PlaySound(11);
+                stepDelay = 0.3f;
+            }
         }
 
         if (mag > 1) {
